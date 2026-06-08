@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-body text-imus-navy antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-imus-green focus-visible:ring-offset-2;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-imus-green focus:px-4 focus:py-2 focus:text-imus-navy focus:font-semibold;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+}

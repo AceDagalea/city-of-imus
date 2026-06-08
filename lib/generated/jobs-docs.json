@@ -1,0 +1,34 @@
+[
+  {
+    "id": "job-2026-a",
+    "title": "LIST OF VACANT POSITIONS — City Government of Imus",
+    "badge": "CGI",
+    "datePosted": "May 5, 2026",
+    "year": "2026",
+    "pdfUrl": "https://www.cityofimus.gov.ph/FULL%20DISCLOSURE/Job%20vacancies/Vacant%20Positions%2005052026A.pdf",
+    "thumbnail": "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/thumb.webp",
+    "pages": [
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-01.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-02.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-03.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-04.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-05.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-06.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-07.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026a-pdf/page-08.webp"
+    ]
+  },
+  {
+    "id": "job-2026-b",
+    "title": "LIST OF VACANT POSITIONS — Ospital ng Imus",
+    "badge": "ONI",
+    "datePosted": "May 5, 2026",
+    "year": "2026",
+    "pdfUrl": "https://www.cityofimus.gov.ph/FULL%20DISCLOSURE/Job%20vacancies/Vacant%20Positions%2005052026B.pdf",
+    "thumbnail": "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026b-pdf/thumb.webp",
+    "pages": [
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026b-pdf/page-01.webp",
+      "/disclosure-pdfs/full-disclosure-job-vacancies-vacant-positions-05052026b-pdf/page-02.webp"
+    ]
+  }
+]

@@ -1,0 +1,498 @@
+[
+  {
+    "id": "angat-imus-homeowners-alliance-inc-federation",
+    "name": "Angat Imus Homeowners Alliance, Inc. - Federation",
+    "headOfOffice": "Mr. Enrique Romeo R. Martin",
+    "room": "—",
+    "floor": "4th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "barangay-accounting",
+    "name": "Barangay Accounting",
+    "headOfOffice": "Ms. Roselie A. Pangilinan",
+    "room": "304",
+    "floor": "3rd Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "bids-and-awards-committee",
+    "name": "Bids and Awards Committee",
+    "headOfOffice": "Mr. Lauro D. Monzon",
+    "room": "420",
+    "floor": "4th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "city-chaplain-office",
+    "name": "City Chaplain Office",
+    "headOfOffice": "Bp Rafael P. Gamis",
+    "room": "247",
+    "floor": "2nd Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "city-college-of-imus",
+    "name": "City College of Imus",
+    "headOfOffice": "Dr. Janice T. Ilano",
+    "room": "—",
+    "floor": "Outside Office",
+    "detailUrl": null
+  },
+  {
+    "id": "city-local-government-operations-office",
+    "name": "City Local Government Operations Office",
+    "headOfOffice": "Ms. Mary Roxanne T. Vicedo",
+    "room": "229",
+    "floor": "2nd Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "city-of-imus-task-force-for-road-clearing",
+    "name": "City of Imus Task Force for Road Clearing",
+    "headOfOffice": "Mr. Edri Neil A. Luna",
+    "room": "—",
+    "floor": "4th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "civil-society-organization-office",
+    "name": "Civil Society Organization Office",
+    "headOfOffice": "Ms. Sheryline S. Timtiman",
+    "room": "407",
+    "floor": "4th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "commission-on-audit",
+    "name": "Commission on Audit",
+    "headOfOffice": "Mr. Benjie V. Tubelleza",
+    "room": "320",
+    "floor": "3rd Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "dti-go-negosyo-center",
+    "name": "DTI - Go Negosyo Center",
+    "headOfOffice": "Ms. Marie Jenneth Vilbar-Lungcay",
+    "room": "—",
+    "floor": "UG Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "liga-ng-mga-barangay-ng-imus",
+    "name": "Liga ng mga Barangay ng Imus",
+    "headOfOffice": "Hon. Reymundo G. Ramirez",
+    "room": "—",
+    "floor": "5th Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/abc.html"
+  },
+  {
+    "id": "local-housing-board",
+    "name": "Local Housing Board",
+    "headOfOffice": "Mr. Jose Froilan G. Abad",
+    "room": "—",
+    "floor": "UG Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-building-official",
+    "name": "Office of the Building Official",
+    "headOfOffice": "Engr. Leah S. Gatpandan",
+    "room": "231",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/obo.html"
+  },
+  {
+    "id": "office-of-the-business-permits-and-licensing-officer",
+    "name": "Office of the Business Permits and Licensing Officer",
+    "headOfOffice": "Ms. Jasmin C. Ramos",
+    "room": "101",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/bplo.html"
+  },
+  {
+    "id": "office-of-the-city-accountant",
+    "name": "Office of the City Accountant",
+    "headOfOffice": "Ms. Roselie A. Pangilinan",
+    "room": "301",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/city_accounting.html"
+  },
+  {
+    "id": "office-of-the-city-administrator",
+    "name": "Office of the City Administrator",
+    "headOfOffice": "Mr. Lauro D. Monzon",
+    "room": "601",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/office_of_the_admin.html"
+  },
+  {
+    "id": "office-of-the-city-agriculturist",
+    "name": "Office of the City Agriculturist",
+    "headOfOffice": "Mr. Robert R. Marges",
+    "room": "201",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/city_agricultiral_office.html"
+  },
+  {
+    "id": "office-of-the-city-architect",
+    "name": "Office of the City Architect",
+    "headOfOffice": "Engr. Christian Mervin S. Sarno",
+    "room": "401",
+    "floor": "4th Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/arch.html"
+  },
+  {
+    "id": "office-of-the-city-assessor",
+    "name": "Office of the City Assessor",
+    "headOfOffice": "Mr. Elmer L. Camerino",
+    "room": "106",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/office_of_the_assessor.html"
+  },
+  {
+    "id": "office-of-the-city-budget-officer",
+    "name": "Office of the City Budget Officer",
+    "headOfOffice": "Ms. Arlene DG. Duminding",
+    "room": "306",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/3rd_Floor/BUDGET_2023.pdf"
+  },
+  {
+    "id": "office-of-the-city-civil-registrar",
+    "name": "Office of the City Civil Registrar",
+    "headOfOffice": "Mr. Randy B. Gonzales",
+    "room": "121",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/Ground_Floor/CCRO_2023.pdf"
+  },
+  {
+    "id": "office-of-the-city-cooperatives-development-officer",
+    "name": "Office of the City Cooperatives Development Officer",
+    "headOfOffice": "Mr. Generoso F. Ramos, Jr.",
+    "room": "215",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/cicledo.html"
+  },
+  {
+    "id": "office-of-the-city-disaster-risk-reduction-and-management-officer",
+    "name": "Office of the City Disaster Risk Reduction and Management Officer",
+    "headOfOffice": "Ms. Marisel R. Cayetano",
+    "room": "206",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/cdrrmo.html"
+  },
+  {
+    "id": "office-of-the-city-engineer",
+    "name": "Office of the City Engineer",
+    "headOfOffice": "Engr. Christian Mervin S. Sarno",
+    "room": "403",
+    "floor": "4th Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/engr.html"
+  },
+  {
+    "id": "office-of-the-city-environment-and-natural-resources-officer",
+    "name": "Office of the City Environment and Natural Resources Officer",
+    "headOfOffice": "Ms. Dorotea L. Sagenes",
+    "room": "311",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/3rd_Floor/CENRO.pdf"
+  },
+  {
+    "id": "office-of-the-city-general-services-officer",
+    "name": "Office of the City General Services Officer",
+    "headOfOffice": "Mr. Patrick M. Paulme",
+    "room": "415",
+    "floor": "4th Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/gso.html"
+  },
+  {
+    "id": "office-of-the-city-health-officer",
+    "name": "Office of the City Health Officer",
+    "headOfOffice": "Dr. Ferdinand P. Mina",
+    "room": "248",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/Outside_Office/CHO.pdf"
+  },
+  {
+    "id": "office-of-the-city-health-officer-city-epidemiology-and-surveillance-unit",
+    "name": "Office of the City Health Officer - City Epidemiology and Surveillance Unit",
+    "headOfOffice": "Ms. Donabelle R. Melo, RN",
+    "room": "—",
+    "floor": "Outside Office",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-city-health-officer-city-of-imus-diagnostic-laboratory",
+    "name": "Office of the City Health Officer - City of Imus Diagnostic Laboratory",
+    "headOfOffice": "Ms. Alexandra Regilyne M. Romero, RMT",
+    "room": "—",
+    "floor": "Outside Office",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-city-health-officer-city-sanitation-unit",
+    "name": "Office of the City Health Officer - City Sanitation Unit",
+    "headOfOffice": "Dr. Ferdinand P. Mina",
+    "room": "—",
+    "floor": "2nd Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-city-human-resource-management-officer",
+    "name": "Office of the City Human Resource Management Officer",
+    "headOfOffice": "Ms. Van Carlyne F. Rocha",
+    "room": "322",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/3rd_Floor/HRMO.pdf"
+  },
+  {
+    "id": "office-of-the-city-information-officer",
+    "name": "Office of the City Information Officer",
+    "headOfOffice": "Mr. Ervin Ace H. Navarette",
+    "room": "213",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/city_information_office.html"
+  },
+  {
+    "id": "office-of-the-city-legal-officer",
+    "name": "Office of the City Legal Officer",
+    "headOfOffice": "Atty. Leonard Martin E. Syjuco",
+    "room": "316",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/3rd_Floor/LEGAL_2023.pdf"
+  },
+  {
+    "id": "office-of-the-city-mayor",
+    "name": "Office of the City Mayor",
+    "headOfOffice": "Hon. Alex L. Advincula",
+    "room": "—",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/office_of_the_mayor.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-city-information-technology-and-records-management-unit",
+    "name": "Office of the City Mayor - City Information Technology and Records Management Unit",
+    "headOfOffice": "Engr. Christian D. Barco",
+    "room": "411",
+    "floor": "4th Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/it.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-city-of-imus-public-library",
+    "name": "Office of the City Mayor - City of Imus Public Library",
+    "headOfOffice": "Ms. Rosena V. Roman",
+    "room": "001",
+    "floor": "LG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/city_public_library.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-city-of-imus-sports-development-unit",
+    "name": "Office of the City Mayor - City of Imus Sports Development Unit",
+    "headOfOffice": "Mr. Jericho F. Reyes",
+    "room": "217",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/sports_development.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-city-of-imus-traffic-management-unit",
+    "name": "Office of the City Mayor - City of Imus Traffic Management Unit",
+    "headOfOffice": "PLT Elerico N. Hayag (Ret)",
+    "room": "219",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/citmo.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-civil-security-unit",
+    "name": "Office of the City Mayor - Civil Security Unit",
+    "headOfOffice": "PCOL Jose Junar P. Alamo (Ret)",
+    "room": "318",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/3rd_Floor/CSU.pdf"
+  },
+  {
+    "id": "office-of-the-city-mayor-economic-enterprise-management-unit",
+    "name": "Office of the City Mayor - Economic Enterprise Management Unit",
+    "headOfOffice": "Mr. Peter Simon C. Lara",
+    "room": "—",
+    "floor": "Outside Office",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-city-mayor-extension-unit",
+    "name": "Office of the City Mayor - Extension Unit",
+    "headOfOffice": "—",
+    "room": "—",
+    "floor": "Outside Office",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-city-mayor-gender-and-development-unit",
+    "name": "Office of the City Mayor - Gender and Development Unit",
+    "headOfOffice": "Ms. Dorotea L. Sagenes",
+    "room": "424",
+    "floor": "4th Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/gad.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-local-youth-development-office",
+    "name": "Office of the City Mayor - Local Youth Development Office",
+    "headOfOffice": "Mr. Jericho F. Reyes",
+    "room": "335",
+    "floor": "3rd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/youth.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-office-of-the-senior-citizens-affairs",
+    "name": "Office of the City Mayor - Office of the Senior Citizens Affairs",
+    "headOfOffice": "Mr. Arturo B. Pangilinan",
+    "room": "136",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/osca.html"
+  },
+  {
+    "id": "office-of-the-city-mayor-public-employment-service-office",
+    "name": "Office of the City Mayor - Public Employment Service Office",
+    "headOfOffice": "Ms. Cecile C. Foz",
+    "room": "241",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/2nd_Floor/PESO_2023.pdf"
+  },
+  {
+    "id": "office-of-the-city-mayor-tricycle-regulatory-unit",
+    "name": "Office of the City Mayor - Tricycle Regulatory Unit",
+    "headOfOffice": "Mr. Nestor C. Sauquillo",
+    "room": "243",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/tricycle_reg_unit.html"
+  },
+  {
+    "id": "office-of-the-city-planning-and-development-coordinator",
+    "name": "Office of the City Planning and Development Coordinator",
+    "headOfOffice": "Engr. Guiana F. Monzon",
+    "room": "221",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/cpdo.html"
+  },
+  {
+    "id": "office-of-the-city-population-officer",
+    "name": "Office of the City Population Officer",
+    "headOfOffice": "Ms. Maria Theresa C. Sañez",
+    "room": "236",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/office_on_population.html"
+  },
+  {
+    "id": "office-of-the-city-social-welfare-and-development-officer",
+    "name": "Office of the City Social Welfare and Development Officer",
+    "headOfOffice": "Ms. Josephine G. Villanueva, RSW",
+    "room": "126",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/cswdo.html"
+  },
+  {
+    "id": "office-of-the-city-tourism-and-heritage-officer",
+    "name": "Office of the City Tourism and Heritage Officer",
+    "headOfOffice": "Dr. Emanuel R. Paredes",
+    "room": "225",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/city_tourism.html"
+  },
+  {
+    "id": "office-of-the-city-treasurer",
+    "name": "Office of the City Treasurer",
+    "headOfOffice": "Mr. Manuel Reynold W. Dela Fuente",
+    "room": "131",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/city_treasurer.html"
+  },
+  {
+    "id": "office-of-the-city-veterinarian",
+    "name": "Office of the City Veterinarian",
+    "headOfOffice": "Dr. Maribel Depayso-Reyes",
+    "room": "227",
+    "floor": "2nd Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/city_vet.html"
+  },
+  {
+    "id": "office-of-the-city-vice-mayor",
+    "name": "Office of the City Vice Mayor",
+    "headOfOffice": "Hon. Homer T. Saquilayan",
+    "room": "—",
+    "floor": "5th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-congressman",
+    "name": "Office of the Congressman",
+    "headOfOffice": "Hon. Adrian Jay C. Advincula",
+    "room": "—",
+    "floor": "3rd Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-local-economic-development-and-investment-promotions-officer",
+    "name": "Office of the Local Economic Development and Investment Promotions Officer",
+    "headOfOffice": "Ms. Marie Jenneth Vilbar-Lungcay",
+    "room": "142",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/ledipo.html"
+  },
+  {
+    "id": "office-of-the-persons-with-disability-affairs-officer",
+    "name": "Office of the Persons with Disability Affairs Officer",
+    "headOfOffice": "Ms. Josephine G. Villanueva",
+    "room": "138",
+    "floor": "UG Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/pdao.html"
+  },
+  {
+    "id": "office-of-the-sangguniang-panlungsod",
+    "name": "Office of the Sangguniang Panlungsod",
+    "headOfOffice": "Mr. Jose Rafael C. Alarcon",
+    "room": "—",
+    "floor": "5th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "office-of-the-sangguniang-panlungsod-secretary-records-and-legislative-section",
+    "name": "Office of the Sangguniang Panlungsod Secretary (Records and Legislative Section)",
+    "headOfOffice": "Ms. Mary Jemeny V. Yulo",
+    "room": "703",
+    "floor": "5th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "ospital-ng-imus",
+    "name": "Ospital ng Imus",
+    "headOfOffice": "Dr. Gabriel G. Gabriel",
+    "room": "—",
+    "floor": "Outside Office",
+    "detailUrl": "https://www.cityofimus.gov.ph/docs/Citizen's Charter/Outside_Office/ONI.pdf"
+  },
+  {
+    "id": "peace-and-order-and-public-safety",
+    "name": "Peace and Order and Public Safety",
+    "headOfOffice": "Mr. Arturo B. Pangilinan",
+    "room": "425",
+    "floor": "4th Floor",
+    "detailUrl": null
+  },
+  {
+    "id": "robinsons-and-district-satellite-offices",
+    "name": "Robinsons and District Satellite Offices",
+    "headOfOffice": "Mr. Manuel Reynold W. Dela Fuente",
+    "room": "—",
+    "floor": "Outside Office",
+    "detailUrl": null
+  },
+  {
+    "id": "sangguniang-kabataan-federation-office",
+    "name": "Sangguniang Kabataan Federation Office",
+    "headOfOffice": "Hon. Glian Piolo P. Ilagan",
+    "room": "708",
+    "floor": "5th Floor",
+    "detailUrl": "https://www.cityofimus.gov.ph/departments_units/sk.html"
+  }
+]

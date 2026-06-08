@@ -1,0 +1,444 @@
+[
+  {
+    "id": "cluster-1",
+    "name": "Cluster 1",
+    "officials": [
+      {
+        "barangay": "Alapan I-A",
+        "captain": "Aman, Jeffrey Primero"
+      },
+      {
+        "barangay": "Alapan I-B",
+        "captain": "Santos, Rico David"
+      },
+      {
+        "barangay": "Alapan I-C",
+        "captain": "Marcial, Noriel Santiaguel"
+      },
+      {
+        "barangay": "Alapan II-A",
+        "captain": "Barzaga, Marc Albert Didal"
+      },
+      {
+        "barangay": "Alapan II-B",
+        "captain": "Camia, Benedicto Dayrit"
+      },
+      {
+        "barangay": "Bucandala I",
+        "captain": "Santiaguel, Ferdinand Apolinar"
+      },
+      {
+        "barangay": "Bucandala II",
+        "captain": "Vilbar, Mark Jefferson Legaspi"
+      },
+      {
+        "barangay": "Bucandala III",
+        "captain": "Sarreal, Amado Saria"
+      },
+      {
+        "barangay": "Bucandala IV",
+        "captain": "Bacos, Gary Olaes"
+      },
+      {
+        "barangay": "Bucandala V",
+        "captain": "Saliba, Reynaldo Obispo"
+      }
+    ]
+  },
+  {
+    "id": "cluster-2",
+    "name": "Cluster 2",
+    "officials": [
+      {
+        "barangay": "Carsadang Bago I",
+        "captain": "Cubillo, Laila Papa"
+      },
+      {
+        "barangay": "Carsadang Bago II",
+        "captain": "Candalla, Eliseo Jarin"
+      },
+      {
+        "barangay": "Pag-Asa I",
+        "captain": "Galang, Rolito Jarin"
+      },
+      {
+        "barangay": "Pag-Asa II",
+        "captain": "Medina, Ernesto Jarin"
+      },
+      {
+        "barangay": "Pag-Asa III",
+        "captain": "Dagumboy, Joemar Felix"
+      },
+      {
+        "barangay": "Medicion I-A",
+        "captain": "Camat, Leomar Viña"
+      },
+      {
+        "barangay": "Medicion I-B",
+        "captain": "Condalor, Ferdinand Dayson"
+      },
+      {
+        "barangay": "Medicion I-C",
+        "captain": "Dominguez, Roberto Toledo"
+      },
+      {
+        "barangay": "Medicion I-D",
+        "captain": "Igtiben, Mark Luigi Monreal"
+      },
+      {
+        "barangay": "Medicion II-A",
+        "captain": "Jarin, Alexander Monzon"
+      },
+      {
+        "barangay": "Medicion II-B",
+        "captain": "Monzon, Eduardo Frias"
+      },
+      {
+        "barangay": "Medicion II-C",
+        "captain": "Bella, Riciel Barzaga"
+      },
+      {
+        "barangay": "Medicion II-D",
+        "captain": "Nas, Rommel Cairme"
+      },
+      {
+        "barangay": "Medicion II-E",
+        "captain": "Monzon, Lamberto Episioco"
+      },
+      {
+        "barangay": "Medicion II-F",
+        "captain": "Octavo, Eugenio Risco"
+      }
+    ]
+  },
+  {
+    "id": "cluster-3",
+    "name": "Cluster 3",
+    "officials": [
+      {
+        "barangay": "Anabu I-A",
+        "captain": "Saratan, Jan Wilmher Cuenca"
+      },
+      {
+        "barangay": "Anabu I-B",
+        "captain": "Minaldo, Rafael Ochoa"
+      },
+      {
+        "barangay": "Anabu I-C",
+        "captain": "Ramos, Romeo Ignacio"
+      },
+      {
+        "barangay": "Anabu I-D",
+        "captain": "Lares, Joven A."
+      },
+      {
+        "barangay": "Anabu I-E",
+        "captain": "Camungol, Antonio Barco"
+      },
+      {
+        "barangay": "Anabu I-F",
+        "captain": "Sarte, Rocky Marciano A."
+      },
+      {
+        "barangay": "Anabu I-G",
+        "captain": "Silla, Robinson Papa"
+      }
+    ]
+  },
+  {
+    "id": "cluster-4",
+    "name": "Cluster 4",
+    "officials": [
+      {
+        "barangay": "Anabu II-A",
+        "captain": "Atanacio, James Bryan Remulla"
+      },
+      {
+        "barangay": "Anabu II-B",
+        "captain": "Diato, Christian Rementilla"
+      },
+      {
+        "barangay": "Anabu II-C",
+        "captain": "Sarte, Joey Bernardo"
+      },
+      {
+        "barangay": "Anabu II-D",
+        "captain": "Lares, Geraldo Calitis"
+      },
+      {
+        "barangay": "Anabu II-E",
+        "captain": "Paredes, Lorenzo Genido"
+      },
+      {
+        "barangay": "Anabu II-F",
+        "captain": "Parreñas, Bernadette Gaborro"
+      }
+    ]
+  },
+  {
+    "id": "cluster-5",
+    "name": "Cluster 5",
+    "officials": [
+      {
+        "barangay": "Bayan Luma I",
+        "captain": "Canaynay, Melquiades Tala Tala"
+      },
+      {
+        "barangay": "Bayan Luma II",
+        "captain": "Bautista, Reuben Jesse Magsaysay"
+      },
+      {
+        "barangay": "Bayan Luma III",
+        "captain": "Borromeo, Reynaldo Pastor"
+      },
+      {
+        "barangay": "Bayan Luma IV",
+        "captain": "Aquilino, Natividad Chua"
+      },
+      {
+        "barangay": "Bayan Luma V",
+        "captain": "Reyes, Edgardo Dela Cruz"
+      },
+      {
+        "barangay": "Bayan Luma VI",
+        "captain": "Salvador, Kent Lewis Cani"
+      },
+      {
+        "barangay": "Bayan Luma VII",
+        "captain": "Camia, Zosimo Jr. Cruz"
+      },
+      {
+        "barangay": "Bayan Luma VIII",
+        "captain": "Esguerra, Efren Jr. Bautista"
+      },
+      {
+        "barangay": "Bayan Luma IX",
+        "captain": "Tined, Ruben Jr. De Guzman"
+      }
+    ]
+  },
+  {
+    "id": "cluster-6",
+    "name": "Cluster 6",
+    "officials": [
+      {
+        "barangay": "Bagong Silang",
+        "captain": "Cariño, Carlito Dumalanta"
+      },
+      {
+        "barangay": "Magdalo",
+        "captain": "Jardin, Kaizer Lozada"
+      },
+      {
+        "barangay": "Maharlika",
+        "captain": "Hynson, Gina Delos Reyes"
+      },
+      {
+        "barangay": "Mariano Espeleta I",
+        "captain": "Cruz, Alnair Macahilig"
+      },
+      {
+        "barangay": "Mariano Espeleta II",
+        "captain": "Punzalan, Nelson Jr. Dagum"
+      },
+      {
+        "barangay": "Mariano Espeleta III",
+        "captain": "Nato, Silvestre Campaña"
+      },
+      {
+        "barangay": "Pinagbuklod",
+        "captain": "Ocampo, Ricardo Salvador"
+      },
+      {
+        "barangay": "Pasong Buaya I",
+        "captain": "Ramos, Wilfredo Esguerra"
+      },
+      {
+        "barangay": "Pasong Buaya II",
+        "captain": "Tagle, Carlito Camantigue"
+      }
+    ]
+  },
+  {
+    "id": "cluster-7",
+    "name": "Cluster 7",
+    "officials": [
+      {
+        "barangay": "Buhay Na Tubig",
+        "captain": "Ramirez, Reymundo De Guzman"
+      },
+      {
+        "barangay": "Palico I",
+        "captain": "Olives, Nicanor Zaragosa"
+      },
+      {
+        "barangay": "Palico II",
+        "captain": "Sapanghila, Ryan Jay Gayamo"
+      },
+      {
+        "barangay": "Palico III",
+        "captain": "Dominguez, Luisito Zapanta"
+      },
+      {
+        "barangay": "Palico Iv",
+        "captain": "Dominguez, Marlo Espiritu"
+      },
+      {
+        "barangay": "Tanzang Luma I",
+        "captain": "Dones, Reynante Dominguez"
+      },
+      {
+        "barangay": "Tanzang Luma II",
+        "captain": "Lacson, Carlo Rey Perez"
+      },
+      {
+        "barangay": "Tanzang Luma III",
+        "captain": "Manela, Marty Landas"
+      },
+      {
+        "barangay": "Tanzang Luma Iv",
+        "captain": "Cinto, Jhun Gaña"
+      },
+      {
+        "barangay": "Tanzang Luma V",
+        "captain": "Acuña, Bienvenido Camaclang"
+      },
+      {
+        "barangay": "Tanzang Luma VI",
+        "captain": "Crisologo, Redentor Magsakay"
+      }
+    ]
+  },
+  {
+    "id": "cluster-8",
+    "name": "Cluster 8",
+    "officials": [
+      {
+        "barangay": "Poblacion I-A",
+        "captain": "Tacus, Gregorio Escobido"
+      },
+      {
+        "barangay": "Poblacion I-B",
+        "captain": "Dominguez, Kristel Joy De Leon"
+      },
+      {
+        "barangay": "Poblacion I-C",
+        "captain": "Constantino, Hilario Sapin"
+      },
+      {
+        "barangay": "Poblacion II-A",
+        "captain": "Sauler, Gary Dela Cruz"
+      },
+      {
+        "barangay": "Poblacion II-B",
+        "captain": "Ravelo, Ferdinand Tambio"
+      },
+      {
+        "barangay": "Poblacion III-A",
+        "captain": "Maluto, Carlos Serviano"
+      },
+      {
+        "barangay": "Poblacion III-B",
+        "captain": "Ramirez, Elmer Diones"
+      },
+      {
+        "barangay": "Poblacion IV-A",
+        "captain": "Figueras, Perpetua Fernandez"
+      },
+      {
+        "barangay": "Poblacion IV-B",
+        "captain": "Caimol, John Orly Gonzaga"
+      },
+      {
+        "barangay": "Poblacion IV-C",
+        "captain": "Kamantigue, Imelda Gacos"
+      },
+      {
+        "barangay": "Poblacion IV-D",
+        "captain": "Virata, Michael Samonte"
+      },
+      {
+        "barangay": "Toclong I-A",
+        "captain": "Sañez, Oktubre Camandang"
+      },
+      {
+        "barangay": "Toclong I-B",
+        "captain": "Badion, Nerrie Salem"
+      },
+      {
+        "barangay": "Toclong I-C",
+        "captain": "Santos, Joey Remulla"
+      },
+      {
+        "barangay": "Toclong II-A",
+        "captain": "Sañez, Abraham Jr. Santos"
+      },
+      {
+        "barangay": "Toclong II-B",
+        "captain": "Remulla, Joseph Regalado"
+      }
+    ]
+  },
+  {
+    "id": "cluster-9",
+    "name": "Cluster 9",
+    "officials": [
+      {
+        "barangay": "Malagasang I-A",
+        "captain": "Parnala, Pedro Manimbao"
+      },
+      {
+        "barangay": "Malagasang I-B",
+        "captain": "Reyes, Mario Jr. Palajos"
+      },
+      {
+        "barangay": "Malagasang I-C",
+        "captain": "Saulog, Gerardo Sanchez"
+      },
+      {
+        "barangay": "Malagasang I-D",
+        "captain": "Tapawan, Manuel Saquilayan"
+      },
+      {
+        "barangay": "Malagasang I-E",
+        "captain": "Sayaman, Josefino Macalawa"
+      },
+      {
+        "barangay": "Malagasang I-F",
+        "captain": "Lara, Randy Sapinoso"
+      },
+      {
+        "barangay": "Malagasang I-G",
+        "captain": "Valerio, Mark Oliver Jarin"
+      },
+      {
+        "barangay": "Malagasang II-A",
+        "captain": "Progoso, Aldrin Olivarez"
+      },
+      {
+        "barangay": "Malagasang II-B",
+        "captain": "Andallon, Lenie Herrera"
+      },
+      {
+        "barangay": "Malagasang II-C",
+        "captain": "Herrera, Danilo Magsino"
+      },
+      {
+        "barangay": "Malagasang II-D",
+        "captain": "Servida, Alexander Vasquez"
+      },
+      {
+        "barangay": "Malagasang II-E",
+        "captain": "Topacio, Jose Zanido Camarce"
+      },
+      {
+        "barangay": "Malagasang II-F",
+        "captain": "Fauni, Edward Dayuta"
+      },
+      {
+        "barangay": "Malagasang II-G",
+        "captain": "Fauni, Armando Saquilayan"
+      }
+    ]
+  }
+]
