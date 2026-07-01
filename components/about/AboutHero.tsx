@@ -31,7 +31,7 @@ export default function AboutHero({
         className="object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-imus-navy/90 via-imus-navy/65 to-imus-navy/35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-tenant-navy/90 via-tenant-navy/65 to-tenant-navy/35" />
 
       <div className="relative mx-auto flex min-h-[320px] max-w-7xl items-center px-4 py-12 md:min-h-[380px] md:px-6 md:py-14">
         <motion.div
@@ -46,7 +46,7 @@ export default function AboutHero({
           >
             {t(title, language)}
           </h1>
-          <div className="mt-5 h-1 w-16 rounded-full bg-imus-green" aria-hidden="true" />
+          <div className="mt-5 h-1 w-16 rounded-full bg-tenant-green" aria-hidden="true" />
           <p className="mt-5 text-lg font-medium text-white/90 md:text-xl">
             {t(subtitle, language)}
           </p>

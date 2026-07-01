@@ -24,7 +24,7 @@ export default function BarangayOfficialsContent() {
   return (
     <article className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-card">
       <div className="flex flex-col gap-4 border-b border-gray-100 px-6 py-5 sm:flex-row sm:items-center sm:justify-between md:px-8">
-        <h2 className="font-heading text-xl font-bold text-imus-green md:text-2xl">
+        <h2 className="font-heading text-xl font-bold text-tenant-green md:text-2xl">
           {language === "fil" ? "Mga Opisyal ng Barangay" : "Barangay Officials"}
         </h2>
         <label className="relative w-full sm:max-w-xs">
@@ -38,7 +38,7 @@ export default function BarangayOfficialsContent() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={language === "fil" ? "Maghanap ng barangay..." : "Search barangay..."}
-            className="w-full rounded-lg border border-gray-200 py-2 pl-9 pr-3 text-sm focus:border-imus-green focus:outline-none focus:ring-2 focus:ring-imus-green/20"
+            className="w-full rounded-lg border border-gray-200 py-2 pl-9 pr-3 text-sm focus:border-tenant-green focus:outline-none focus:ring-2 focus:ring-tenant-green/20"
           />
         </label>
       </div>
@@ -51,12 +51,12 @@ export default function BarangayOfficialsContent() {
         ) : (
           filteredClusters.map((cluster) => (
             <div key={cluster.id} className="mb-8 last:mb-0">
-              <p className="rounded-t-lg bg-imus-navy px-4 py-2.5 text-center text-sm font-semibold text-white">
+              <p className="rounded-t-lg bg-tenant-navy px-4 py-2.5 text-center text-sm font-semibold text-white">
                 {cluster.name}
               </p>
               <table className="w-full min-w-[480px] border-collapse text-sm">
                 <thead>
-                  <tr className="bg-imus-green text-left text-white">
+                  <tr className="bg-tenant-green text-left text-white">
                     <th className="px-4 py-2.5 font-semibold">
                       {language === "fil" ? "Barangay" : "Barangay"}
                     </th>
@@ -67,8 +67,8 @@ export default function BarangayOfficialsContent() {
                 </thead>
                 <tbody>
                   {cluster.officials.map((official) => (
-                    <tr key={`${cluster.id}-${official.barangay}`} className="odd:bg-white even:bg-imus-gray/50">
-                      <td className="border-t border-gray-100 px-4 py-2.5 font-medium text-imus-navy">
+                    <tr key={`${cluster.id}-${official.barangay}`} className="odd:bg-white even:bg-tenant-gray/50">
+                      <td className="border-t border-gray-100 px-4 py-2.5 font-medium text-tenant-navy">
                         {official.barangay}
                       </td>
                       <td className="border-t border-gray-100 px-4 py-2.5 text-gray-700">

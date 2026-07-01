@@ -42,14 +42,14 @@ export function ImusWordmark({
     <span className={`inline-flex flex-col leading-none ${className}`}>
       <span
         className={`font-heading font-bold uppercase tracking-wide ${topSize} ${
-          onDark ? "text-imus-green-light" : "text-imus-green"
+          onDark ? "text-tenant-green-light" : "text-tenant-green"
         }`}
       >
         City Government of
       </span>
       <span
         className={`font-heading font-extrabold uppercase tracking-tight ${bottomSize} ${
-          onDark ? "text-white" : "text-imus-navy"
+          onDark ? "text-white" : "text-tenant-navy"
         }`}
       >
         Imus

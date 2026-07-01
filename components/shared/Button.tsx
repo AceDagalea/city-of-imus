@@ -16,13 +16,13 @@ interface ButtonProps {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-imus-green text-imus-navy font-semibold hover:bg-imus-greenDark",
+    "bg-tenant-green text-tenant-navy font-semibold hover:bg-tenant-greenDark",
   secondary:
-    "bg-imus-red text-white font-semibold hover:bg-imus-red/90",
+    "bg-tenant-red text-white font-semibold hover:bg-tenant-red/90",
   outline:
-    "border-2 border-white text-white hover:bg-white hover:text-imus-navy",
+    "border-2 border-white text-white hover:bg-white hover:text-tenant-navy",
   ghost:
-    "text-imus-navy hover:text-imus-red",
+    "text-tenant-navy hover:text-tenant-red",
 };
 
 export default function Button({

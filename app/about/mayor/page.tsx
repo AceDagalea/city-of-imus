@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function MayorPage() {
   return (
-    <div className="bg-imus-gray">
+    <div className="bg-tenant-gray">
       <div className="mx-auto max-w-7xl overflow-x-hidden px-4 py-10 md:px-6 md:py-12">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)]">
           <GovernmentExploreSidebar activeId="mayor" variant="mayor" />

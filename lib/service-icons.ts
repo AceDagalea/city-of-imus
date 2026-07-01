@@ -41,7 +41,7 @@ const CATEGORY_STYLES: Record<string, ServiceIconStyle> = {
   clo: { icon: Scale, bg: "bg-indigo-100", color: "text-indigo-600", ring: "ring-indigo-200" },
   cpdo: { icon: Map, bg: "bg-teal-100", color: "text-teal-600", ring: "ring-teal-200" },
   obo: { icon: HardHat, bg: "bg-orange-100", color: "text-orange-600", ring: "ring-orange-200" },
-  osca: { icon: HeartHandshake, bg: "bg-imus-green/15", color: "text-imus-greenDark", ring: "ring-imus-green/25" },
+  osca: { icon: HeartHandshake, bg: "bg-tenant-green/15", color: "text-tenant-greenDark", ring: "ring-tenant-green/25" },
   pdao: { icon: Accessibility, bg: "bg-emerald-100", color: "text-emerald-600", ring: "ring-emerald-200" },
 };
 
@@ -57,8 +57,8 @@ const SLUG_STYLES: Record<string, ServiceIconStyle> = {
   "civil-registry-application": { icon: IdCard, bg: "bg-violet-100", color: "text-violet-600", ring: "ring-violet-200" },
   "late-registration": { icon: ClipboardList, bg: "bg-purple-100", color: "text-purple-600", ring: "ring-purple-200" },
   "building-permit-application": { icon: HardHat, bg: "bg-orange-100", color: "text-orange-600", ring: "ring-orange-200" },
-  "certificate-of-occupancy": { icon: Building2, bg: "bg-imus-green/15", color: "text-imus-greenDark", ring: "ring-imus-green/25" },
-  "ancillary-permit-application": { icon: Landmark, bg: "bg-imus-green/15", color: "text-imus-greenDark", ring: "ring-imus-green/25" },
+  "certificate-of-occupancy": { icon: Building2, bg: "bg-tenant-green/15", color: "text-tenant-greenDark", ring: "ring-tenant-green/25" },
+  "ancillary-permit-application": { icon: Landmark, bg: "bg-tenant-green/15", color: "text-tenant-greenDark", ring: "ring-tenant-green/25" },
   "zoning-certification": { icon: Map, bg: "bg-teal-100", color: "text-teal-600", ring: "ring-teal-200" },
   "zoning-application": { icon: Map, bg: "bg-cyan-100", color: "text-cyan-600", ring: "ring-cyan-200" },
   "subdivision-approval": { icon: Home, bg: "bg-lime-100", color: "text-lime-700", ring: "ring-lime-200" },
@@ -66,7 +66,7 @@ const SLUG_STYLES: Record<string, ServiceIconStyle> = {
   "legal-document-application": { icon: FileText, bg: "bg-indigo-100", color: "text-indigo-600", ring: "ring-indigo-200" },
   "contract-of-lease": { icon: Home, bg: "bg-sky-100", color: "text-sky-600", ring: "ring-sky-200" },
   "deed-of-sale-motor-vehicle": { icon: Car, bg: "bg-gray-100", color: "text-gray-700", ring: "ring-gray-200" },
-  "osca-application": { icon: HeartHandshake, bg: "bg-imus-green/15", color: "text-imus-greenDark", ring: "ring-imus-green/25" },
+  "osca-application": { icon: HeartHandshake, bg: "bg-tenant-green/15", color: "text-tenant-greenDark", ring: "ring-tenant-green/25" },
   "pdao-application": { icon: Accessibility, bg: "bg-emerald-100", color: "text-emerald-600", ring: "ring-emerald-200" },
 };
 
@@ -79,7 +79,7 @@ export const AUDIENCE_ICON_STYLES: Record<string, ServiceIconStyle> = {
   citizens: { icon: Users, bg: "bg-blue-100", color: "text-blue-600", ring: "ring-blue-200" },
   businesses: { icon: Briefcase, bg: "bg-sky-100", color: "text-sky-600", ring: "ring-sky-200" },
   construction: { icon: HardHat, bg: "bg-orange-100", color: "text-orange-600", ring: "ring-orange-200" },
-  seniors: { icon: HeartHandshake, bg: "bg-imus-green/15", color: "text-imus-greenDark", ring: "ring-imus-green/25" },
+  seniors: { icon: HeartHandshake, bg: "bg-tenant-green/15", color: "text-tenant-greenDark", ring: "ring-tenant-green/25" },
   safety: { icon: Flame, bg: "bg-red-100", color: "text-red-600", ring: "ring-red-200" },
 };
 
@@ -88,7 +88,7 @@ export const POPULAR_SEARCH_ICONS: Record<string, ServiceIconStyle> = {
   "Birth Certificate": { icon: Baby, bg: "bg-pink-100", color: "text-pink-600", ring: "ring-pink-200" },
   "Building Permit": { icon: HardHat, bg: "bg-orange-100", color: "text-orange-600", ring: "ring-orange-200" },
   "Fire Safety": { icon: Flame, bg: "bg-red-100", color: "text-red-600", ring: "ring-red-200" },
-  "Senior Citizen ID": { icon: HeartHandshake, bg: "bg-imus-green/15", color: "text-imus-greenDark", ring: "ring-imus-green/25" },
+  "Senior Citizen ID": { icon: HeartHandshake, bg: "bg-tenant-green/15", color: "text-tenant-greenDark", ring: "ring-tenant-green/25" },
 };
 
 const SIZE_CLASSES: Record<ServiceIconSize, { box: string; icon: string }> = {
@@ -105,9 +105,9 @@ export function getServiceIconStyle(slug: string, categoryId: string): ServiceIc
 
   return CATEGORY_STYLES[categoryId] ?? {
     icon: FileText,
-    bg: "bg-imus-sky",
-    color: "text-imus-navy",
-    ring: "ring-imus-skyDark",
+    bg: "bg-tenant-sky",
+    color: "text-tenant-navy",
+    ring: "ring-tenant-skyDark",
   };
 }
 

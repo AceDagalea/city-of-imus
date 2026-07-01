@@ -34,7 +34,7 @@ export default function FormApplicationTemplate({
   const help = getFormHelp(form.categoryId);
 
   return (
-    <div id="main-content" className="bg-imus-gray">
+    <div id="main-content" className="bg-tenant-gray">
       <FormApplicationHero
         title={t(form.name)}
         description={t(form.description)}
@@ -64,7 +64,7 @@ export default function FormApplicationTemplate({
 
       <Link
         href="/contact"
-        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-imus-navy text-white shadow-float transition-transform hover:scale-105 focus-ring"
+        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-tenant-navy text-white shadow-float transition-transform hover:scale-105 focus-ring"
         aria-label="Chat with us"
       >
         <MessageCircle className="h-6 w-6" />

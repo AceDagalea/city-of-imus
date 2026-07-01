@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function AboutGovernmentPage() {
   return (
-    <div className="bg-imus-gray">
+    <div className="bg-tenant-gray">
       <GovernmentPageHero
         title={GOVERNMENT_HERO.title}
         subtitle={GOVERNMENT_HERO.subtitle}

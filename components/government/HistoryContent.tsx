@@ -13,7 +13,7 @@ export default function HistoryContent() {
 
   return (
     <article className="overflow-hidden rounded-xl border border-gray-100 bg-white p-6 shadow-card md:p-8">
-      <h2 className="font-heading text-xl font-bold text-imus-green md:text-2xl">
+      <h2 className="font-heading text-xl font-bold text-tenant-green md:text-2xl">
         {language === "fil" ? "KASAYSAYAN" : "HISTORY"}
       </h2>
 
@@ -26,7 +26,7 @@ export default function HistoryContent() {
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
         {HISTORY_IMAGES.map((image) => (
           <figure key={image.src} className="overflow-hidden rounded-lg border border-gray-100">
-            <div className="relative aspect-[4/3] bg-imus-gray">
+            <div className="relative aspect-[4/3] bg-tenant-gray">
               <Image
                 src={image.src}
                 alt={t(image.alt, language)}

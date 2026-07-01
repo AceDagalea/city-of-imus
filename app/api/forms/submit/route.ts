@@ -1,17 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
+import { auth } from "@/auth";
+import { prisma } from "@/lib/db";
 import { getFormBySlug } from "@/lib/forms";
+
+const REFERENCE_PREFIX = (process.env.TENANT ?? "LGU").toUpperCase();
 
 function generateReferenceNo() {
   const date = new Date();
   const ymd = date.toISOString().slice(0, 10).replace(/-/g, "");
   const rand = Math.random().toString(36).substring(2, 8).toUpperCase();
-  return `IMUS-${ymd}-${rand}`;
+  return `${REFERENCE_PREFIX}-${ymd}-${rand}`;
 }
 
+/**
+ * Citizen request submission — persists to the database (no more JSON files
+ * under data/submissions; pre-existing sample files are intentionally left
+ * alone). File attachments stay on local disk under
+ * data/submissions/<referenceNo>/ for now (object storage deferred per master
+ * plan §5.3/§9), with their paths tracked in Attachment rows.
+ */
 export async function POST(request: NextRequest) {
   try {
+    // Auth: only a verified citizen account may create a request (§6.2 matrix;
+    // email verification required at launch per product decision).
+    const session = await auth();
+    const user = session?.user;
+    if (!user?.id) {
+      return NextResponse.json({ error: "Please sign in to submit a request" }, { status: 401 });
+    }
+    if (user.role !== "CITIZEN") {
+      return NextResponse.json({ error: "Only citizen accounts can submit requests" }, { status: 403 });
+    }
+    if (!user.verified) {
+      return NextResponse.json(
+        { error: "Please verify your email address before submitting a request" },
+        { status: 403 }
+      );
+    }
+
     const formData = await request.formData();
     const formSlug = formData.get("formSlug") as string;
 
@@ -24,24 +52,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Invalid form" }, { status: 400 });
     }
 
-    const email = formData.get("email") as string;
-    const firstName = formData.get("firstName") as string;
-    const lastName = formData.get("lastName") as string;
-
-    if (!email || !firstName || !lastName) {
-      return NextResponse.json({ error: "Required fields are missing" }, { status: 400 });
-    }
-
     const referenceNo = generateReferenceNo();
-    const submission: Record<string, unknown> = {
-      referenceNo,
-      formSlug,
-      formName: formData.get("formName"),
-      submittedAt: new Date().toISOString(),
-      applicant: { email, firstName, lastName },
-      fields: {} as Record<string, string>,
-      attachments: [] as string[],
-    };
+    const fields: Record<string, string> = {};
+    const attachments: { filename: string; url: string }[] = [];
 
     for (const [key, value] of Array.from(formData.entries())) {
       if (key === "formSlug" || key === "formName") continue;
@@ -53,19 +66,36 @@ export async function POST(request: NextRequest) {
         await mkdir(uploadsDir, { recursive: true });
         const buffer = Buffer.from(await value.arrayBuffer());
         const filename = `${key}-${value.name}`;
-        await writeFile(path.join(uploadsDir, filename), buffer);
-        (submission.attachments as string[]).push(filename);
+        const filePath = path.join(uploadsDir, filename);
+        await writeFile(filePath, buffer);
+        attachments.push({
+          filename,
+          url: path.join("data", "submissions", referenceNo, filename).replace(/\\/g, "/"),
+        });
       } else if (typeof value === "string") {
-        (submission.fields as Record<string, string>)[key] = value;
+        fields[key] = value;
       }
     }
 
-    const dataDir = path.join(process.cwd(), "data", "submissions");
-    await mkdir(dataDir, { recursive: true });
-    await writeFile(
-      path.join(dataDir, `${referenceNo}.json`),
-      JSON.stringify(submission, null, 2)
-    );
+    await prisma.submission.create({
+      data: {
+        referenceNo,
+        formSlug,
+        officeId: form.categoryId,
+        citizenId: user.id,
+        status: "SUBMITTED",
+        fields: JSON.stringify(fields),
+        attachments: { create: attachments },
+        events: {
+          create: {
+            actorId: user.id,
+            fromStatus: null,
+            toStatus: "SUBMITTED",
+            note: "Application submitted",
+          },
+        },
+      },
+    });
 
     return NextResponse.json({
       success: true,

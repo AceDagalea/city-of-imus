@@ -41,7 +41,7 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
         className="scroll-mt-32 overflow-hidden rounded-xl border border-gray-100 bg-white shadow-card"
       >
         <div className="flex flex-col sm:flex-row">
-          <div className="relative aspect-[4/3] w-full shrink-0 bg-imus-gray sm:aspect-auto sm:w-48 md:w-56">
+          <div className="relative aspect-[4/3] w-full shrink-0 bg-tenant-gray sm:aspect-auto sm:w-48 md:w-56">
             <Image
               src={MAYOR_PHOTO_URL}
               alt={`${STRINGS.mayorName[language]}, City Mayor`}
@@ -52,24 +52,24 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
             />
           </div>
           <div className="flex flex-1 flex-col p-5 md:p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-imus-green">
+            <p className="text-xs font-bold uppercase tracking-widest text-tenant-green">
               {STRINGS.mayorTitle[language]}
             </p>
-            <h2 className="mt-1 font-heading text-2xl font-bold text-imus-navy">
+            <h2 className="mt-1 font-heading text-2xl font-bold text-tenant-navy">
               {STRINGS.mayorName[language]}
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-gray-600">
               {t(MAYOR_PROFILE.bio, language)}
             </p>
             <div className="mt-4">
-              <p className="text-xs font-bold uppercase tracking-widest text-imus-navy/60">
+              <p className="text-xs font-bold uppercase tracking-widest text-tenant-navy/60">
                 {language === "fil" ? "Eight-Point Agenda" : "Eight-Point Agenda"}
               </p>
               <ul className="mt-2 flex flex-wrap gap-2">
                 {MAYOR_PROFILE.agenda.map((item) => (
                   <li
                     key={item.en}
-                    className="rounded-full bg-imus-green/10 px-3 py-1 text-xs font-medium text-imus-greenDark"
+                    className="rounded-full bg-tenant-green/10 px-3 py-1 text-xs font-medium text-tenant-greenDark"
                   >
                     {t(item, language)}
                   </li>
@@ -90,7 +90,7 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
         className="mt-5 scroll-mt-32 overflow-hidden rounded-xl border border-gray-100 bg-white shadow-card"
       >
         <div className="flex flex-col sm:flex-row">
-          <div className="relative aspect-[16/9] w-full shrink-0 bg-imus-navy sm:aspect-auto sm:w-48 md:w-56">
+          <div className="relative aspect-[16/9] w-full shrink-0 bg-tenant-navy sm:aspect-auto sm:w-48 md:w-56">
             <Image
               src={COUNCIL_INFO.image}
               alt={language === "fil" ? "Sangguniang Panlungsod ng Imus" : "Imus City Council"}
@@ -99,9 +99,9 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
               sizes="(max-width: 640px) 100vw, 224px"
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-imus-navy/35" />
+            <div className="absolute inset-0 bg-tenant-navy/35" />
             <div className="absolute bottom-3 left-3 right-3 rounded-lg bg-white/95 px-3 py-2 text-center shadow-sm">
-              <p className="text-2xl font-bold text-imus-navy">{COUNCIL_INFO.memberCount}</p>
+              <p className="text-2xl font-bold text-tenant-navy">{COUNCIL_INFO.memberCount}</p>
               <p className="text-[10px] font-semibold uppercase tracking-wide text-gray-500">
                 {language === "fil" ? "Mga Konsehal" : "Councilors"}
               </p>
@@ -109,14 +109,14 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
           </div>
 
           <div className="flex flex-1 flex-col p-5 md:p-6">
-            <p className="text-xs font-bold uppercase tracking-widest text-imus-green">
+            <p className="text-xs font-bold uppercase tracking-widest text-tenant-green">
               {language === "fil" ? "Sanggunian" : "Legislative Branch"}
             </p>
-            <h2 className="mt-1 font-heading text-2xl font-bold text-imus-navy">
+            <h2 className="mt-1 font-heading text-2xl font-bold text-tenant-navy">
               {language === "fil" ? "Sangguniang Panlungsod" : "City Council"}
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              <span className="font-semibold text-imus-navy">
+              <span className="font-semibold text-tenant-navy">
                 {t(COUNCIL_INFO.viceMayorTitle, language)}:
               </span>{" "}
               {t(COUNCIL_INFO.viceMayor, language)}
@@ -128,7 +128,7 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
             <ul className="mt-3 space-y-1.5 text-sm text-gray-600">
               {COUNCIL_INFO.responsibilities.map((item) => (
                 <li key={item.en} className="flex gap-2">
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-imus-green" aria-hidden="true" />
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-tenant-green" aria-hidden="true" />
                   <span>{t(item, language)}</span>
                 </li>
               ))}
@@ -141,9 +141,9 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-imus-navy/10 bg-imus-gray px-3 py-1.5 text-xs font-semibold text-imus-navy transition-colors hover:border-imus-green/40 hover:bg-imus-green/10 focus-ring"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-tenant-navy/10 bg-tenant-gray px-3 py-1.5 text-xs font-semibold text-tenant-navy transition-colors hover:border-tenant-green/40 hover:bg-tenant-green/10 focus-ring"
                   >
-                    <Icon className="h-3.5 w-3.5 text-imus-green" aria-hidden="true" />
+                    <Icon className="h-3.5 w-3.5 text-tenant-green" aria-hidden="true" />
                     {t(link.label, language)}
                   </Link>
                 );
@@ -156,7 +156,7 @@ export default function AboutGovernmentSection({ embedded = false }: AboutGovern
               </Button>
               <Link
                 href="/full-disclosure/resolutions"
-                className="inline-flex items-center gap-1 text-sm font-semibold text-imus-green transition-colors hover:text-imus-greenDark focus-ring rounded-sm"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-tenant-green transition-colors hover:text-tenant-greenDark focus-ring rounded-sm"
               >
                 {language === "fil" ? "Mga Resolusyon" : "View Resolutions"}
                 <ArrowRight className="h-4 w-4" />

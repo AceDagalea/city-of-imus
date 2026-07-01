@@ -10,14 +10,14 @@ export default function NewsPage() {
   const { language } = useLanguage();
 
   return (
-    <div className="bg-imus-gray pt-24">
+    <div className="bg-tenant-gray pt-24">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h1 className="font-heading text-4xl font-bold text-imus-navy">
+          <h1 className="font-heading text-4xl font-bold text-tenant-navy">
             {STRINGS.newsTitle[language]}
           </h1>
         </motion.div>
@@ -25,7 +25,7 @@ export default function NewsPage() {
         <section id="announcements" aria-labelledby="announcements-section" className="mb-14">
           <h2
             id="announcements-section"
-            className="mb-6 font-heading text-2xl font-bold text-imus-navy"
+            className="mb-6 font-heading text-2xl font-bold text-tenant-navy"
           >
             {language === "fil" ? "Mga Anunsyo" : "Announcements"}
           </h2>
@@ -53,7 +53,7 @@ export default function NewsPage() {
         </section>
 
         <section aria-labelledby="news-section">
-          <h2 id="news-section" className="mb-6 font-heading text-2xl font-bold text-imus-navy">
+          <h2 id="news-section" className="mb-6 font-heading text-2xl font-bold text-tenant-navy">
             {language === "fil" ? "Balita" : "City News"}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

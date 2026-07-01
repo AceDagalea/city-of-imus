@@ -26,7 +26,7 @@ export default function AboutIntroSection() {
         <div>
           <h2
             id="about-intro-heading"
-            className="font-heading text-2xl font-bold text-imus-navy md:text-3xl"
+            className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl"
           >
             {t(ABOUT_INTRO.title, language)}
           </h2>
@@ -44,13 +44,13 @@ export default function AboutIntroSection() {
               <Link
                 key={link.id}
                 href={link.href}
-                className="group flex items-center gap-4 rounded-xl border border-gray-100 bg-white p-4 shadow-sm transition-all hover:border-imus-green/30 hover:shadow-md focus-ring"
+                className="group flex items-center gap-4 rounded-xl border border-gray-100 bg-white p-4 shadow-sm transition-all hover:border-tenant-green/30 hover:shadow-md focus-ring"
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-imus-green/15 text-imus-greenDark">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tenant-green/15 text-tenant-greenDark">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-heading font-bold text-imus-navy group-hover:text-imus-greenDark">
+                  <p className="font-heading font-bold text-tenant-navy group-hover:text-tenant-greenDark">
                     {t(link.label, language)}
                   </p>
                   <p className="mt-0.5 text-sm text-gray-500 line-clamp-2">
@@ -58,7 +58,7 @@ export default function AboutIntroSection() {
                   </p>
                 </div>
                 <ArrowRight
-                  className="h-5 w-5 shrink-0 text-imus-green transition-transform group-hover:translate-x-0.5"
+                  className="h-5 w-5 shrink-0 text-tenant-green transition-transform group-hover:translate-x-0.5"
                   aria-hidden="true"
                 />
               </Link>

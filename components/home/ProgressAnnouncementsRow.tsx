@@ -20,9 +20,9 @@ export default function ProgressAnnouncementsRow() {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-imus-navy/75" aria-hidden="true" />
+          <div className="absolute inset-0 bg-tenant-navy/75" aria-hidden="true" />
           <div className="relative flex h-full flex-col justify-center px-8 py-12 md:px-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-imus-green">
+            <p className="text-xs font-bold uppercase tracking-widest text-tenant-green">
               {language === "fil" ? "Maging Bahagi ng Pag-unlad" : "Be Part of the Progress"}
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-white md:text-4xl">
@@ -35,7 +35,7 @@ export default function ProgressAnnouncementsRow() {
             </p>
             <Link
               href="/tourism"
-              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-imus-green px-6 py-3 text-sm font-bold text-imus-navy transition-colors hover:bg-white focus-ring"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-tenant-green px-6 py-3 text-sm font-bold text-tenant-navy transition-colors hover:bg-white focus-ring"
             >
               {language === "fil" ? "Tuklasin ang Imus" : "Discover Imus"}
               <ArrowRight className="h-4 w-4" />

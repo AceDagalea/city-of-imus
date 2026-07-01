@@ -9,9 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        imus: {
-          navy: "#1A3668",
-          green: "#39A843",
+        // National "Republic of the Philippines" design-system palette.
+        // Drives the outer chrome (utility bar, national banners, footer legal
+        // strip). Consistent across every LGU deployment.
+        gov: {
+          blue: "#0038A8",
+          blueDark: "#002776",
+          red: "#CE1126",
+          gold: "#FCD116",
+          white: "#FFFFFF",
+        },
+        // Per-tenant palette. `primary`/`secondary`/`accent` (and the navy/green
+        // aliases) are backed by CSS custom properties set in `app/layout.tsx`
+        // from `config/tenant.config.ts`, so re-skinning is a config edit — no
+        // Tailwind rebuild. Written as `rgb(var(--x) / <alpha-value>)` so Tailwind
+        // opacity modifiers (e.g. `bg-tenant-navy/10`) keep working. The tint
+        // shades stay as fixed hex.
+        tenant: {
+          primary: "rgb(var(--tenant-primary) / <alpha-value>)",
+          secondary: "rgb(var(--tenant-secondary) / <alpha-value>)",
+          accent: "rgb(var(--tenant-accent) / <alpha-value>)",
+          navy: "rgb(var(--tenant-primary) / <alpha-value>)",
+          green: "rgb(var(--tenant-secondary) / <alpha-value>)",
           greenDark: "#2D8636",
           greenLight: "#5BC464",
           red: "#C8102E",

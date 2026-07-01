@@ -1,8 +1,26 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import { Montserrat, Libre_Baskerville } from "next/font/google";
 import LayoutShell from "@/components/layout/LayoutShell";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { AccessibilityProvider } from "@/context/AccessibilityContext";
+import { tenantConfig } from "@/config/tenant.config";
 import "@/styles/globals.css";
+
+/** "#1A3668" → "26 54 104" (space-separated RGB channels for CSS `rgb()`). */
+function hexToRgbChannels(hex: string): string {
+  const clean = hex.replace("#", "");
+  const value = Number.parseInt(clean, 16);
+  return `${(value >> 16) & 255} ${(value >> 8) & 255} ${value & 255}`;
+}
+
+// Tenant brand colors flow in as CSS custom properties so re-skinning is a
+// config edit (no rebuild). Tailwind's `tenant.*` tokens read these vars.
+const tenantThemeVars = {
+  "--tenant-primary": hexToRgbChannels(tenantConfig.brand.primary),
+  "--tenant-secondary": hexToRgbChannels(tenantConfig.brand.secondary),
+  "--tenant-accent": hexToRgbChannels(tenantConfig.brand.accent),
+} as CSSProperties;
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -34,14 +52,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${libreBaskerville.variable}`}>
+    <html
+      lang="en"
+      style={tenantThemeVars}
+      className={`${montserrat.variable} ${libreBaskerville.variable}`}
+    >
       <body className="min-h-screen overflow-x-hidden flex flex-col font-body">
-        <LanguageProvider>
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
-          <LayoutShell>{children}</LayoutShell>
-        </LanguageProvider>
+        <AccessibilityProvider>
+          <LanguageProvider>
+            <a href="#main-content" className="skip-link">
+              Skip to main content
+            </a>
+            <LayoutShell>{children}</LayoutShell>
+          </LanguageProvider>
+        </AccessibilityProvider>
       </body>
     </html>
   );

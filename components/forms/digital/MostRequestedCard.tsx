@@ -17,14 +17,14 @@ export default function MostRequestedCard({ form }: { form: CityForm }) {
   return (
     <Link
       href={href}
-      className="group flex min-w-[210px] flex-1 flex-col rounded-xl border border-gray-100 bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:border-imus-skyDark hover:shadow-float focus-ring"
+      className="group flex min-w-[210px] flex-1 flex-col rounded-xl border border-gray-100 bg-white p-5 shadow-card transition-all hover:-translate-y-0.5 hover:border-tenant-skyDark hover:shadow-float focus-ring"
     >
       <ServiceMiniLogo slug={form.slug} categoryId={form.categoryId} size="lg" className="mb-4" />
-      <h3 className="font-semibold text-imus-navy group-hover:text-imus-red line-clamp-2">
+      <h3 className="font-semibold text-tenant-navy group-hover:text-tenant-red line-clamp-2">
         {t(form.name)}
       </h3>
       <p className="mt-2 flex-1 text-sm text-gray-500 line-clamp-2">{t(form.description)}</p>
-      <ChevronRight className="mt-4 h-5 w-5 text-imus-navy/30 transition-transform group-hover:translate-x-1 group-hover:text-imus-navy" />
+      <ChevronRight className="mt-4 h-5 w-5 text-tenant-navy/30 transition-transform group-hover:translate-x-1 group-hover:text-tenant-navy" />
     </Link>
   );
 }

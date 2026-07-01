@@ -15,16 +15,16 @@ export default function MayorBioSection() {
       </h2>
       <div className="grid gap-6 lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start">
         <aside className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm lg:sticky lg:top-32">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-imus-green/15 text-imus-greenDark">
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-tenant-green/15 text-tenant-greenDark">
             <CalendarDays className="h-6 w-6" aria-hidden="true" />
           </div>
-          <p className="mt-4 text-sm font-semibold text-imus-navy">
+          <p className="mt-4 text-sm font-semibold text-tenant-navy">
             {t(MAYOR_TERM.officeLabel, language)}
           </p>
-          <p className="mt-2 font-heading text-2xl font-bold text-imus-navy">
+          <p className="mt-2 font-heading text-2xl font-bold text-tenant-navy">
             {t(MAYOR_TERM.years, language)}
           </p>
-          <p className="mt-1 text-sm font-medium text-imus-green">{t(MAYOR_TERM.label, language)}</p>
+          <p className="mt-1 text-sm font-medium text-tenant-green">{t(MAYOR_TERM.label, language)}</p>
         </aside>
 
         <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm md:p-8">

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function HistoryPage() {
   return (
-    <div className="bg-imus-gray">
+    <div className="bg-tenant-gray">
       <GovernmentPageHero title={HISTORY_HERO.title} subtitle={HISTORY_HERO.subtitle} />
       <GovernmentPageLayout activeId="history">
         <HistoryContent />

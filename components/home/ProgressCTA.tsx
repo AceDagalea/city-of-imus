@@ -20,9 +20,9 @@ export default function ProgressCTA() {
             className="object-cover"
             sizes="(max-width: 1280px) 100vw, 1280px"
           />
-          <div className="absolute inset-0 bg-imus-navy/70" aria-hidden="true" />
+          <div className="absolute inset-0 bg-tenant-navy/70" aria-hidden="true" />
           <div className="relative flex flex-col items-start justify-center px-8 py-14 md:px-14 md:py-20">
-            <p className="text-xs font-bold uppercase tracking-widest text-imus-green">
+            <p className="text-xs font-bold uppercase tracking-widest text-tenant-green">
               {language === "fil" ? "Maging Bahagi ng Pag-unlad" : "Be Part of the Progress"}
             </p>
             <h2 className="mt-2 font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
@@ -35,7 +35,7 @@ export default function ProgressCTA() {
             </p>
             <Link
               href="/tourism"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-imus-green px-6 py-3 text-sm font-bold text-imus-navy transition-colors hover:bg-white focus-ring"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-tenant-green px-6 py-3 text-sm font-bold text-tenant-navy transition-colors hover:bg-white focus-ring"
             >
               {language === "fil" ? "Tuklasin ang Imus" : "Discover Imus"}
               <ArrowRight className="h-4 w-4" />

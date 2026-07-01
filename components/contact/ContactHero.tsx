@@ -12,7 +12,7 @@ export default function ContactHero() {
   const lang = language === "fil" ? "fil" : "en";
 
   return (
-    <section className="relative overflow-hidden bg-imus-navy text-white">
+    <section className="relative overflow-hidden bg-tenant-navy text-white">
       <div className="absolute inset-0">
         <Image
           src={CONTACT_HERO.image}
@@ -22,7 +22,7 @@ export default function ContactHero() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-imus-navy from-[42%] via-imus-navy/88 to-imus-navy/45" />
+        <div className="absolute inset-0 bg-gradient-to-r from-tenant-navy from-[42%] via-tenant-navy/88 to-tenant-navy/45" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-10 md:px-6 md:pb-20 md:pt-12">
@@ -39,7 +39,7 @@ export default function ContactHero() {
         >
           {language === "fil" ? "Makipag-ugnayan" : "Contact Us"}
         </motion.h1>
-        <div className="mt-4 h-1 w-16 rounded-full bg-imus-green" aria-hidden="true" />
+        <div className="mt-4 h-1 w-16 rounded-full bg-tenant-green" aria-hidden="true" />
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

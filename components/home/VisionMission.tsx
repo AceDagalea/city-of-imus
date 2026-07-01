@@ -8,7 +8,7 @@ export default function VisionMission() {
   const { language } = useLanguage();
 
   return (
-    <section className="bg-imus-navy py-16" aria-labelledby="vision-mission-heading">
+    <section className="bg-tenant-navy py-16" aria-labelledby="vision-mission-heading">
       <h2 id="vision-mission-heading" className="sr-only">
         Vision and Mission
       </h2>
@@ -21,7 +21,7 @@ export default function VisionMission() {
           <h3 className="font-heading text-2xl font-bold text-white">
             {STRINGS.vision.en}
           </h3>
-          <div className="mb-4 mt-2 h-1 w-16 bg-imus-green" aria-hidden="true" />
+          <div className="mb-4 mt-2 h-1 w-16 bg-tenant-green" aria-hidden="true" />
           <p className="leading-relaxed text-white/80">{STRINGS.visionText.en}</p>
         </motion.div>
 
@@ -34,7 +34,7 @@ export default function VisionMission() {
           <h3 className="font-heading text-2xl font-bold text-white">
             {STRINGS.mission.en}
           </h3>
-          <div className="mb-4 mt-2 h-1 w-16 bg-imus-green" aria-hidden="true" />
+          <div className="mb-4 mt-2 h-1 w-16 bg-tenant-green" aria-hidden="true" />
           <p className="leading-relaxed text-white/80">{STRINGS.missionText.en}</p>
         </motion.div>
       </div>

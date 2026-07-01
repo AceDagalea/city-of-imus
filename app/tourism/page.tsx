@@ -70,8 +70,8 @@ export default function TourismPage() {
           return (
             <section key={section.id} id={section.id} className="mb-12 scroll-mt-28">
               <div className="flex items-center gap-3 mb-4">
-                <Icon className="h-6 w-6 text-imus-red" />
-                <h2 className="font-heading text-2xl font-bold text-imus-navy">
+                <Icon className="h-6 w-6 text-tenant-red" />
+                <h2 className="font-heading text-2xl font-bold text-tenant-navy">
                   {section.title[language]}
                 </h2>
               </div>
@@ -84,7 +84,7 @@ export default function TourismPage() {
 
         {/* Landmarks */}
         <section className="mb-12">
-          <h2 className="mb-6 font-heading text-2xl font-bold text-imus-navy">
+          <h2 className="mb-6 font-heading text-2xl font-bold text-tenant-navy">
             {language === "fil" ? "Mga Dapat Bisitahin" : "Places to Visit"}
           </h2>
           <div className="grid gap-6 sm:grid-cols-2">
@@ -101,7 +101,7 @@ export default function TourismPage() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-semibold text-imus-navy">{landmark.title[language]}</h3>
+                  <h3 className="font-semibold text-tenant-navy">{landmark.title[language]}</h3>
                   <p className="mt-1 flex items-center gap-1 text-sm text-gray-500">
                     <MapPin className="h-4 w-4" />
                     {landmark.address}
@@ -113,9 +113,9 @@ export default function TourismPage() {
         </section>
 
         {/* Artist Registry */}
-        <section className="rounded-xl bg-imus-navy p-8 text-white">
+        <section className="rounded-xl bg-tenant-navy p-8 text-white">
           <div className="flex items-start gap-4">
-            <Palette className="h-8 w-8 shrink-0 text-imus-green" />
+            <Palette className="h-8 w-8 shrink-0 text-tenant-green" />
             <div>
               <h2 className="font-heading text-xl font-bold">
                 {language === "fil"
@@ -131,7 +131,7 @@ export default function TourismPage() {
                 href={`${SITE_URL}/tourism`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-block rounded-full bg-imus-green px-6 py-2 text-sm font-semibold text-imus-navy hover:bg-imus-greenDark"
+                className="mt-4 inline-block rounded-full bg-tenant-green px-6 py-2 text-sm font-semibold text-tenant-navy hover:bg-tenant-greenDark"
               >
                 {language === "fil" ? "Magparehistro" : "Register Here"}
               </a>

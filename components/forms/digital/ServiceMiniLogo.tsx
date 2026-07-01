@@ -26,7 +26,7 @@ export default function ServiceMiniLogo({
   return (
     <span
       className={`inline-flex shrink-0 items-center justify-center rounded-full shadow-sm ring-2 ${config.bg} ${config.ring ?? "ring-transparent"} ${sizes.box} ${className} ${
-        active ? "ring-imus-navy/30 shadow-md" : ""
+        active ? "ring-tenant-navy/30 shadow-md" : ""
       }`}
       aria-hidden="true"
     >

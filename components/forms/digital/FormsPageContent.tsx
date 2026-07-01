@@ -34,13 +34,13 @@ export default function FormsPageContent() {
 
   return (
     <div id="main-content">
-      <section className="relative overflow-hidden bg-gradient-to-br from-imus-sky via-white to-imus-sky/40">
+      <section className="relative overflow-hidden bg-gradient-to-br from-tenant-sky via-white to-tenant-sky/40">
         <div className="absolute inset-0 opacity-[0.12]">
           <Image src={HERO_IMAGE_URL} alt="" fill className="object-cover" sizes="100vw" aria-hidden="true" />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 py-14 md:px-6 md:py-20">
-          <p className="text-xs font-bold uppercase tracking-widest text-imus-green">City Government of Imus</p>
-          <h1 className="mt-2 font-heading text-4xl font-bold text-imus-navy md:text-5xl lg:text-[3.25rem]">
+          <p className="text-xs font-bold uppercase tracking-widest text-tenant-green">City Government of Imus</p>
+          <h1 className="mt-2 font-heading text-4xl font-bold text-tenant-navy md:text-5xl lg:text-[3.25rem]">
             Digital Services
           </h1>
           <p className="mt-4 max-w-xl text-base text-gray-600 md:text-lg">
@@ -54,7 +54,7 @@ export default function FormsPageContent() {
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-8">
               <div className="mb-4">
-                <h2 className="font-heading text-xl font-bold text-imus-navy">Browse by Category</h2>
+                <h2 className="font-heading text-xl font-bold text-tenant-navy">Browse by Category</h2>
                 <p className="mt-1 text-sm text-gray-500">
                   Select a category to view available services.
                 </p>
@@ -75,8 +75,8 @@ export default function FormsPageContent() {
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex flex-col items-center gap-2 rounded-xl border-2 px-3 py-4 text-center transition-all focus-ring ${
                         isActive
-                          ? "border-imus-navy bg-imus-navy text-white shadow-card"
-                          : "border-gray-100 bg-white text-imus-navy hover:border-imus-skyDark hover:bg-imus-sky/40"
+                          ? "border-tenant-navy bg-tenant-navy text-white shadow-card"
+                          : "border-gray-100 bg-white text-tenant-navy hover:border-tenant-skyDark hover:bg-tenant-sky/40"
                       }`}
                     >
                       <ServiceMiniLogo
@@ -94,7 +94,7 @@ export default function FormsPageContent() {
               <div id="services-grid">
                 <div className="mb-6 flex flex-wrap items-end justify-between gap-2">
                   <div>
-                    <h3 className="font-heading text-lg font-bold text-imus-navy">
+                    <h3 className="font-heading text-lg font-bold text-tenant-navy">
                       Services for {activeTabMeta.label.replace("For ", "")}
                     </h3>
                     <p className="text-sm text-gray-500">

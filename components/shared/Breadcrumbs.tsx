@@ -14,11 +14,11 @@ export default function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
           <li key={i} className="flex items-center gap-1">
             {i > 0 && <ChevronRight className="h-3 w-3" aria-hidden="true" />}
             {item.href ? (
-              <Link href={item.href} className="hover:text-imus-green focus-ring rounded-sm">
+              <Link href={item.href} className="hover:text-tenant-green focus-ring rounded-sm">
                 {item.label}
               </Link>
             ) : (
-              <span className="text-imus-green" aria-current="page">
+              <span className="text-tenant-green" aria-current="page">
                 {item.label}
               </span>
             )}

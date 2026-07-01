@@ -17,7 +17,7 @@ export default function FormApplicationHero({
   draftSavedAt,
 }: FormApplicationHeroProps) {
   return (
-    <section className="bg-imus-navy text-white">
+    <section className="bg-tenant-navy text-white">
       <div className="mx-auto max-w-7xl px-4 py-8 md:px-6 md:py-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-2xl">
@@ -27,11 +27,11 @@ export default function FormApplicationHero({
                   <li key={item.label + i} className="flex items-center gap-1.5">
                     {i > 0 && <span className="text-white/40">›</span>}
                     {item.href ? (
-                      <Link href={item.href} className="hover:text-imus-green focus-ring rounded-sm">
+                      <Link href={item.href} className="hover:text-tenant-green focus-ring rounded-sm">
                         {item.label}
                       </Link>
                     ) : (
-                      <span className="text-imus-green">{item.label}</span>
+                      <span className="text-tenant-green">{item.label}</span>
                     )}
                   </li>
                 ))}
@@ -44,7 +44,7 @@ export default function FormApplicationHero({
           {draftSavedAt && (
             <div className="shrink-0 rounded-xl border border-white/25 bg-white/5 px-5 py-4 backdrop-blur-sm">
               <div className="flex items-center gap-2 text-sm font-semibold">
-                <Clock className="h-4 w-4 text-imus-green" aria-hidden="true" />
+                <Clock className="h-4 w-4 text-tenant-green" aria-hidden="true" />
                 Draft saved
                 <CheckCircle2 className="h-4 w-4 text-green-400" aria-hidden="true" />
               </div>

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-imus-gray">
+    <div className="bg-tenant-gray">
       <AboutHero />
       <AboutIntroSection />
       <AboutStatsSection />

@@ -26,8 +26,8 @@ export default function TextDisclosureView({
 
   return (
     <article className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-md">
-      <header className="border-b border-gray-100 bg-imus-navy px-6 py-5 text-white">
-        <p className="text-xs font-semibold uppercase tracking-widest text-imus-green">{sectionLabel}</p>
+      <header className="border-b border-gray-100 bg-tenant-navy px-6 py-5 text-white">
+        <p className="text-xs font-semibold uppercase tracking-widest text-tenant-green">{sectionLabel}</p>
         <p className={`mt-2 inline-block rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ${getBadgeStyle(document.badge)}`}>
           {document.badge}
         </p>
@@ -67,7 +67,7 @@ export default function TextDisclosureView({
       <footer className="border-t border-gray-100 px-6 py-5">
         <Link
           href={`/full-disclosure/${sectionId}`}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
         >
           <ArrowLeft className="h-4 w-4" />
           {language === "fil" ? `Bumalik sa ${sectionLabel}` : `Back to ${sectionLabel}`}

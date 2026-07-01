@@ -1,0 +1,84 @@
+// Datasource: SQLite by default (zero-infra, fits the template goal).
+// Swapping to Postgres is a one-line change of `provider` + DATABASE_URL.
+//
+// SQLite-required adjustments from the master plan §6.4 sketch:
+//  - Prisma enums aren't supported on SQLite → `role`, `status`, `fromStatus`,
+//    `toStatus` are Strings validated in code (see lib/rbac.ts, lib/workflow.ts).
+//  - Scalar lists aren't supported on SQLite → `officeIds` is a JSON-encoded
+//    string array (helpers in lib/rbac.ts).
+//  - `Submission.fields` is a JSON-encoded String for the same reason.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String
+  role          String    @default("CITIZEN") // CITIZEN | STAFF | ADMIN
+  canApprove    Boolean   @default(false) // only meaningful when role = STAFF
+  officeIds     String    @default("[]") // JSON string array of office ids
+  firstName     String
+  lastName      String
+  phone         String?
+  isActive      Boolean   @default(true)
+  emailVerified DateTime?
+  createdAt     DateTime  @default(now())
+
+  submissions        Submission[]        @relation("citizenSubmissions")
+  verificationTokens VerificationToken[]
+}
+
+model VerificationToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Submission {
+  id           String   @id @default(cuid())
+  referenceNo  String   @unique
+  formSlug     String
+  officeId     String
+  citizenId    String
+  citizen      User     @relation("citizenSubmissions", fields: [citizenId], references: [id])
+  assignedToId String?
+  // DRAFT | SUBMITTED | UNDER_REVIEW | NEEDS_INFO | APPROVED | REJECTED |
+  // READY_FOR_RELEASE | RELEASED
+  status       String   @default("SUBMITTED")
+  fields       String   @default("{}") // JSON-encoded form field values
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  attachments Attachment[]
+  events      SubmissionEvent[]
+}
+
+model SubmissionEvent {
+  id           String     @id @default(cuid())
+  submissionId String
+  submission   Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  actorId      String
+  fromStatus   String?
+  toStatus     String
+  note         String?
+  createdAt    DateTime   @default(now())
+}
+
+model Attachment {
+  id           String     @id @default(cuid())
+  submissionId String
+  submission   Submission @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  filename     String
+  url          String // local path under data/submissions/<referenceNo>/ for now (object storage deferred per §5.3/§9)
+  uploadedAt   DateTime   @default(now())
+}

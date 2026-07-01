@@ -17,9 +17,9 @@ export default function StatCard({ value, label, suffix = "", decimals = 0 }: St
   return (
     <div
       ref={ref}
-      className="group rounded-xl bg-imus-navy p-6 text-center transition-all duration-300 hover:border-b-4 hover:border-imus-green"
+      className="group rounded-xl bg-tenant-navy p-6 text-center transition-all duration-300 hover:border-b-4 hover:border-tenant-green"
     >
-      <p className="text-4xl font-bold text-imus-green">
+      <p className="text-4xl font-bold text-tenant-green">
         {displayValue}
         {suffix && <span className="text-2xl">{suffix}</span>}
       </p>

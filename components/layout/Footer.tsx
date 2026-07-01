@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Facebook, Youtube, Phone, Mail, MapPin, Send } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { ImusWordmark } from "@/components/shared/ImusLogo";
+import NationalLegalStrip from "@/components/layout/NationalLegalStrip";
 import { CONTACT, FOOTER_COLUMNS } from "@/lib/constants";
 import { STRINGS, t } from "@/lib/i18n";
 
@@ -19,29 +20,29 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-imus-navy text-white">
+    <footer className="bg-tenant-navy text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
           <div className="sm:col-span-2 lg:col-span-2">
             <ImusWordmark size="lg" onDark />
-            <p className="mt-3 text-xs text-imus-green">{STRINGS.tagline[language]}</p>
+            <p className="mt-3 text-xs text-tenant-green">{STRINGS.tagline[language]}</p>
             <address className="mt-5 space-y-2.5 text-sm not-italic text-white/70">
               <p className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-imus-green" aria-hidden="true" />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-tenant-green" aria-hidden="true" />
                 {CONTACT.address}
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-imus-green" aria-hidden="true" />
+                <Phone className="h-4 w-4 shrink-0 text-tenant-green" aria-hidden="true" />
                 <a
                   href={`tel:${CONTACT.mainLines[0].replace(/[^0-9]/g, "")}`}
-                  className="hover:text-imus-green"
+                  className="hover:text-tenant-green"
                 >
                   {CONTACT.mainLines[0]}
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-imus-green" aria-hidden="true" />
-                <a href={`mailto:${CONTACT.email}`} className="hover:text-imus-green">
+                <Mail className="h-4 w-4 shrink-0 text-tenant-green" aria-hidden="true" />
+                <a href={`mailto:${CONTACT.email}`} className="hover:text-tenant-green">
                   {CONTACT.email}
                 </a>
               </p>
@@ -51,7 +52,7 @@ export default function Footer() {
                 href={CONTACT.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white/10 p-2.5 transition-colors hover:bg-imus-green hover:text-imus-navy focus-ring"
+                className="rounded-full bg-white/10 p-2.5 transition-colors hover:bg-tenant-green hover:text-tenant-navy focus-ring"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" />
@@ -60,7 +61,7 @@ export default function Footer() {
                 href={`https://www.youtube.com/watch?v=${CONTACT.youtubeId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white/10 p-2.5 transition-colors hover:bg-imus-green hover:text-imus-navy focus-ring"
+                className="rounded-full bg-white/10 p-2.5 transition-colors hover:bg-tenant-green hover:text-tenant-navy focus-ring"
                 aria-label="YouTube"
               >
                 <Youtube className="h-4 w-4" />
@@ -70,7 +71,7 @@ export default function Footer() {
 
           {Object.values(FOOTER_COLUMNS).map((column) => (
             <div key={column.title.en}>
-              <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-imus-green">
+              <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-tenant-green">
                 {t(column.title, language)}
               </h3>
               <ul className="space-y-2.5 text-sm">
@@ -100,7 +101,7 @@ export default function Footer() {
           ))}
 
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-imus-green">
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-tenant-green">
               {language === "fil" ? "Mag-subscribe sa Updates" : "Subscribe to Updates"}
             </h3>
             <p className="mb-4 text-sm text-white/60">
@@ -119,11 +120,11 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={language === "fil" ? "Email address" : "Email address"}
                 required
-                className="min-w-0 flex-1 rounded-lg border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/40 outline-none focus:border-imus-green"
+                className="min-w-0 flex-1 rounded-lg border border-white/20 bg-white/10 px-3 py-2.5 text-sm text-white placeholder:text-white/40 outline-none focus:border-tenant-green"
               />
               <button
                 type="submit"
-                className="flex shrink-0 items-center justify-center rounded-lg bg-imus-green px-3 py-2.5 text-imus-navy transition-colors hover:bg-white focus-ring"
+                className="flex shrink-0 items-center justify-center rounded-lg bg-tenant-green px-3 py-2.5 text-tenant-navy transition-colors hover:bg-white focus-ring"
                 aria-label={language === "fil" ? "Mag-subscribe" : "Subscribe"}
               >
                 <Send className="h-4 w-4" />
@@ -132,6 +133,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* National legal strip (Republic of the Philippines / RA 10173 / RA 10754) */}
+      <NationalLegalStrip />
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-center text-xs text-white/50 sm:flex-row md:px-6">

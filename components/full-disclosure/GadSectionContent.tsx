@@ -21,21 +21,21 @@ function DatabaseIllustration() {
     <div className="relative hidden h-28 w-36 shrink-0 md:block" aria-hidden="true">
       <div className="absolute bottom-3 right-2 h-24 w-28 rounded-lg border border-gray-200 bg-white p-3 shadow-lg">
         <div className="mb-2 flex items-center gap-1.5">
-          <div className="h-2 w-2 rounded-full bg-imus-green" />
+          <div className="h-2 w-2 rounded-full bg-tenant-green" />
           <div className="h-1.5 flex-1 rounded bg-gray-200" />
         </div>
         <div className="space-y-1.5">
-          <div className="h-2 w-full rounded bg-imus-sky" />
-          <div className="h-2 w-4/5 rounded bg-imus-gray" />
-          <div className="h-2 w-full rounded bg-imus-gray" />
+          <div className="h-2 w-full rounded bg-tenant-sky" />
+          <div className="h-2 w-4/5 rounded bg-tenant-gray" />
+          <div className="h-2 w-full rounded bg-tenant-gray" />
           <div className="mt-2 grid grid-cols-3 gap-1">
-            <div className="h-6 rounded bg-imus-navy/10" />
-            <div className="h-6 rounded bg-imus-green/20" />
-            <div className="h-6 rounded bg-imus-sky" />
+            <div className="h-6 rounded bg-tenant-navy/10" />
+            <div className="h-6 rounded bg-tenant-green/20" />
+            <div className="h-6 rounded bg-tenant-sky" />
           </div>
         </div>
       </div>
-      <div className="absolute bottom-8 right-10 h-16 w-16 rounded-full bg-imus-green/15 ring-4 ring-white" />
+      <div className="absolute bottom-8 right-10 h-16 w-16 rounded-full bg-tenant-green/15 ring-4 ring-white" />
     </div>
   );
 }
@@ -73,11 +73,11 @@ export default function GadSectionContent() {
     <div>
       <div className="mb-8 flex flex-col gap-6 border-b border-gray-100 pb-8 md:flex-row md:items-start md:justify-between">
         <div className="flex gap-4">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-imus-navy text-white shadow-md">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-tenant-navy text-white shadow-md">
             <Users className="h-6 w-6" aria-hidden="true" />
           </div>
           <div>
-            <h2 className="font-heading text-2xl font-bold text-imus-navy md:text-3xl">GAD Database</h2>
+            <h2 className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl">GAD Database</h2>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-gray-600 md:text-base">
               {language === "fil"
                 ? "Gender and Development programs, plans, accomplishment reports, at sex-disaggregated data ng Lungsod ng Imus."
@@ -103,7 +103,7 @@ export default function GadSectionContent() {
                 ? "Maghanap ng mga dokumento ng GAD..."
                 : "Search GAD documents..."
             }
-            className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition-shadow focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20"
+            className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition-shadow focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20"
           />
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -117,7 +117,7 @@ export default function GadSectionContent() {
               setYearFilter(e.target.value);
               resetPage();
             }}
-            className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-imus-navy shadow-sm focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20 sm:min-w-[140px]"
+            className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-tenant-navy shadow-sm focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20 sm:min-w-[140px]"
           >
             <option value="all">{language === "fil" ? "Lahat ng Taon" : "All Years"}</option>
             {years.map((year) => (
@@ -136,7 +136,7 @@ export default function GadSectionContent() {
               setCategoryFilter(e.target.value);
               resetPage();
             }}
-            className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-imus-navy shadow-sm focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20 sm:min-w-[160px]"
+            className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-tenant-navy shadow-sm focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20 sm:min-w-[160px]"
           >
             <option value="all">{language === "fil" ? "Lahat ng Kategorya" : "All Categories"}</option>
             {categories.map((category) => (
@@ -158,7 +158,7 @@ export default function GadSectionContent() {
             <section key={year} aria-labelledby={`gad-year-${year}`}>
               <h3
                 id={`gad-year-${year}`}
-                className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-imus-navy/50"
+                className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-tenant-navy/50"
               >
                 {year} {language === "fil" ? "Mga Dokumento" : "Documents"}
               </h3>
@@ -181,7 +181,7 @@ export default function GadSectionContent() {
             type="button"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={pagination.currentPage === 1}
-            className="inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-imus-navy transition-colors hover:bg-imus-gray disabled:cursor-not-allowed disabled:opacity-40 focus-ring"
+            className="inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-tenant-navy transition-colors hover:bg-tenant-gray disabled:cursor-not-allowed disabled:opacity-40 focus-ring"
           >
             <ChevronLeft className="h-4 w-4" />
             {language === "fil" ? "Nakaraan" : "Previous"}
@@ -195,8 +195,8 @@ export default function GadSectionContent() {
               aria-current={pageNum === pagination.currentPage ? "page" : undefined}
               className={`min-w-[2.5rem] rounded-lg px-3 py-2 text-sm font-semibold transition-colors focus-ring ${
                 pageNum === pagination.currentPage
-                  ? "bg-imus-navy text-white shadow-sm"
-                  : "border border-gray-200 bg-white text-imus-navy hover:bg-imus-gray"
+                  ? "bg-tenant-navy text-white shadow-sm"
+                  : "border border-gray-200 bg-white text-tenant-navy hover:bg-tenant-gray"
               }`}
             >
               {pageNum}
@@ -207,7 +207,7 @@ export default function GadSectionContent() {
             type="button"
             onClick={() => setPage((p) => Math.min(pagination.totalPages, p + 1))}
             disabled={pagination.currentPage === pagination.totalPages}
-            className="inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-imus-navy transition-colors hover:bg-imus-gray disabled:cursor-not-allowed disabled:opacity-40 focus-ring"
+            className="inline-flex items-center gap-1 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-tenant-navy transition-colors hover:bg-tenant-gray disabled:cursor-not-allowed disabled:opacity-40 focus-ring"
           >
             {language === "fil" ? "Susunod" : "Next"}
             <ChevronRight className="h-4 w-4" />

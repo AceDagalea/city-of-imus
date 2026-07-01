@@ -30,20 +30,20 @@ export default function NewsEventsSection() {
   const otherNews = NEWS_ITEMS.filter((n) => n.id !== featured.id).slice(0, 3);
 
   return (
-    <section className="bg-imus-gray py-12 md:py-16" aria-labelledby="news-events-heading">
+    <section className="bg-tenant-gray py-12 md:py-16" aria-labelledby="news-events-heading">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <div className="mb-6 flex items-center justify-between">
               <h2
                 id="news-events-heading"
-                className="font-heading text-2xl font-bold text-imus-navy md:text-3xl"
+                className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl"
               >
                 {language === "fil" ? "Balita at Updates" : "News & Updates"}
               </h2>
               <Link
                 href="/news"
-                className="flex items-center gap-1 text-sm font-semibold text-imus-red transition-colors hover:text-imus-navy focus-ring rounded-sm"
+                className="flex items-center gap-1 text-sm font-semibold text-tenant-red transition-colors hover:text-tenant-navy focus-ring rounded-sm"
               >
                 {language === "fil" ? "Lahat ng Balita" : "View All News"}
                 <ArrowRight className="h-4 w-4" />
@@ -60,26 +60,26 @@ export default function NewsEventsSection() {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 40vw"
                   />
-                  <span className="absolute left-3 top-3 rounded bg-imus-red px-2.5 py-1 text-[10px] font-bold uppercase text-white">
+                  <span className="absolute left-3 top-3 rounded bg-tenant-red px-2.5 py-1 text-[10px] font-bold uppercase text-white">
                     Featured
                   </span>
                 </div>
                 <div className="p-4">
-                  <time className="text-xs text-imus-navy/50">
+                  <time className="text-xs text-tenant-navy/50">
                     {formatDate(featured.date, language)}
                   </time>
-                  <h3 className="mt-1.5 font-heading text-base font-bold text-imus-navy line-clamp-2">
+                  <h3 className="mt-1.5 font-heading text-base font-bold text-tenant-navy line-clamp-2">
                     {featured.external ? (
                       <a
                         href={featured.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-imus-red focus-ring rounded-sm"
+                        className="hover:text-tenant-red focus-ring rounded-sm"
                       >
                         {t(featured.title, language)}
                       </a>
                     ) : (
-                      <Link href={featured.href} className="hover:text-imus-red focus-ring rounded-sm">
+                      <Link href={featured.href} className="hover:text-tenant-red focus-ring rounded-sm">
                         {t(featured.title, language)}
                       </Link>
                     )}
@@ -97,21 +97,21 @@ export default function NewsEventsSection() {
                       <Image src={item.image} alt="" fill className="object-cover" sizes="80px" />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <time className="text-[10px] text-imus-navy/50">
+                      <time className="text-[10px] text-tenant-navy/50">
                         {formatDate(item.date, language)}
                       </time>
-                      <h4 className="mt-0.5 text-xs font-semibold text-imus-navy line-clamp-3">
+                      <h4 className="mt-0.5 text-xs font-semibold text-tenant-navy line-clamp-3">
                         {item.external ? (
                           <a
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-imus-red focus-ring rounded-sm"
+                            className="hover:text-tenant-red focus-ring rounded-sm"
                           >
                             {t(item.title, language)}
                           </a>
                         ) : (
-                          <Link href={item.href} className="hover:text-imus-red focus-ring rounded-sm">
+                          <Link href={item.href} className="hover:text-tenant-red focus-ring rounded-sm">
                             {t(item.title, language)}
                           </Link>
                         )}
@@ -125,12 +125,12 @@ export default function NewsEventsSection() {
 
           <div className="lg:col-span-5">
             <div className="mb-6 flex items-center justify-between">
-              <h2 className="font-heading text-2xl font-bold text-imus-navy md:text-3xl">
+              <h2 className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl">
                 {language === "fil" ? "Mga Kaganapan" : "Upcoming Events"}
               </h2>
               <Link
                 href="/news"
-                className="flex items-center gap-1 text-sm font-semibold text-imus-red transition-colors hover:text-imus-navy focus-ring rounded-sm"
+                className="flex items-center gap-1 text-sm font-semibold text-tenant-red transition-colors hover:text-tenant-navy focus-ring rounded-sm"
               >
                 {language === "fil" ? "Lahat" : "View All Events"}
                 <ArrowRight className="h-4 w-4" />
@@ -144,13 +144,13 @@ export default function NewsEventsSection() {
                     key={event.id}
                     className="flex gap-4 rounded-xl border border-gray-100 bg-white p-4 shadow-card"
                   >
-                    <div className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-lg bg-imus-navy text-white">
+                    <div className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-lg bg-tenant-navy text-white">
                       <span className="text-[10px] font-bold leading-none">{month}</span>
                       <span className="text-xl font-bold leading-none">{day}</span>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-sm font-semibold text-imus-navy">
-                        <Link href={event.href} className="hover:text-imus-red focus-ring rounded-sm">
+                      <h3 className="text-sm font-semibold text-tenant-navy">
+                        <Link href={event.href} className="hover:text-tenant-red focus-ring rounded-sm">
                           {t(event.title, language)}
                         </Link>
                       </h3>
@@ -171,7 +171,7 @@ export default function NewsEventsSection() {
             </ul>
             <Link
               href="/news"
-              className="mt-5 inline-flex items-center gap-2 rounded-lg border-2 border-imus-navy px-5 py-2.5 text-sm font-semibold text-imus-navy transition-colors hover:bg-imus-navy hover:text-white focus-ring"
+              className="mt-5 inline-flex items-center gap-2 rounded-lg border-2 border-tenant-navy px-5 py-2.5 text-sm font-semibold text-tenant-navy transition-colors hover:bg-tenant-navy hover:text-white focus-ring"
             >
               <Calendar className="h-4 w-4" aria-hidden="true" />
               {language === "fil" ? "Buong Kalendaryo" : "View Full Calendar"}

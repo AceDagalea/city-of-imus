@@ -62,7 +62,7 @@ export default function CityProfileContent() {
 
   return (
     <article className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-card">
-      <div className="relative aspect-[16/7] w-full bg-imus-gray">
+      <div className="relative aspect-[16/7] w-full bg-tenant-gray">
         <Image
           src={CITY_PROFILE_IMAGE}
           alt="Imus Plaza and Cathedral aerial view"
@@ -74,7 +74,7 @@ export default function CityProfileContent() {
       </div>
 
       <div className="space-y-6 p-6 md:p-8">
-        <blockquote className="border-l-4 border-imus-green pl-4 text-center text-sm italic leading-relaxed text-imus-navy/80 md:text-base">
+        <blockquote className="border-l-4 border-tenant-green pl-4 text-center text-sm italic leading-relaxed text-tenant-navy/80 md:text-base">
           {CITY_PROFILE_TAGLINE[language].map((line) => (
             <p key={line} className="mb-2 last:mb-0">
               {line}
@@ -90,7 +90,7 @@ export default function CityProfileContent() {
 
         <div
           ref={ref}
-          className="grid grid-cols-2 gap-3 rounded-xl bg-imus-green p-4 md:grid-cols-3 md:gap-4 md:p-6"
+          className="grid grid-cols-2 gap-3 rounded-xl bg-tenant-green p-4 md:grid-cols-3 md:gap-4 md:p-6"
         >
           {CITY_PROFILE_STATS.map((stat) => (
             <ProfileStat
@@ -108,7 +108,7 @@ export default function CityProfileContent() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div>
-            <h2 className="font-heading text-lg font-bold text-imus-green md:text-xl">
+            <h2 className="font-heading text-lg font-bold text-tenant-green md:text-xl">
               {language === "fil" ? "Bisyon" : "Vision"}
             </h2>
             <p className="mt-3 leading-relaxed text-gray-700">
@@ -116,7 +116,7 @@ export default function CityProfileContent() {
             </p>
           </div>
           <div>
-            <h2 className="font-heading text-lg font-bold text-imus-green md:text-xl">
+            <h2 className="font-heading text-lg font-bold text-tenant-green md:text-xl">
               {language === "fil" ? "Misyon" : "Mission"}
             </h2>
             <p className="mt-3 leading-relaxed text-gray-700">

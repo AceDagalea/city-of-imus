@@ -19,7 +19,7 @@ export default function SocialMap() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8 font-heading text-3xl font-bold text-imus-navy"
+          className="mb-8 font-heading text-3xl font-bold text-tenant-navy"
         >
           {STRINGS.stayConnected[language]}
         </motion.h2>
@@ -30,7 +30,7 @@ export default function SocialMap() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="mb-4 font-heading text-xl font-semibold text-imus-navy">
+            <h3 className="mb-4 font-heading text-xl font-semibold text-tenant-navy">
               {STRINGS.findUs[language]}
             </h3>
             <div className="overflow-hidden rounded-xl shadow-lg">
@@ -53,7 +53,7 @@ export default function SocialMap() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="mb-4 font-heading text-xl font-semibold text-imus-navy">
+            <h3 className="mb-4 font-heading text-xl font-semibold text-tenant-navy">
               Facebook
             </h3>
             <div className="overflow-hidden rounded-xl shadow-lg">

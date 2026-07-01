@@ -64,13 +64,13 @@ function ColumnCard({
       className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl bg-white shadow-card ring-1 ring-gray-100"
     >
       <header className="flex min-h-[3.25rem] items-center border-b border-gray-100 px-5 py-4">
-        <h3 className="font-heading text-base font-semibold text-imus-navy md:text-lg">{title}</h3>
+        <h3 className="font-heading text-base font-semibold text-tenant-navy md:text-lg">{title}</h3>
       </header>
 
       <div className="flex min-h-0 flex-1 flex-col">{children}</div>
 
       {footer ? (
-        <footer className="mt-auto border-t border-gray-100 bg-imus-gray/30 px-5 py-3">{footer}</footer>
+        <footer className="mt-auto border-t border-gray-100 bg-tenant-gray/30 px-5 py-3">{footer}</footer>
       ) : null}
     </motion.article>
   );
@@ -80,7 +80,7 @@ export default function CityHallMap() {
   const { language } = useLanguage();
 
   return (
-    <section className="bg-imus-gray py-12 md:py-16" aria-labelledby="stay-connected-heading">
+    <section className="bg-tenant-gray py-12 md:py-16" aria-labelledby="stay-connected-heading">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -90,11 +90,11 @@ export default function CityHallMap() {
         >
           <h2
             id="stay-connected-heading"
-            className="font-heading text-2xl font-bold text-imus-navy md:text-3xl"
+            className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl"
           >
             {STRINGS.stayConnected[language]}
           </h2>
-          <div className="mt-3 h-1 w-14 rounded-full bg-imus-green" aria-hidden="true" />
+          <div className="mt-3 h-1 w-14 rounded-full bg-tenant-green" aria-hidden="true" />
         </motion.div>
 
         <div className="grid gap-6 lg:grid-cols-3 lg:gap-8 lg:items-stretch">
@@ -106,7 +106,7 @@ export default function CityHallMap() {
                 href={MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-imus-green transition-colors hover:text-imus-greenDark focus-ring rounded-sm"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-tenant-green transition-colors hover:text-tenant-greenDark focus-ring rounded-sm"
               >
                 <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {language === "fil" ? "Buksan sa Google Maps" : "Open in Google Maps"}
@@ -114,16 +114,16 @@ export default function CityHallMap() {
             }
           >
             <div className="space-y-4 p-5">
-              <div className="flex items-start gap-3 rounded-xl bg-imus-green/10 p-4 ring-1 ring-imus-green/15">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-imus-green text-white">
+              <div className="flex items-start gap-3 rounded-xl bg-tenant-green/10 p-4 ring-1 ring-tenant-green/15">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-tenant-green text-white">
                   <MapPin className="h-4 w-4" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-sm font-medium leading-relaxed text-imus-navy">
+                  <p className="text-sm font-medium leading-relaxed text-tenant-navy">
                     {CONTACT.address}
                   </p>
                   <p className="mt-2 flex items-center gap-2 text-xs text-gray-600">
-                    <Clock className="h-3.5 w-3.5 shrink-0 text-imus-greenDark" aria-hidden="true" />
+                    <Clock className="h-3.5 w-3.5 shrink-0 text-tenant-greenDark" aria-hidden="true" />
                     {CONTACT.hours}
                   </p>
                 </div>
@@ -155,9 +155,9 @@ export default function CityHallMap() {
                   href={column.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-imus-navy transition-colors hover:text-imus-green focus-ring rounded-sm"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-tenant-navy transition-colors hover:text-tenant-green focus-ring rounded-sm"
                 >
-                  <Facebook className="h-4 w-4 shrink-0 text-imus-green" aria-hidden="true" />
+                  <Facebook className="h-4 w-4 shrink-0 text-tenant-green" aria-hidden="true" />
                   {column.handle}
                 </a>
               }

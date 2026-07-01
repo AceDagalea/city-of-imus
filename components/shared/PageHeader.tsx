@@ -11,7 +11,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle, breadcrumbs }: PageHeaderProps) {
   return (
-    <div className="bg-imus-navy pb-12 pt-10 text-white">
+    <div className="bg-tenant-navy pb-12 pt-10 text-white">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         {breadcrumbs && <Breadcrumbs items={breadcrumbs} />}
         <motion.h1

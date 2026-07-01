@@ -21,7 +21,7 @@ export default function YouTubeEmbed({
   const src = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
 
   return (
-    <div className={`relative aspect-video w-full overflow-hidden bg-imus-navy ${className}`}>
+    <div className={`relative aspect-video w-full overflow-hidden bg-tenant-navy ${className}`}>
       <iframe
         src={src}
         title={title}

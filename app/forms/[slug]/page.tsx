@@ -19,9 +19,9 @@ export default function FormSubmissionPage() {
 
   if (!form) {
     return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center bg-imus-gray px-4">
-        <h1 className="text-2xl font-bold text-imus-navy">Form Not Found</h1>
-        <Link href="/forms" className="mt-4 text-imus-red hover:underline">
+      <div className="flex min-h-[60vh] flex-col items-center justify-center bg-tenant-gray px-4">
+        <h1 className="text-2xl font-bold text-tenant-navy">Form Not Found</h1>
+        <Link href="/forms" className="mt-4 text-tenant-red hover:underline">
           ← Back to Forms
         </Link>
       </div>
@@ -30,19 +30,19 @@ export default function FormSubmissionPage() {
 
   if (form.mode !== "online" || !form.template) {
     return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center bg-imus-gray px-4">
-        <h1 className="text-2xl font-bold text-imus-navy">{t(form.name)}</h1>
+      <div className="flex min-h-[60vh] flex-col items-center justify-center bg-tenant-gray px-4">
+        <h1 className="text-2xl font-bold text-tenant-navy">{t(form.name)}</h1>
         <p className="mt-2 text-gray-600">This form is available for download only.</p>
         <a
           href={form.pdfUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-lg bg-imus-navy px-6 py-3 text-white hover:bg-imus-navyDark"
+          className="mt-6 inline-flex items-center gap-2 rounded-lg bg-tenant-navy px-6 py-3 text-white hover:bg-tenant-navyDark"
         >
           <Download className="h-5 w-5" />
           Download PDF
         </a>
-        <Link href="/forms" className="mt-4 text-imus-red hover:underline">
+        <Link href="/forms" className="mt-4 text-tenant-red hover:underline">
           ← Back to Forms
         </Link>
       </div>
@@ -61,15 +61,15 @@ export default function FormSubmissionPage() {
       draftSavedAt={draftSavedAt}
     >
       {isEboss && (
-        <div className="mb-5 rounded-xl border-2 border-imus-green bg-imus-green/10 p-5">
-          <p className="text-sm text-imus-navy">
+        <div className="mb-5 rounded-xl border-2 border-tenant-green bg-tenant-green/10 p-5">
+          <p className="text-sm text-tenant-navy">
             For business permits, we recommend using the eBOSS portal for faster processing.
           </p>
           <a
             href={CONTACT.eboss}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-3 inline-block rounded-lg bg-imus-green px-6 py-2.5 text-sm font-semibold text-imus-navy hover:bg-imus-greenDark focus-ring"
+            className="mt-3 inline-block rounded-lg bg-tenant-green px-6 py-2.5 text-sm font-semibold text-tenant-navy hover:bg-tenant-greenDark focus-ring"
           >
             Go to eBOSS Portal
           </a>

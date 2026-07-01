@@ -43,11 +43,11 @@ export default function WhyInvestSection() {
           >
             <h2
               id="why-invest-heading"
-              className="font-heading text-2xl font-bold text-imus-navy md:text-3xl"
+              className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl"
             >
               {t(INVEST_SECTION.title, language)}
             </h2>
-            <div className="mt-3 h-1 w-14 rounded-full bg-imus-green" aria-hidden="true" />
+            <div className="mt-3 h-1 w-14 rounded-full bg-tenant-green" aria-hidden="true" />
             <p className="mt-4 text-sm leading-relaxed text-gray-600 md:text-base">
               {t(INVEST_SECTION.subtitle, language)}
             </p>
@@ -64,9 +64,9 @@ export default function WhyInvestSection() {
             {HIGHLIGHTS.map(({ icon: Icon, label }) => (
               <li
                 key={label.en}
-                className="inline-flex items-center gap-2 rounded-full border border-imus-green/20 bg-imus-green/10 px-4 py-2 text-sm font-semibold text-imus-navy"
+                className="inline-flex items-center gap-2 rounded-full border border-tenant-green/20 bg-tenant-green/10 px-4 py-2 text-sm font-semibold text-tenant-navy"
               >
-                <Icon className="h-4 w-4 text-imus-greenDark" aria-hidden="true" />
+                <Icon className="h-4 w-4 text-tenant-greenDark" aria-hidden="true" />
                 {t(label, language)}
               </li>
             ))}
@@ -96,7 +96,7 @@ export default function WhyInvestSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-8 rounded-2xl border border-gray-100 bg-imus-gray/40 p-6 md:p-8"
+          className="mt-8 rounded-2xl border border-gray-100 bg-tenant-gray/40 p-6 md:p-8"
         >
           <div className="space-y-4 text-sm leading-relaxed text-gray-700 md:text-base">
             {INVEST_PARAGRAPHS.map((paragraph) => (
@@ -104,7 +104,7 @@ export default function WhyInvestSection() {
             ))}
 
             <div>
-              <p className="font-semibold text-imus-navy">
+              <p className="font-semibold text-tenant-navy">
                 {language === "fil"
                   ? "Nagtatag ang Pamahalaang Lungsod ng mga platform para sa negosyo, tulad ng:"
                   : "The City Government has also established several platforms for businesses, such as the following:"}
@@ -113,7 +113,7 @@ export default function WhyInvestSection() {
                 {INVEST_PLATFORMS.map((platform, index) => (
                   <li key={platform.en} className="flex gap-3">
                     <span
-                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-imus-green text-sm font-bold text-white"
+                      className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-tenant-green text-sm font-bold text-white"
                       aria-hidden="true"
                     >
                       {index + 1}
@@ -131,7 +131,7 @@ export default function WhyInvestSection() {
             href={INVEST_SECTION.ctaHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-imus-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-imus-navy/90 focus-ring"
+            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-tenant-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-tenant-navy/90 focus-ring"
           >
             {t(INVEST_SECTION.cta, language)}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

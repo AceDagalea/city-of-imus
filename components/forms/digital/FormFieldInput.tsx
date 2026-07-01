@@ -22,13 +22,13 @@ export default function FormFieldInput({
 }: FormFieldInputProps) {
   const colSpan = getFieldColSpan(field);
   const inputClass =
-    "w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-imus-navy outline-none transition-colors placeholder:text-gray-400 focus:border-imus-navy focus:ring-2 focus:ring-imus-navy/15";
+    "w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-tenant-navy outline-none transition-colors placeholder:text-gray-400 focus:border-tenant-navy focus:ring-2 focus:ring-tenant-navy/15";
 
   return (
     <div className={`col-span-2 ${colSpan}`}>
-      <label htmlFor={field.id} className="mb-1.5 block text-sm font-medium text-imus-navy">
+      <label htmlFor={field.id} className="mb-1.5 block text-sm font-medium text-tenant-navy">
         {t(field.label)}
-        {field.required && <span className="text-imus-red"> *</span>}
+        {field.required && <span className="text-tenant-red"> *</span>}
       </label>
 
       {field.id === "sex" && field.type === "select" && field.options ? (
@@ -42,7 +42,7 @@ export default function FormFieldInput({
                 checked={value === opt.value}
                 onChange={(e) => onChange(field.id, e.target.value)}
                 required={field.required && !value}
-                className="h-4 w-4 border-gray-300 text-imus-navy focus:ring-imus-navy"
+                className="h-4 w-4 border-gray-300 text-tenant-navy focus:ring-tenant-navy"
               />
               {t(opt.label)}
             </label>
@@ -83,7 +83,7 @@ export default function FormFieldInput({
             required={field.required && !fileName}
             accept=".pdf,.jpg,.jpeg,.png"
             onChange={(e) => onFileChange?.(field.id, e.target.files?.[0] ?? null)}
-            className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm file:mr-4 file:rounded-full file:border-0 file:bg-imus-navy file:px-4 file:py-1.5 file:text-sm file:font-medium file:text-white"
+            className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm file:mr-4 file:rounded-full file:border-0 file:bg-tenant-navy file:px-4 file:py-1.5 file:text-sm file:font-medium file:text-white"
           />
           {fileName && <p className="mt-1 text-xs text-gray-500">Selected: {fileName}</p>}
         </div>

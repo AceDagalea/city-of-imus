@@ -34,14 +34,14 @@ export default function LandmarksCarousel() {
   const landmark = LANDMARKS[current];
 
   return (
-    <section className="bg-imus-gray py-16" aria-labelledby="landmarks-heading">
+    <section className="bg-tenant-gray py-16" aria-labelledby="landmarks-heading">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.h2
           id="landmarks-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8 font-heading text-3xl font-bold text-imus-navy"
+          className="mb-8 font-heading text-3xl font-bold text-tenant-navy"
         >
           {STRINGS.landmarks[language]}
         </motion.h2>
@@ -70,7 +70,7 @@ export default function LandmarksCarousel() {
                   sizes="100vw"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-imus-navy/90 via-imus-navy/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-tenant-navy/90 via-tenant-navy/30 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10">
                   <h3 className="font-heading text-2xl font-bold text-white md:text-3xl">
                     {t(landmark.title, language)}
@@ -113,7 +113,7 @@ export default function LandmarksCarousel() {
                   setCurrent(i);
                 }}
                 className={`h-2 w-2 rounded-full transition-colors focus-ring ${
-                  i === current ? "bg-imus-green" : "bg-white/50"
+                  i === current ? "bg-tenant-green" : "bg-white/50"
                 }`}
                 aria-label={`Go to landmark ${i + 1}`}
               />

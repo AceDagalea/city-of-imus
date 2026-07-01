@@ -20,7 +20,7 @@ export default function GovernmentExploreSidebar({
 
   return (
     <aside className="lg:sticky lg:top-32 lg:self-start">
-      <p className="mb-3 px-1 text-[11px] font-bold uppercase tracking-[0.2em] text-imus-navy/45">
+      <p className="mb-3 px-1 text-[11px] font-bold uppercase tracking-[0.2em] text-tenant-navy/45">
         {language === "fil" ? "Pangkalahatang Impormasyon" : "General Information"}
       </p>
 
@@ -32,8 +32,8 @@ export default function GovernmentExploreSidebar({
           const isActive = link.id === activeId;
           const className = `block rounded-lg px-3 py-2.5 text-sm transition-colors focus-ring ${
             isActive
-              ? "bg-imus-navy font-semibold text-white"
-              : "text-imus-navy hover:bg-imus-gray"
+              ? "bg-tenant-navy font-semibold text-white"
+              : "text-tenant-navy hover:bg-tenant-gray"
           }`;
 
           return "external" in link && link.external ? (
@@ -55,11 +55,11 @@ export default function GovernmentExploreSidebar({
       </nav>
 
       {variant === "mayor" ? (
-        <div className="mt-4 rounded-xl bg-imus-green/10 p-4 ring-1 ring-imus-green/15">
+        <div className="mt-4 rounded-xl bg-tenant-green/10 p-4 ring-1 ring-tenant-green/15">
           <div className="flex items-start gap-2">
-            <Landmark className="mt-0.5 h-4 w-4 shrink-0 text-imus-greenDark" aria-hidden="true" />
+            <Landmark className="mt-0.5 h-4 w-4 shrink-0 text-tenant-greenDark" aria-hidden="true" />
             <div>
-              <p className="text-sm font-semibold text-imus-navy">
+              <p className="text-sm font-semibold text-tenant-navy">
                 {t(MAYOR_GOVERNMENT_CTA.title, language)}
               </p>
               <p className="mt-1 text-sm text-gray-600">
@@ -67,7 +67,7 @@ export default function GovernmentExploreSidebar({
               </p>
               <Link
                 href="/about/government"
-                className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-imus-green hover:text-imus-greenDark focus-ring rounded-sm"
+                className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tenant-green hover:text-tenant-greenDark focus-ring rounded-sm"
               >
                 {t(MAYOR_GOVERNMENT_CTA.link, language)}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -77,11 +77,11 @@ export default function GovernmentExploreSidebar({
         </div>
       ) : (
         <>
-          <div className="mt-4 rounded-xl bg-imus-green/10 p-4 ring-1 ring-imus-green/15">
+          <div className="mt-4 rounded-xl bg-tenant-green/10 p-4 ring-1 ring-tenant-green/15">
             <div className="flex items-start gap-2">
-              <Info className="mt-0.5 h-4 w-4 shrink-0 text-imus-greenDark" aria-hidden="true" />
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-tenant-greenDark" aria-hidden="true" />
               <div>
-                <p className="text-sm font-semibold text-imus-navy">
+                <p className="text-sm font-semibold text-tenant-navy">
                   {t(DEPARTMENT_INFO.whatIs.title, language)}
                 </p>
                 <p className="mt-1 text-sm text-gray-600">
@@ -91,11 +91,11 @@ export default function GovernmentExploreSidebar({
             </div>
           </div>
 
-          <div className="mt-4 rounded-xl bg-imus-sky/70 p-4 ring-1 ring-imus-navy/5">
+          <div className="mt-4 rounded-xl bg-tenant-sky/70 p-4 ring-1 ring-tenant-navy/5">
             <div className="flex items-start gap-2">
-              <CircleHelp className="mt-0.5 h-4 w-4 shrink-0 text-imus-navy" aria-hidden="true" />
+              <CircleHelp className="mt-0.5 h-4 w-4 shrink-0 text-tenant-navy" aria-hidden="true" />
               <div>
-                <p className="text-sm font-semibold text-imus-navy">
+                <p className="text-sm font-semibold text-tenant-navy">
                   {t(DEPARTMENT_INFO.needHelp.title, language)}
                 </p>
                 <p className="mt-1 text-sm text-gray-600">
@@ -103,7 +103,7 @@ export default function GovernmentExploreSidebar({
                 </p>
                 <Link
                   href="/contact"
-                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-imus-green hover:text-imus-greenDark focus-ring rounded-sm"
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tenant-green hover:text-tenant-greenDark focus-ring rounded-sm"
                 >
                   {t(DEPARTMENT_INFO.needHelp.cta, language)}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />

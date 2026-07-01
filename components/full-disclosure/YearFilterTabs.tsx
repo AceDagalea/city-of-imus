@@ -31,8 +31,8 @@ export default function YearFilterTabs({
             scroll={false}
             className={`rounded-full px-3 py-1 text-xs font-medium transition-colors focus-ring ${
               isActive
-                ? "bg-imus-navy font-semibold text-white"
-                : "border border-imus-navy text-imus-navy hover:bg-imus-gray"
+                ? "bg-tenant-navy font-semibold text-white"
+                : "border border-tenant-navy text-tenant-navy hover:bg-tenant-gray"
             }`}
           >
             {option.label}

@@ -37,7 +37,7 @@ export default function AnnouncementsCarousel() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8 font-heading text-3xl font-bold text-imus-navy"
+          className="mb-8 font-heading text-3xl font-bold text-tenant-navy"
         >
           {STRINGS.announcements[language]}
         </motion.h2>
@@ -85,7 +85,7 @@ export default function AnnouncementsCarousel() {
           <div className="mt-6 flex items-center justify-center gap-4">
             <button
               onClick={() => paginate(-1)}
-              className="rounded-full bg-imus-navy p-2 text-white transition-colors hover:bg-imus-navyDark focus-ring"
+              className="rounded-full bg-tenant-navy p-2 text-white transition-colors hover:bg-tenant-navyDark focus-ring"
               aria-label="Previous announcements"
             >
               <ChevronLeft className="h-5 w-5" />
@@ -99,7 +99,7 @@ export default function AnnouncementsCarousel() {
                     setCurrentIndex(i);
                   }}
                   className={`h-2 w-2 rounded-full transition-colors focus-ring ${
-                    i === currentIndex ? "bg-imus-green" : "bg-gray-300"
+                    i === currentIndex ? "bg-tenant-green" : "bg-gray-300"
                   }`}
                   role="tab"
                   aria-selected={i === currentIndex}
@@ -109,7 +109,7 @@ export default function AnnouncementsCarousel() {
             </div>
             <button
               onClick={() => paginate(1)}
-              className="rounded-full bg-imus-navy p-2 text-white transition-colors hover:bg-imus-navyDark focus-ring"
+              className="rounded-full bg-tenant-navy p-2 text-white transition-colors hover:bg-tenant-navyDark focus-ring"
               aria-label="Next announcements"
             >
               <ChevronRight className="h-5 w-5" />

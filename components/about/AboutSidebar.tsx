@@ -36,7 +36,7 @@ export default function AboutSidebar({ activeId = "our-city", variant = "page" }
       aria-label="About Imus sections"
       className={
         isHero
-          ? "w-full max-w-[240px] rounded-lg bg-imus-navy/90 p-2 shadow-xl backdrop-blur-sm"
+          ? "w-full max-w-[240px] rounded-lg bg-tenant-navy/90 p-2 shadow-xl backdrop-blur-sm"
           : "w-full"
       }
     >
@@ -46,16 +46,16 @@ export default function AboutSidebar({ activeId = "our-city", variant = "page" }
           const isActive = activeId === link.id;
           const className = `flex items-center gap-3 rounded-md px-3 py-2.5 text-sm transition-colors focus-ring ${
             isActive
-              ? "border-l-4 border-imus-green bg-white/10 font-semibold text-white"
+              ? "border-l-4 border-tenant-green bg-white/10 font-semibold text-white"
               : isHero
                 ? "border-l-4 border-transparent text-white/85 hover:bg-white/10 hover:text-white"
-                : "border-l-4 border-transparent text-imus-navy hover:bg-imus-gray"
+                : "border-l-4 border-transparent text-tenant-navy hover:bg-tenant-gray"
           }`;
 
           const content = (
             <>
               <Icon
-                className={`h-4 w-4 shrink-0 ${isActive && isHero ? "text-imus-green" : isHero ? "text-white/70" : isActive ? "text-imus-green" : "text-imus-red"}`}
+                className={`h-4 w-4 shrink-0 ${isActive && isHero ? "text-tenant-green" : isHero ? "text-white/70" : isActive ? "text-tenant-green" : "text-tenant-red"}`}
                 aria-hidden="true"
               />
               <span>{t(link.label, language)}</span>

@@ -3,7 +3,7 @@ import FormsPageContent from "@/components/forms/digital/FormsPageContent";
 
 export default function FormsPage() {
   return (
-    <Suspense fallback={<div className="min-h-[60vh] animate-pulse bg-imus-gray" />}>
+    <Suspense fallback={<div className="min-h-[60vh] animate-pulse bg-tenant-gray" />}>
       <FormsPageContent />
     </Suspense>
   );

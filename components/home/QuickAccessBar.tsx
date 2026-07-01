@@ -37,20 +37,20 @@ export default function QuickAccessBar() {
               const Icon = iconMap[item.icon] || Monitor;
               const content = (
                 <>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-imus-navy/10 transition-colors group-hover:border-imus-navy group-hover:bg-imus-navy">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-tenant-navy/10 transition-colors group-hover:border-tenant-navy group-hover:bg-tenant-navy">
                     <Icon
-                      className="h-4 w-4 text-imus-navy transition-colors group-hover:text-white"
+                      className="h-4 w-4 text-tenant-navy transition-colors group-hover:text-white"
                       aria-hidden="true"
                     />
                   </div>
-                  <span className="text-center text-xs font-semibold leading-tight text-imus-navy">
+                  <span className="text-center text-xs font-semibold leading-tight text-tenant-navy">
                     {t(item.label, language)}
                   </span>
                 </>
               );
 
               const className =
-                "group flex flex-col items-center justify-center gap-2 px-3 py-5 transition-colors hover:bg-imus-gray/60 focus-ring sm:py-6";
+                "group flex flex-col items-center justify-center gap-2 px-3 py-5 transition-colors hover:bg-tenant-gray/60 focus-ring sm:py-6";
 
               return "external" in item && item.external ? (
                 <a

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, User, Menu, X } from "lucide-react";
 import ImusLogo from "@/components/shared/ImusLogo";
+import NationalBar from "@/components/layout/NationalBar";
 import { CONTACT } from "@/lib/constants";
 
 const NAV = [
@@ -19,11 +20,12 @@ export default function DigitalPortalHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      <div className="bg-imus-navy text-white">
+      <NationalBar />
+      <div className="bg-tenant-navy text-white">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-xs md:px-6">
           <p className="text-white/85">
             Official Website of the{" "}
-            <span className="font-semibold text-imus-green-light">City Government of Imus</span>, Cavite
+            <span className="font-semibold text-tenant-green-light">City Government of Imus</span>, Cavite
           </p>
           <div className="flex flex-wrap items-center gap-4 text-white/75">
             <a href="#main-content" className="hover:text-white focus-ring rounded-sm">
@@ -53,7 +55,7 @@ export default function DigitalPortalHeader() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-md"
+                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-md"
                 >
                   {item.label}
                   {item.children && <ChevronDown className="h-3.5 w-3.5 opacity-50" />}
@@ -64,7 +66,7 @@ export default function DigitalPortalHeader() {
                       <li key={child.href}>
                         <Link
                           href={child.href}
-                          className="block px-4 py-2 text-sm text-imus-navy hover:bg-imus-gray focus-ring"
+                          className="block px-4 py-2 text-sm text-tenant-navy hover:bg-tenant-gray focus-ring"
                         >
                           {child.label}
                         </Link>
@@ -81,13 +83,13 @@ export default function DigitalPortalHeader() {
               href={CONTACT.eboss}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden items-center gap-2 rounded-full bg-imus-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-imus-navyDark focus-ring sm:inline-flex"
+              className="hidden items-center gap-2 rounded-full bg-tenant-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tenant-navyDark focus-ring sm:inline-flex"
             >
               <User className="h-4 w-4" />
               Login / Register
             </a>
             <button
-              className="rounded-md p-2 text-imus-navy lg:hidden focus-ring"
+              className="rounded-md p-2 text-tenant-navy lg:hidden focus-ring"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -112,7 +114,7 @@ export default function DigitalPortalHeader() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block rounded-lg px-3 py-3 font-medium text-imus-navy hover:bg-imus-gray"
+                    className="block rounded-lg px-3 py-3 font-medium text-tenant-navy hover:bg-tenant-gray"
                   >
                     {item.label}
                   </Link>

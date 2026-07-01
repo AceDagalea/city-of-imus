@@ -21,7 +21,7 @@ export default function HeroSection() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-imus-navy/65" aria-hidden="true" />
+        <div className="absolute inset-0 bg-tenant-navy/65" aria-hidden="true" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-14 md:px-6 md:py-20">
           <div className="max-w-2xl">
@@ -30,13 +30,13 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <p className="text-xs font-bold uppercase tracking-widest text-imus-green">
+              <p className="text-xs font-bold uppercase tracking-widest text-tenant-green">
                 {STRINGS.vision.en}
               </p>
               <h1 className="mt-2 font-heading text-xl font-bold leading-snug text-white md:text-2xl lg:text-[1.65rem]">
                 {STRINGS.visionText.en}
               </h1>
-              <p className="mt-5 text-xs font-bold uppercase tracking-widest text-imus-green">
+              <p className="mt-5 text-xs font-bold uppercase tracking-widest text-tenant-green">
                 {STRINGS.mission.en}
               </p>
               <p className="mt-2 text-sm leading-relaxed text-white/90 md:text-base">
@@ -58,14 +58,14 @@ export default function HeroSection() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition-colors hover:text-imus-green focus-ring rounded-sm"
+                      className="transition-colors hover:text-tenant-green focus-ring rounded-sm"
                     >
                       {t(item.label, language)}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="transition-colors hover:text-imus-green focus-ring rounded-sm"
+                      className="transition-colors hover:text-tenant-green focus-ring rounded-sm"
                     >
                       {t(item.label, language)}
                     </Link>

@@ -32,17 +32,17 @@ export default function ResolutionList({ resolutions }: { resolutions: Resolutio
               aria-expanded={isOpen}
             >
               <div className="flex-1">
-                <p className="text-xs font-bold uppercase tracking-wide text-imus-green">
+                <p className="text-xs font-bold uppercase tracking-wide text-tenant-green">
                   {item.number}
                 </p>
-                <h3 className="mt-1 font-semibold leading-snug text-imus-navy">{item.title}</h3>
+                <h3 className="mt-1 font-semibold leading-snug text-tenant-navy">{item.title}</h3>
                 <p className="mt-2 flex items-center gap-1 text-xs text-gray-500">
                   <Calendar className="h-3.5 w-3.5" />
                   {item.date}
                 </p>
               </div>
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-imus-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
+                className={`h-5 w-5 shrink-0 text-tenant-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
               />
             </button>
             {isOpen && (

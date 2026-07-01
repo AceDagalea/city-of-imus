@@ -15,8 +15,8 @@ export default function BanaagIssueView({ issue }: BanaagIssueViewProps) {
 
   return (
     <article className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-md">
-      <header className="border-b border-gray-100 bg-imus-navy px-6 py-5 text-white">
-        <p className="text-xs font-semibold uppercase tracking-widest text-imus-green">BanAAg</p>
+      <header className="border-b border-gray-100 bg-tenant-navy px-6 py-5 text-white">
+        <p className="text-xs font-semibold uppercase tracking-widest text-tenant-green">BanAAg</p>
         <h1 className="mt-1 font-heading text-2xl font-bold md:text-3xl">{issue.title}</h1>
         <p className="mt-2 text-sm text-white/80">{issue.datePosted}</p>
       </header>
@@ -27,7 +27,7 @@ export default function BanaagIssueView({ issue }: BanaagIssueViewProps) {
             key={src}
             id={`page-${index + 1}`}
             aria-label={`${language === "fil" ? "Pahina" : "Page"} ${index + 1}`}
-            className="bg-imus-gray/40 px-4 py-6 md:px-8"
+            className="bg-tenant-gray/40 px-4 py-6 md:px-8"
           >
             <figure className="mx-auto max-w-4xl">
               <Image
@@ -51,7 +51,7 @@ export default function BanaagIssueView({ issue }: BanaagIssueViewProps) {
       <footer className="flex flex-wrap items-center justify-between gap-4 border-t border-gray-100 px-6 py-5">
         <Link
           href="/full-disclosure/banaag"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
         >
           <ArrowLeft className="h-4 w-4" />
           {language === "fil" ? "Bumalik sa BanAAg" : "Back to BanAAg"}
@@ -60,7 +60,7 @@ export default function BanaagIssueView({ issue }: BanaagIssueViewProps) {
           href={issue.pdfUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-imus-navy px-4 py-2 text-sm font-medium text-imus-navy transition-colors hover:bg-imus-navy hover:text-white focus-ring"
+          className="inline-flex items-center gap-2 rounded-full border border-tenant-navy px-4 py-2 text-sm font-medium text-tenant-navy transition-colors hover:bg-tenant-navy hover:text-white focus-ring"
         >
           <Download className="h-4 w-4" />
           {language === "fil" ? "I-download ang PDF" : "Download PDF"}

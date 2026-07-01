@@ -5,8 +5,8 @@ export type LocalizedString = {
   fil: string;
 };
 
-export function t(text: LocalizedString, _lang?: Language): string {
-  return text.en;
+export function t(text: LocalizedString, lang: Language = "en"): string {
+  return text[lang] ?? text.en;
 }
 
 export const STRINGS = {
@@ -67,4 +67,171 @@ export const STRINGS = {
   maintainedBy: { en: "Maintained by the City Information Office", fil: "Pinapanatili ng City Information Office" },
   aboutTitle: { en: "About the City of Imus", fil: "Tungkol sa Lungsod ng Imus" },
   newsTitle: { en: "City News & Announcements", fil: "Balita at Anunsyo ng Lungsod" },
+
+  // ── National chrome (Republic of the Philippines design system) ──────────
+  republicOfPhilippines: { en: "Republic of the Philippines", fil: "Republika ng Pilipinas" },
+  language: { en: "Language", fil: "Wika" },
+  english: { en: "English", fil: "Ingles" },
+  filipino: { en: "Filipino", fil: "Filipino" },
+  accessibility: { en: "Accessibility", fil: "Accessibility" },
+  textSize: { en: "Text size", fil: "Laki ng teksto" },
+  decreaseTextSize: { en: "Decrease text size", fil: "Bawasan ang laki ng teksto" },
+  resetTextSize: { en: "Reset text size", fil: "I-reset ang laki ng teksto" },
+  increaseTextSize: { en: "Increase text size", fil: "Palakihin ang laki ng teksto" },
+  highContrast: { en: "High contrast", fil: "Mataas na kontrast" },
+  toggleHighContrast: { en: "Toggle high contrast", fil: "I-toggle ang mataas na kontrast" },
+
+  // ── Transparency seal + footer legal strip ──────────────────────────────
+  transparencySeal: { en: "Transparency Seal", fil: "Transparency Seal" },
+  transparencySealDesc: {
+    en: "Committed to open and accountable governance.",
+    fil: "Nakatuon sa bukas at may pananagutang pamamahala.",
+  },
+  viewTransparency: { en: "View Transparency Seal", fil: "Tingnan ang Transparency Seal" },
+  freedomOfInformation: { en: "Freedom of Information", fil: "Freedom of Information" },
+  privacyPolicy: { en: "Privacy Policy", fil: "Patakaran sa Privacy" },
+  privacyNotice: {
+    en: "This site handles personal data in accordance with the Data Privacy Act of 2012 (RA 10173).",
+    fil: "Pinangangasiwaan ng site na ito ang personal na datos alinsunod sa Data Privacy Act of 2012 (RA 10173).",
+  },
+  accessibilityStatement: {
+    en: "This website aims to conform with WCAG 2.1 AA accessibility standards for government websites.",
+    fil: "Layunin ng website na ito na sumunod sa WCAG 2.1 AA accessibility standards para sa mga website ng pamahalaan.",
+  },
+  transparencyTitle: { en: "Transparency", fil: "Transparency" },
+  transparencyIntro: {
+    en: "Access the City Government's full disclosure reports, budgets, procurement, and other public accountability documents.",
+    fil: "I-access ang mga full disclosure report, badyet, procurement, at iba pang dokumento ng pananagutang pampubliko ng Pamahalaang Lungsod.",
+  },
+
+  // ── Auth ─────────────────────────────────────────────────────────────────
+  signIn: { en: "Sign In", fil: "Mag-sign In" },
+  signOut: { en: "Sign Out", fil: "Mag-sign Out" },
+  registerTitle: { en: "Create a Citizen Account", fil: "Gumawa ng Citizen Account" },
+  registerSubtitle: {
+    en: "Register to submit and track city service requests online.",
+    fil: "Magparehistro upang magsumite at subaybayan ang mga kahilingan sa serbisyo ng lungsod online.",
+  },
+  loginTitle: { en: "Sign in to your account", fil: "Mag-sign in sa iyong account" },
+  loginSubtitle: {
+    en: "Access your applications and city services.",
+    fil: "I-access ang iyong mga aplikasyon at serbisyo ng lungsod.",
+  },
+  emailLabel: { en: "Email address", fil: "Email address" },
+  passwordLabel: { en: "Password", fil: "Password" },
+  firstNameLabel: { en: "First name", fil: "Pangalan" },
+  lastNameLabel: { en: "Last name", fil: "Apelyido" },
+  phoneLabel: { en: "Phone (optional)", fil: "Telepono (opsyonal)" },
+  createAccount: { en: "Create Account", fil: "Gumawa ng Account" },
+  noAccountYet: { en: "Don't have an account?", fil: "Wala ka pang account?" },
+  alreadyHaveAccount: { en: "Already have an account?", fil: "May account ka na?" },
+  registerHere: { en: "Register here", fil: "Magparehistro dito" },
+  signInHere: { en: "Sign in here", fil: "Mag-sign in dito" },
+  invalidCredentials: {
+    en: "Invalid email or password, or the account is deactivated.",
+    fil: "Maling email o password, o deactivated ang account.",
+  },
+  processing: { en: "Processing…", fil: "Pinoproseso…" },
+  verifyEmailTitle: { en: "Verify your email", fil: "I-verify ang iyong email" },
+  verifyEmailSent: {
+    en: "We sent a verification link to your email address. Open it to activate your account. (In local development the link is printed in the server console.)",
+    fil: "Nagpadala kami ng verification link sa iyong email address. Buksan ito upang i-activate ang iyong account. (Sa local development, nakalimbag ang link sa server console.)",
+  },
+  verifySuccess: {
+    en: "Your email has been verified. You can now sign in and submit requests.",
+    fil: "Na-verify na ang iyong email. Maaari ka nang mag-sign in at magsumite ng mga kahilingan.",
+  },
+  verifyFailed: {
+    en: "This verification link is invalid or has expired.",
+    fil: "Invalid o expired na ang verification link na ito.",
+  },
+  verifyRequired: {
+    en: "Please verify your email address before submitting a request.",
+    fil: "Paki-verify muna ang iyong email address bago magsumite ng kahilingan.",
+  },
+
+  // ── Consoles (shared) ────────────────────────────────────────────────────
+  referenceNo: { en: "Reference No.", fil: "Reference No." },
+  serviceLabel: { en: "Service", fil: "Serbisyo" },
+  statusLabel: { en: "Status", fil: "Status" },
+  officeLabel: { en: "Office", fil: "Tanggapan" },
+  applicantLabel: { en: "Applicant", fil: "Aplikante" },
+  submittedLabel: { en: "Submitted", fil: "Naisumite" },
+  updatedLabel: { en: "Last updated", fil: "Huling na-update" },
+  viewLabel: { en: "View", fil: "Tingnan" },
+  timelineLabel: { en: "Timeline", fil: "Timeline" },
+  attachmentsLabel: { en: "Attachments", fil: "Mga Attachment" },
+  detailsLabel: { en: "Submitted Information", fil: "Isinumiteng Impormasyon" },
+  noteLabel: { en: "Note (optional)", fil: "Tala (opsyonal)" },
+  backLabel: { en: "Back", fil: "Bumalik" },
+
+  // ── Citizen console ──────────────────────────────────────────────────────
+  citizenDashboardTitle: { en: "My Applications", fil: "Aking mga Aplikasyon" },
+  citizenDashboardSubtitle: {
+    en: "Track the status of your submitted requests.",
+    fil: "Subaybayan ang status ng iyong mga isinumiteng kahilingan.",
+  },
+  newApplication: { en: "New Application", fil: "Bagong Aplikasyon" },
+  noApplications: {
+    en: "You haven't submitted any applications yet.",
+    fil: "Wala ka pang naisusumiteng aplikasyon.",
+  },
+  browseServices: { en: "Browse Services", fil: "Tingnan ang mga Serbisyo" },
+  respondTitle: { en: "Respond to Request for Information", fil: "Tumugon sa Kahilingan ng Impormasyon" },
+  respondHelp: {
+    en: "The reviewing office asked for more information. Add a reply and/or upload the requested documents.",
+    fil: "Humingi ng karagdagang impormasyon ang tanggapan. Magdagdag ng tugon at/o mag-upload ng mga hinihinging dokumento.",
+  },
+  replyLabel: { en: "Your reply", fil: "Iyong tugon" },
+  uploadDocs: { en: "Upload documents", fil: "Mag-upload ng dokumento" },
+  sendResponse: { en: "Send Response", fil: "Ipadala ang Tugon" },
+  responseSent: { en: "Response sent.", fil: "Naipadala ang tugon." },
+
+  // ── Staff console ────────────────────────────────────────────────────────
+  staffQueueTitle: { en: "Processing Queue", fil: "Processing Queue" },
+  staffQueueSubtitle: {
+    en: "Submissions for the offices assigned to you.",
+    fil: "Mga isinumiteng kahilingan para sa mga tanggapang nakatalaga sa iyo.",
+  },
+  queueEmpty: {
+    en: "No submissions in your queue.",
+    fil: "Walang laman ang iyong queue.",
+  },
+  startReview: { en: "Start Review", fil: "Simulan ang Pagsusuri" },
+  requestInfo: { en: "Request Info", fil: "Humingi ng Impormasyon" },
+  approveLabel: { en: "Approve", fil: "Aprubahan" },
+  rejectLabel: { en: "Reject", fil: "Tanggihan" },
+  markReady: { en: "Mark Ready for Release", fil: "Markahang Handa nang Kunin" },
+  markReleased: { en: "Mark Released", fil: "Markahang Nailabas" },
+  segregationNotice: {
+    en: "You moved this submission to review, so a different approver must decide on it.",
+    fil: "Ikaw ang naglipat nito sa pagsusuri, kaya ibang approver ang dapat magpasya.",
+  },
+  ageLabel: { en: "Age", fil: "Tagal" },
+  daysLabel: { en: "day(s)", fil: "araw" },
+
+  // ── Admin console ────────────────────────────────────────────────────────
+  adminDashboardTitle: { en: "Admin Console", fil: "Admin Console" },
+  adminUsersTitle: { en: "User Management", fil: "Pamamahala ng User" },
+  adminSubmissionsTitle: { en: "All Submissions", fil: "Lahat ng Isinumite" },
+  adminOfficesTitle: { en: "Offices & Categories", fil: "Mga Tanggapan at Kategorya" },
+  adminContentTitle: { en: "Tenant Content", fil: "Nilalaman ng Tenant" },
+  createUserTitle: { en: "Create Staff / Admin Account", fil: "Gumawa ng Staff / Admin Account" },
+  roleLabel: { en: "Role", fil: "Role" },
+  canApproveLabel: { en: "Can approve", fil: "Maaaring mag-apruba" },
+  activeLabel: { en: "Active", fil: "Aktibo" },
+  deactivatedLabel: { en: "Deactivated", fil: "Deactivated" },
+  deactivateLabel: { en: "Deactivate", fil: "I-deactivate" },
+  activateLabel: { en: "Activate", fil: "I-activate" },
+  assignedOffices: { en: "Assigned offices", fil: "Mga nakatalagang tanggapan" },
+  allOffices: { en: "All offices", fil: "Lahat ng tanggapan" },
+  allStatusesLabel: { en: "All statuses", fil: "Lahat ng status" },
+  officesReadOnlyNote: {
+    en: "Offices are currently seeded from the tenant configuration file. Full CRUD management is planned for a later phase.",
+    fil: "Ang mga tanggapan ay kasalukuyang galing sa tenant configuration file. Ang buong CRUD management ay nakaplano sa susunod na phase.",
+  },
+  contentReadOnlyNote: {
+    en: "Read-only view of the non-form tenant configuration. Editing via UI is planned for a later phase — edit config/tenants/*.config.ts to change these values.",
+    fil: "Read-only na view ng tenant configuration. Ang pag-edit sa UI ay nakaplano sa susunod na phase — i-edit ang config/tenants/*.config.ts upang baguhin ang mga ito.",
+  },
 };

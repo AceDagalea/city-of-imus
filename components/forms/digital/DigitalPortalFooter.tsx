@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Facebook, Youtube, Mail, Phone } from "lucide-react";
 import { ImusWordmark } from "@/components/shared/ImusLogo";
+import NationalLegalStrip from "@/components/layout/NationalLegalStrip";
 import { CONTACT } from "@/lib/constants";
 
 const QUICK_LINKS = [
@@ -21,19 +22,19 @@ export default function DigitalPortalFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-imus-navy text-white">
+    <footer className="bg-tenant-navy text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <ImusWordmark size="lg" onDark />
-            <p className="mt-1 text-xs text-imus-green">Cavite</p>
+            <p className="mt-1 text-xs text-tenant-green">Cavite</p>
             <p className="mt-4 text-sm leading-relaxed text-white/70">{CONTACT.address}</p>
             <div className="mt-4 flex gap-2">
               <a
                 href={CONTACT.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white/10 p-2.5 hover:bg-imus-green hover:text-imus-navy focus-ring"
+                className="rounded-full bg-white/10 p-2.5 hover:bg-tenant-green hover:text-tenant-navy focus-ring"
                 aria-label="Facebook"
               >
                 <Facebook className="h-4 w-4" />
@@ -42,14 +43,14 @@ export default function DigitalPortalFooter() {
                 href={`https://www.youtube.com/watch?v=${CONTACT.youtubeId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-white/10 p-2.5 hover:bg-imus-green hover:text-imus-navy focus-ring"
+                className="rounded-full bg-white/10 p-2.5 hover:bg-tenant-green hover:text-tenant-navy focus-ring"
                 aria-label="YouTube"
               >
                 <Youtube className="h-4 w-4" />
               </a>
               <a
                 href={`mailto:${CONTACT.email}`}
-                className="rounded-full bg-white/10 p-2.5 hover:bg-imus-green hover:text-imus-navy focus-ring"
+                className="rounded-full bg-white/10 p-2.5 hover:bg-tenant-green hover:text-tenant-navy focus-ring"
                 aria-label="Email"
               >
                 <Mail className="h-4 w-4" />
@@ -58,7 +59,7 @@ export default function DigitalPortalFooter() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-imus-green">Quick Links</h3>
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-tenant-green">Quick Links</h3>
             <ul className="space-y-2 text-sm text-white/70">
               {QUICK_LINKS.map((link) => (
                 <li key={link.href}>
@@ -71,7 +72,7 @@ export default function DigitalPortalFooter() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-imus-green">Other Resources</h3>
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-tenant-green">Other Resources</h3>
             <ul className="space-y-2 text-sm text-white/70">
               {RESOURCES.map((link) => (
                 <li key={link.href}>
@@ -84,16 +85,16 @@ export default function DigitalPortalFooter() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-imus-green">Contact Us</h3>
+            <h3 className="mb-4 text-xs font-bold uppercase tracking-wider text-tenant-green">Contact Us</h3>
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 shrink-0 text-imus-green" />
+                <Phone className="h-4 w-4 shrink-0 text-tenant-green" />
                 <a href={`tel:${CONTACT.mainLines[0].replace(/\D/g, "")}`} className="hover:text-white">
                   {CONTACT.mainLines[0]}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 shrink-0 text-imus-green" />
+                <Mail className="h-4 w-4 shrink-0 text-tenant-green" />
                 <a href={`mailto:${CONTACT.email}`} className="hover:text-white">
                   {CONTACT.email}
                 </a>
@@ -103,6 +104,7 @@ export default function DigitalPortalFooter() {
           </div>
         </div>
       </div>
+      <NationalLegalStrip />
       <div className="border-t border-white/10 py-5 text-center text-xs text-white/50">
         © {year} City Government of Imus. All rights reserved.
       </div>

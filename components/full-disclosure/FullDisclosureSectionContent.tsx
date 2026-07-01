@@ -65,7 +65,7 @@ function FullDisclosureSectionInner({ sectionId }: FullDisclosureSectionContentP
 
 export default function FullDisclosureSectionContent(props: FullDisclosureSectionContentProps) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-imus-gray pt-32" />}>
+    <Suspense fallback={<div className="min-h-screen bg-tenant-gray pt-32" />}>
       <FullDisclosureSectionInner {...props} />
     </Suspense>
   );

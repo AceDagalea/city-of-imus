@@ -15,7 +15,7 @@ export default function MayorMessageSection() {
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <h2
           id="mayor-message-heading"
-          className="mb-8 text-center text-sm font-bold uppercase tracking-[0.2em] text-imus-navy md:text-left"
+          className="mb-8 text-center text-sm font-bold uppercase tracking-[0.2em] text-tenant-navy md:text-left"
         >
           {STRINGS.mayorMessage[language]}
         </h2>
@@ -35,18 +35,18 @@ export default function MayorMessageSection() {
           </div>
 
           <div className="md:col-span-8 lg:col-span-9">
-            <h3 className="font-heading text-xl font-bold text-imus-navy md:text-2xl">
+            <h3 className="font-heading text-xl font-bold text-tenant-navy md:text-2xl">
               {STRINGS.mayorName[language]}
             </h3>
-            <p className="mt-1 text-sm font-semibold text-imus-red">{STRINGS.mayorTitle[language]}</p>
-            <blockquote className="mt-6 border-l-4 border-imus-green pl-5">
-              <p className="text-base italic leading-relaxed text-imus-navy/85 md:text-lg">
+            <p className="mt-1 text-sm font-semibold text-tenant-red">{STRINGS.mayorTitle[language]}</p>
+            <blockquote className="mt-6 border-l-4 border-tenant-green pl-5">
+              <p className="text-base italic leading-relaxed text-tenant-navy/85 md:text-lg">
                 &ldquo;{STRINGS.mayorQuote[language]}&rdquo;
               </p>
             </blockquote>
             <Link
               href="/about/mayor"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg border-2 border-imus-navy px-5 py-2.5 text-sm font-semibold text-imus-navy transition-colors hover:bg-imus-navy hover:text-white focus-ring"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg border-2 border-tenant-navy px-5 py-2.5 text-sm font-semibold text-tenant-navy transition-colors hover:bg-tenant-navy hover:text-white focus-ring"
             >
               {language === "fil" ? "Basahin ang Buong Mensahe" : "Read Full Message"}
               <ArrowRight className="h-4 w-4" />

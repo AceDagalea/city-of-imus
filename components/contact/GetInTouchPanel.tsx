@@ -18,17 +18,17 @@ export default function GetInTouchPanel() {
   return (
     <div className="flex flex-col gap-4">
       <div className="rounded-xl bg-white p-6 shadow-card ring-1 ring-gray-100">
-        <h2 className="font-heading text-xl font-bold text-imus-navy">
+        <h2 className="font-heading text-xl font-bold text-tenant-navy">
           {language === "fil" ? "Makipag-ugnayan" : "Get in Touch"}
         </h2>
 
         <div className="mt-6 space-y-6">
           <div className="flex gap-4">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-imus-navy text-white">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tenant-navy text-white">
               <MapPin className="h-5 w-5" aria-hidden="true" />
             </div>
             <div>
-              <p className="font-semibold text-imus-navy">City Government Center</p>
+              <p className="font-semibold text-tenant-navy">City Government Center</p>
               <address className="mt-1 not-italic text-sm leading-relaxed text-gray-600">
                 {CONTACT.address}
               </address>
@@ -36,11 +36,11 @@ export default function GetInTouchPanel() {
           </div>
 
           <div className="flex gap-4">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-imus-navy text-white">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tenant-navy text-white">
               <Clock className="h-5 w-5" aria-hidden="true" />
             </div>
             <div>
-              <p className="font-semibold text-imus-navy">
+              <p className="font-semibold text-tenant-navy">
                 {language === "fil" ? "Oras ng Opisina" : "Office Hours"}
               </p>
               <ul className="mt-1 space-y-0.5 text-sm text-gray-600">
@@ -52,11 +52,11 @@ export default function GetInTouchPanel() {
           </div>
 
           <div className="flex gap-4">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-imus-navy text-white">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tenant-navy text-white">
               <Phone className="h-5 w-5" aria-hidden="true" />
             </div>
             <div>
-              <p className="font-semibold text-imus-navy">
+              <p className="font-semibold text-tenant-navy">
                 {language === "fil" ? "Main Lines" : "Main Lines"}
               </p>
               <div className="mt-1 space-y-0.5">
@@ -64,7 +64,7 @@ export default function GetInTouchPanel() {
                   <a
                     key={line}
                     href={formatTel(line)}
-                    className="block text-sm font-medium text-gray-700 transition-colors hover:text-imus-red focus-ring rounded-sm"
+                    className="block text-sm font-medium text-gray-700 transition-colors hover:text-tenant-red focus-ring rounded-sm"
                   >
                     {line}
                   </a>
@@ -75,7 +75,7 @@ export default function GetInTouchPanel() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden rounded-xl bg-imus-red p-6 text-white shadow-card">
+      <div className="relative overflow-hidden rounded-xl bg-tenant-red p-6 text-white shadow-card">
         <div className="relative z-10">
           <p className="text-sm font-medium text-white/90">
             {language === "fil" ? "Emergency Hotline" : "Emergency Hotline"}

@@ -83,8 +83,8 @@ export default function SearchModal({ open, onClose, initialQuery = "" }: Search
                 {QUICK_LINKS.map((link) => {
                   const Icon = link.icon;
                   const content = (
-                    <span className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-imus-navy hover:bg-imus-gray">
-                      <Icon className="h-4 w-4 text-imus-red" />
+                    <span className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-tenant-navy hover:bg-tenant-gray">
+                      <Icon className="h-4 w-4 text-tenant-red" />
                       {t(link.label, language)}
                     </span>
                   );
@@ -103,7 +103,7 @@ export default function SearchModal({ open, onClose, initialQuery = "" }: Search
                 {NAV_ITEMS.filter((n) => n.label.en !== "Home").map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} onClick={onClose}>
-                      <span className="block rounded-lg px-3 py-2.5 text-sm text-imus-navy hover:bg-imus-gray">
+                      <span className="block rounded-lg px-3 py-2.5 text-sm text-tenant-navy hover:bg-tenant-gray">
                         {t(item.label, language)}
                       </span>
                     </Link>
@@ -122,9 +122,9 @@ export default function SearchModal({ open, onClose, initialQuery = "" }: Search
                         <Link
                           href={form.mode === "online" ? `/forms/${form.slug}` : "/forms"}
                           onClick={onClose}
-                          className="block rounded-lg px-3 py-2 text-sm hover:bg-imus-gray"
+                          className="block rounded-lg px-3 py-2 text-sm hover:bg-tenant-gray"
                         >
-                          <span className="font-medium text-imus-navy">{t(form.name, language)}</span>
+                          <span className="font-medium text-tenant-navy">{t(form.name, language)}</span>
                           <span className="ml-2 text-xs text-gray-400">{form.mode}</span>
                         </Link>
                       </li>
@@ -138,7 +138,7 @@ export default function SearchModal({ open, onClose, initialQuery = "" }: Search
                   <ul className="space-y-1">
                     {serviceResults.map((s) => (
                       <li key={s.label.en}>
-                        <Link href={s.href} onClick={onClose} className="block rounded-lg px-3 py-2 text-sm text-imus-navy hover:bg-imus-gray">
+                        <Link href={s.href} onClick={onClose} className="block rounded-lg px-3 py-2 text-sm text-tenant-navy hover:bg-tenant-gray">
                           {t(s.label, language)}
                         </Link>
                       </li>

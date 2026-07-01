@@ -24,7 +24,7 @@ export default function GovernmentPageHero({
   const crumb = breadcrumbLabel ?? title;
 
   return (
-    <section className="relative overflow-hidden bg-imus-navy" aria-labelledby="gov-page-hero-heading">
+    <section className="relative overflow-hidden bg-tenant-navy" aria-labelledby="gov-page-hero-heading">
       <div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
         <Image
           src={HERO_IMAGE}
@@ -34,7 +34,7 @@ export default function GovernmentPageHero({
           sizes="50vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-imus-navy via-imus-navy/80 to-imus-navy/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-tenant-navy via-tenant-navy/80 to-tenant-navy/20" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-12">
@@ -55,7 +55,7 @@ export default function GovernmentPageHero({
           >
             {t(title, language)}
           </h1>
-          <div className="mt-4 h-1 w-14 rounded-full bg-imus-green" aria-hidden="true" />
+          <div className="mt-4 h-1 w-14 rounded-full bg-tenant-green" aria-hidden="true" />
           <p className="mt-4 max-w-xl text-white/80">{t(subtitle, language)}</p>
         </motion.div>
       </div>

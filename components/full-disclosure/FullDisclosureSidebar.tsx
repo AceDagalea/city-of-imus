@@ -44,7 +44,7 @@ export default function FullDisclosureSidebar({ activeSectionId }: FullDisclosur
 
   return (
     <aside className="lg:sticky lg:top-32 lg:self-start">
-      <p className="mb-3 px-1 text-[11px] font-bold uppercase tracking-[0.2em] text-imus-navy/45">
+      <p className="mb-3 px-1 text-[11px] font-bold uppercase tracking-[0.2em] text-tenant-navy/45">
         {language === "fil" ? "Transparency" : "Transparency"}
       </p>
 
@@ -60,22 +60,22 @@ export default function FullDisclosureSidebar({ activeSectionId }: FullDisclosur
               href={href}
               className={`flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-left text-sm transition-colors focus-ring ${
                 isActive
-                  ? "bg-imus-navy font-medium text-white"
-                  : "text-imus-navy hover:bg-imus-gray"
+                  ? "bg-tenant-navy font-medium text-white"
+                  : "text-tenant-navy hover:bg-tenant-gray"
               }`}
             >
-              <Icon className={`h-4 w-4 shrink-0 ${isActive ? "text-imus-green" : "text-imus-red"}`} />
+              <Icon className={`h-4 w-4 shrink-0 ${isActive ? "text-tenant-green" : "text-tenant-red"}`} />
               {t(section.label, language)}
             </Link>
           );
         })}
       </nav>
 
-      <div className="mt-4 rounded-xl bg-imus-sky/60 p-4 text-sm ring-1 ring-imus-navy/5">
+      <div className="mt-4 rounded-xl bg-tenant-sky/60 p-4 text-sm ring-1 ring-tenant-navy/5">
         <div className="flex items-start gap-2">
-          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-imus-navy" aria-hidden="true" />
+          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-tenant-navy" aria-hidden="true" />
           <div>
-            <p className="font-semibold text-imus-navy">Full Disclosure Policy</p>
+            <p className="font-semibold text-tenant-navy">Full Disclosure Policy</p>
             <p className="mt-1 text-gray-600">
               {language === "fil"
                 ? "Alinsunod sa DILG Memorandum Circular at Local Government Code."
@@ -83,7 +83,7 @@ export default function FullDisclosureSidebar({ activeSectionId }: FullDisclosur
             </p>
             <Link
               href="/full-disclosure/financial"
-              className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+              className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
             >
               {language === "fil" ? "Alamin pa" : "Learn more"}
               <ArrowRight className="h-3.5 w-3.5" />
@@ -93,7 +93,7 @@ export default function FullDisclosureSidebar({ activeSectionId }: FullDisclosur
       </div>
 
       <div className="mt-4 rounded-xl border border-gray-100 bg-white p-4 text-sm shadow-sm">
-        <p className="font-semibold text-imus-navy">
+        <p className="font-semibold text-tenant-navy">
           {language === "fil" ? "Kailangan ng Tulong?" : "Need Help?"}
         </p>
         <p className="mt-1 text-gray-600">
@@ -103,21 +103,21 @@ export default function FullDisclosureSidebar({ activeSectionId }: FullDisclosur
         </p>
         <a
           href={`tel:${CONTACT.mainLines[0].replace(/\D/g, "")}`}
-          className="mt-3 flex items-center gap-2 text-sm font-medium text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+          className="mt-3 flex items-center gap-2 text-sm font-medium text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
         >
-          <Phone className="h-4 w-4 shrink-0 text-imus-red" />
+          <Phone className="h-4 w-4 shrink-0 text-tenant-red" />
           {CONTACT.mainLines[0]}
         </a>
         <a
           href={`mailto:${CONTACT.email}`}
-          className="mt-2 flex items-center gap-2 text-sm font-medium text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+          className="mt-2 flex items-center gap-2 text-sm font-medium text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
         >
-          <Mail className="h-4 w-4 shrink-0 text-imus-red" />
+          <Mail className="h-4 w-4 shrink-0 text-tenant-red" />
           {CONTACT.email}
         </a>
         <Link
           href="/contact"
-          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+          className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
         >
           {language === "fil" ? "Bisitahin ang Help Center" : "Visit Help Center"}
           <ArrowRight className="h-3.5 w-3.5" />

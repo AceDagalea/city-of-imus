@@ -55,13 +55,13 @@ export default function AboutStatsSection() {
   return (
     <section
       id="at-a-glance"
-      className="bg-imus-gray py-12 md:py-16"
+      className="bg-tenant-gray py-12 md:py-16"
       aria-labelledby="at-a-glance-heading"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div
           ref={ref}
-          className="overflow-hidden rounded-2xl bg-gradient-to-br from-imus-green to-imus-greenDark shadow-float"
+          className="overflow-hidden rounded-2xl bg-gradient-to-br from-tenant-green to-tenant-greenDark shadow-float"
         >
           <div className="border-b border-white/15 px-6 py-5 md:px-8">
             <h2

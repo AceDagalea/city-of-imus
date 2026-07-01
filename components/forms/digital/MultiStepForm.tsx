@@ -155,13 +155,13 @@ export default function MultiStepForm({
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             href="/forms#track"
-            className="rounded-lg bg-imus-navy px-6 py-2.5 text-sm font-semibold text-white hover:bg-imus-navyDark focus-ring"
+            className="rounded-lg bg-tenant-navy px-6 py-2.5 text-sm font-semibold text-white hover:bg-tenant-navyDark focus-ring"
           >
             Track Application
           </Link>
           <Link
             href="/forms"
-            className="rounded-lg border-2 border-imus-navy px-6 py-2.5 text-sm font-semibold text-imus-navy hover:bg-imus-gray focus-ring"
+            className="rounded-lg border-2 border-tenant-navy px-6 py-2.5 text-sm font-semibold text-tenant-navy hover:bg-tenant-gray focus-ring"
           >
             Back to Services
           </Link>
@@ -177,10 +177,10 @@ export default function MultiStepForm({
       <FormStepper steps={steps} currentStep={currentStep} />
 
       <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-card md:p-8">
-        <p className="text-sm font-medium text-imus-red">
+        <p className="text-sm font-medium text-tenant-red">
           Step {currentStep + 1} of {steps.length}
         </p>
-        <h2 className="mt-1 font-heading text-2xl font-bold text-imus-navy">{step.title}</h2>
+        <h2 className="mt-1 font-heading text-2xl font-bold text-tenant-navy">{step.title}</h2>
         <p className="mt-2 text-sm text-gray-500">{step.description}</p>
 
         {isReview ? (
@@ -189,7 +189,7 @@ export default function MultiStepForm({
               {allFields.map((field) => (
                 <div key={field.id} className="grid gap-1 px-4 py-3 sm:grid-cols-3">
                   <dt className="text-sm font-medium text-gray-500">{t(field.label)}</dt>
-                  <dd className="text-sm text-imus-navy sm:col-span-2">
+                  <dd className="text-sm text-tenant-navy sm:col-span-2">
                     {field.type === "file"
                       ? files[field.id]?.name ?? values[field.id] ?? "—"
                       : values[field.id] || "—"}
@@ -197,12 +197,12 @@ export default function MultiStepForm({
                 </div>
               ))}
             </dl>
-            <label className="flex items-start gap-3 rounded-lg bg-imus-gray p-4">
+            <label className="flex items-start gap-3 rounded-lg bg-tenant-gray p-4">
               <input
                 type="checkbox"
                 checked={agreed}
                 onChange={(e) => setAgreed(e.target.checked)}
-                className="mt-0.5 h-4 w-4 rounded border-gray-300 text-imus-navy focus:ring-imus-navy"
+                className="mt-0.5 h-4 w-4 rounded border-gray-300 text-tenant-navy focus:ring-tenant-navy"
               />
               <span className="text-sm text-gray-600">
                 I certify that all information provided is true and correct. I agree to the Data
@@ -228,7 +228,19 @@ export default function MultiStepForm({
         {errorMsg && (
           <div className="mt-4 flex items-center gap-2 rounded-lg bg-red-50 p-3 text-sm text-red-700">
             <AlertCircle className="h-4 w-4 shrink-0" />
-            {errorMsg}
+            <span>
+              {errorMsg}{" "}
+              {/sign in/i.test(errorMsg) && (
+                <Link href="/login" className="font-semibold underline">
+                  Sign in
+                </Link>
+              )}
+              {/verify your email/i.test(errorMsg) && (
+                <Link href="/verify" className="font-semibold underline">
+                  Verify email
+                </Link>
+              )}
+            </span>
           </div>
         )}
 
@@ -236,7 +248,7 @@ export default function MultiStepForm({
           {currentStep === 0 ? (
             <Link
               href="/forms"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-600 transition-colors hover:bg-imus-gray focus-ring"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-600 transition-colors hover:bg-tenant-gray focus-ring"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Forms
@@ -245,7 +257,7 @@ export default function MultiStepForm({
             <button
               type="button"
               onClick={goBack}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-600 transition-colors hover:bg-imus-gray focus-ring"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-gray-600 transition-colors hover:bg-tenant-gray focus-ring"
             >
               <ArrowLeft className="h-4 w-4" />
               Back
@@ -256,7 +268,7 @@ export default function MultiStepForm({
             <button
               type="button"
               onClick={saveDraft}
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-imus-navy transition-colors hover:bg-imus-gray focus-ring"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-semibold text-tenant-navy transition-colors hover:bg-tenant-gray focus-ring"
             >
               <Save className="h-4 w-4" />
               Save as Draft
@@ -266,7 +278,7 @@ export default function MultiStepForm({
                 type="button"
                 onClick={handleSubmit}
                 disabled={status === "submitting"}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-imus-navy px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-imus-navyDark disabled:opacity-60 focus-ring"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-tenant-navy px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tenant-navyDark disabled:opacity-60 focus-ring"
               >
                 {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" />}
                 Submit Application
@@ -275,7 +287,7 @@ export default function MultiStepForm({
               <button
                 type="button"
                 onClick={goNext}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-imus-navy px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-imus-navyDark focus-ring"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-tenant-navy px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tenant-navyDark focus-ring"
               >
                 Next
                 <ArrowRight className="h-4 w-4" />

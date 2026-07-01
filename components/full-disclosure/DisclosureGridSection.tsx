@@ -78,11 +78,11 @@ export default function DisclosureGridSection({
     <div className="min-w-0 max-w-full overflow-x-hidden">
       <div className="mb-8 flex flex-col gap-6 border-b border-gray-100 pb-8 md:flex-row md:items-start md:justify-between">
         <div className="flex gap-4">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-imus-navy text-white shadow-md">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-tenant-navy text-white shadow-md">
             <Icon className="h-6 w-6" aria-hidden="true" />
           </div>
           <div>
-            <h2 className="font-heading text-2xl font-bold text-imus-navy md:text-3xl">
+            <h2 className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl">
               {config.title[lang]}
             </h2>
             <p className="mt-2 max-w-xl text-sm leading-relaxed text-gray-600 md:text-base">
@@ -104,7 +104,7 @@ export default function DisclosureGridSection({
               resetPage();
             }}
             placeholder={config.searchPlaceholder[lang]}
-            className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition-shadow focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20"
+            className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition-shadow focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20"
           />
         </div>
         <div className="flex w-full min-w-0 flex-col gap-3 sm:flex-row">
@@ -120,7 +120,7 @@ export default function DisclosureGridSection({
                   setYearFilter(e.target.value);
                   resetPage();
                 }}
-                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-imus-navy shadow-sm focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20 sm:w-auto sm:min-w-[140px]"
+                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-tenant-navy shadow-sm focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20 sm:w-auto sm:min-w-[140px]"
               >
                 <option value="all">{language === "fil" ? "Lahat ng Taon" : "All Years"}</option>
                 {years.map((year) => (
@@ -143,7 +143,7 @@ export default function DisclosureGridSection({
                   setCategoryFilter(e.target.value);
                   resetPage();
                 }}
-                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-imus-navy shadow-sm focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20 sm:w-auto sm:min-w-[160px]"
+                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-tenant-navy shadow-sm focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20 sm:w-auto sm:min-w-[160px]"
               >
                 <option value="all">{language === "fil" ? "Lahat ng Kategorya" : "All Categories"}</option>
                 {categories.map((category) => (
@@ -169,7 +169,7 @@ export default function DisclosureGridSection({
             <section key={year} aria-labelledby={`${sectionId}-year-${year}`}>
               <h3
                 id={`${sectionId}-year-${year}`}
-                className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-imus-navy/50"
+                className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-tenant-navy/50"
               >
                 {year} {config.groupLabel[lang]}
               </h3>

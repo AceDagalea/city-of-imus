@@ -32,10 +32,10 @@ export default function OrdinanceList({ ordinances }: { ordinances: OrdinanceEnt
               aria-expanded={isOpen}
             >
               <div className="flex-1">
-                <p className="text-xs font-bold uppercase tracking-wide text-imus-green">
+                <p className="text-xs font-bold uppercase tracking-wide text-tenant-green">
                   {item.number}
                 </p>
-                <h3 className="mt-1 font-semibold leading-snug text-imus-navy">{item.title}</h3>
+                <h3 className="mt-1 font-semibold leading-snug text-tenant-navy">{item.title}</h3>
                 {(item.enacted || item.approved) && (
                   <div className="mt-2 flex flex-wrap gap-3 text-xs text-gray-500">
                     {item.enacted && (
@@ -54,7 +54,7 @@ export default function OrdinanceList({ ordinances }: { ordinances: OrdinanceEnt
                 )}
               </div>
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-imus-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
+                className={`h-5 w-5 shrink-0 text-tenant-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
               />
             </button>
           </article>

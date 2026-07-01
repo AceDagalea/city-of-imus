@@ -46,7 +46,7 @@ export default function ServicesPage() {
           { label: STRINGS.servicesTitle[language] },
         ]}
       />
-      <div className="bg-imus-gray">
+      <div className="bg-tenant-gray">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6">
 
         {SERVICE_CATEGORIES.map((category, catIndex) => (
@@ -61,9 +61,9 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-6 font-heading text-2xl font-bold text-imus-navy"
+              className="mb-6 font-heading text-2xl font-bold text-tenant-navy"
             >
-              <span className="border-b-4 border-imus-green pb-1">
+              <span className="border-b-4 border-tenant-green pb-1">
                 {t(category.title, language)}
               </span>
             </motion.h2>
@@ -81,16 +81,16 @@ export default function ServicesPage() {
                     viewport={{ once: true }}
                     transition={{ delay: (catIndex + index) * 0.05 }}
                     className={`flex flex-col rounded-xl bg-white p-6 shadow-md transition-shadow hover:shadow-lg ${
-                      isFeatured ? "ring-2 ring-imus-green" : ""
+                      isFeatured ? "ring-2 ring-tenant-green" : ""
                     }`}
                   >
                     {isFeatured && (
-                      <span className="mb-3 inline-block w-fit rounded-full bg-imus-green px-3 py-1 text-xs font-semibold text-imus-navy">
+                      <span className="mb-3 inline-block w-fit rounded-full bg-tenant-green px-3 py-1 text-xs font-semibold text-tenant-navy">
                         Featured
                       </span>
                     )}
-                    <Icon className="mb-4 h-10 w-10 text-imus-red" aria-hidden="true" />
-                    <h3 className="text-lg font-semibold text-imus-navy">
+                    <Icon className="mb-4 h-10 w-10 text-tenant-red" aria-hidden="true" />
+                    <h3 className="text-lg font-semibold text-tenant-navy">
                       {t(service.title, language)}
                     </h3>
                     <p className="mt-2 flex-1 text-sm text-gray-600">

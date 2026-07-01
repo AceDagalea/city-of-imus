@@ -25,7 +25,7 @@ export default function EmergencyBanner() {
 
   return (
     <div
-      className="sticky top-0 z-[60] flex items-center justify-center gap-3 bg-imus-red px-4 py-2 text-white"
+      className="sticky top-0 z-[60] flex items-center justify-center gap-3 bg-tenant-red px-4 py-2 text-white"
       role="alert"
     >
       <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />

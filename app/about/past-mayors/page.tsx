@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function PastMayorsPage() {
   return (
-    <div className="bg-imus-gray">
+    <div className="bg-tenant-gray">
       <GovernmentPageHero title={PAST_MAYORS_HERO.title} subtitle={PAST_MAYORS_HERO.subtitle} />
       <GovernmentPageLayout activeId="past-mayors">
         <PastMayorsContent />

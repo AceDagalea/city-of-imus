@@ -18,7 +18,7 @@ export default function MayorMessage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 text-center font-heading text-3xl font-bold text-imus-navy"
+          className="mb-10 text-center font-heading text-3xl font-bold text-tenant-navy"
         >
           {STRINGS.mayorMessage[language]}
         </motion.h2>
@@ -40,10 +40,10 @@ export default function MayorMessage() {
                 loading="lazy"
               />
             </div>
-            <h3 className="mt-4 font-heading text-xl font-bold text-imus-navy">
+            <h3 className="mt-4 font-heading text-xl font-bold text-tenant-navy">
               {STRINGS.mayorName[language]}
             </h3>
-            <p className="text-sm text-imus-red">{STRINGS.mayorTitle[language]}</p>
+            <p className="text-sm text-tenant-red">{STRINGS.mayorTitle[language]}</p>
           </motion.div>
 
           <motion.div
@@ -51,8 +51,8 @@ export default function MayorMessage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <blockquote className="relative border-l-4 border-imus-green pl-6">
-              <p className="font-heading text-lg italic leading-relaxed text-imus-navy/90 md:text-xl">
+            <blockquote className="relative border-l-4 border-tenant-green pl-6">
+              <p className="font-heading text-lg italic leading-relaxed text-tenant-navy/90 md:text-xl">
                 &ldquo;{STRINGS.mayorQuote[language]}&rdquo;
               </p>
             </blockquote>

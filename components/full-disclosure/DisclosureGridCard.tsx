@@ -34,10 +34,10 @@ export default function DisclosureGridCard({
   const badgeOnImage = showBadgeOnThumbnail(sectionId) && document.badge && hasThumbnail;
 
   return (
-    <article className="group flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-imus-navy/15 hover:shadow-lg">
+    <article className="group flex h-full min-h-[340px] flex-col overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-tenant-navy/15 hover:shadow-lg">
       <Link href={href} className="flex h-full flex-col focus-ring rounded-xl">
         <div
-          className={`relative ${GRID_THUMBNAIL_HEIGHT} shrink-0 overflow-hidden border-b border-gray-100 bg-imus-gray`}
+          className={`relative ${GRID_THUMBNAIL_HEIGHT} shrink-0 overflow-hidden border-b border-gray-100 bg-tenant-gray`}
         >
           {hasThumbnail && thumbnailFit !== "icon" ? (
             <Image
@@ -52,9 +52,9 @@ export default function DisclosureGridCard({
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 280px"
             />
           ) : (
-            <div className="flex h-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-imus-sky/30 to-white px-4 py-6 text-center">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-imus-navy/10">
-                <FileText className="h-6 w-6 text-imus-navy/50" aria-hidden="true" />
+            <div className="flex h-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-tenant-sky/30 to-white px-4 py-6 text-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-tenant-navy/10">
+                <FileText className="h-6 w-6 text-tenant-navy/50" aria-hidden="true" />
               </div>
             </div>
           )}
@@ -78,7 +78,7 @@ export default function DisclosureGridCard({
             </p>
           )}
 
-          <h3 className="line-clamp-3 min-h-[3.75rem] break-words font-heading text-sm font-bold leading-snug text-imus-navy md:text-base">
+          <h3 className="line-clamp-3 min-h-[3.75rem] break-words font-heading text-sm font-bold leading-snug text-tenant-navy md:text-base">
             {document.title}
           </h3>
 
@@ -89,7 +89,7 @@ export default function DisclosureGridCard({
 
           {showPages && pageCount > 0 && (
             <p className="mt-1 flex items-center gap-1.5 text-xs text-gray-500">
-              <FileText className="h-3.5 w-3.5 shrink-0 text-imus-navy/50" aria-hidden="true" />
+              <FileText className="h-3.5 w-3.5 shrink-0 text-tenant-navy/50" aria-hidden="true" />
               {pageCount}{" "}
               {language === "fil"
                 ? pageCount === 1
@@ -101,7 +101,7 @@ export default function DisclosureGridCard({
             </p>
           )}
 
-          <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-imus-navy transition-colors group-hover:text-imus-red">
+          <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-semibold text-tenant-navy transition-colors group-hover:text-tenant-red">
             {language === "fil" ? readLabel.fil : readLabel.en}
             <ArrowRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
           </span>

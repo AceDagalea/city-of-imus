@@ -18,7 +18,7 @@ export default function MayorProfileHero() {
       aria-labelledby="mayor-profile-heading"
     >
       <div className="grid md:grid-cols-[minmax(0,340px)_minmax(0,1fr)]">
-        <div className="relative min-h-[320px] bg-imus-gray md:min-h-[380px]">
+        <div className="relative min-h-[320px] bg-tenant-gray md:min-h-[380px]">
           <Image
             src={MAYOR_PROFILE_PHOTO}
             alt={`${MAYOR_DISPLAY_NAME}, City Mayor of Imus`}
@@ -30,12 +30,12 @@ export default function MayorProfileHero() {
         </div>
 
         <div className="flex flex-col justify-center bg-[linear-gradient(135deg,#f8fafc_0%,#eef4fb_100%)] p-6 md:p-10">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-imus-green">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-tenant-green">
             {language === "fil" ? "Punong Lungsod" : "City Mayor"}
           </p>
           <h1
             id="mayor-profile-heading"
-            className="mt-3 font-heading text-2xl font-extrabold uppercase leading-tight text-imus-navy md:text-3xl lg:text-4xl"
+            className="mt-3 font-heading text-2xl font-extrabold uppercase leading-tight text-tenant-navy md:text-3xl lg:text-4xl"
           >
             {MAYOR_DISPLAY_NAME}
           </h1>

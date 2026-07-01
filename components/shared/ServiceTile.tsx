@@ -36,13 +36,13 @@ export default function ServiceTile({ icon, label, href, external = false }: Ser
   const Icon = iconMap[icon] || Briefcase;
   const [pressed, setPressed] = useState(false);
 
-  const className = `flex min-w-[140px] flex-col items-center gap-3 rounded-xl bg-imus-navy p-4 transition-all duration-200 hover:bg-imus-navyDark focus-ring ${
+  const className = `flex min-w-[140px] flex-col items-center gap-3 rounded-xl bg-tenant-navy p-4 transition-all duration-200 hover:bg-tenant-navyDark focus-ring ${
     pressed ? "scale-95" : ""
   }`;
 
   const content = (
     <>
-      <Icon className="h-7 w-7 text-imus-green" aria-hidden="true" />
+      <Icon className="h-7 w-7 text-tenant-green" aria-hidden="true" />
       <span className="text-center text-sm font-medium text-white">{label}</span>
     </>
   );

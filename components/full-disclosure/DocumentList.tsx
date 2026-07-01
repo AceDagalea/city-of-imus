@@ -40,7 +40,7 @@ export default function DocumentList({ documents }: { documents: DisclosureDocum
               aria-expanded={isOpen}
             >
               <div className="flex-1">
-                <h3 className="font-semibold text-imus-navy leading-snug">{doc.title}</h3>
+                <h3 className="font-semibold text-tenant-navy leading-snug">{doc.title}</h3>
                 <div className="mt-2 flex flex-wrap gap-3 text-xs text-gray-500">
                   <span className="flex items-center gap-1">
                     <Calendar className="h-3.5 w-3.5" />
@@ -55,7 +55,7 @@ export default function DocumentList({ documents }: { documents: DisclosureDocum
                 </div>
               </div>
               <ChevronDown
-                className={`h-5 w-5 shrink-0 text-imus-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
+                className={`h-5 w-5 shrink-0 text-tenant-navy transition-transform ${isOpen ? "rotate-180" : ""}`}
               />
             </button>
 
@@ -68,7 +68,7 @@ export default function DocumentList({ documents }: { documents: DisclosureDocum
                   href={doc.pdfUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-imus-navy px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-imus-navyDark focus-ring"
+                  className="inline-flex items-center gap-2 rounded-full bg-tenant-navy px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-tenant-navyDark focus-ring"
                 >
                   <Download className="h-4 w-4" />
                   {language === "fil" ? "I-download ang PDF" : "Download PDF"}

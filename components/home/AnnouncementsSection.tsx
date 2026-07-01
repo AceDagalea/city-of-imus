@@ -67,13 +67,13 @@ export default function AnnouncementsSection() {
           className="mb-8 flex flex-wrap items-end justify-between gap-4"
         >
           <div className="flex items-start gap-3">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-imus-navy text-white shadow-sm">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-tenant-navy text-white shadow-sm">
               <Megaphone className="h-5 w-5" aria-hidden="true" />
             </div>
             <div>
               <h2
                 id="home-announcements-heading"
-                className="font-heading text-2xl font-bold text-imus-navy md:text-3xl"
+                className="font-heading text-2xl font-bold text-tenant-navy md:text-3xl"
               >
                 {language === "fil" ? "Mga Anunsyo" : "Announcements"}
               </h2>
@@ -86,7 +86,7 @@ export default function AnnouncementsSection() {
           </div>
           <Link
             href="/news#announcements"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-imus-red transition-colors hover:text-imus-navy focus-ring rounded-sm"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-tenant-red transition-colors hover:text-tenant-navy focus-ring rounded-sm"
           >
             {language === "fil" ? "Lahat ng Anunsyo" : "View All Announcements"}
             <ArrowRight className="h-4 w-4" />
@@ -97,7 +97,7 @@ export default function AnnouncementsSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="overflow-hidden rounded-2xl border border-imus-skyDark bg-imus-sky shadow-card"
+          className="overflow-hidden rounded-2xl border border-tenant-skyDark bg-tenant-sky shadow-card"
         >
           <div className="grid lg:grid-cols-5">
             <div className="relative aspect-[16/9] lg:col-span-2 lg:aspect-auto lg:min-h-[280px]">
@@ -109,23 +109,23 @@ export default function AnnouncementsSection() {
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
               />
-              <span className="absolute left-4 top-4 rounded-full bg-imus-red px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
+              <span className="absolute left-4 top-4 rounded-full bg-tenant-red px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white">
                 {language === "fil" ? "Pinakabago" : "Latest"}
               </span>
             </div>
             <div className="flex flex-col justify-center p-6 lg:col-span-3 lg:p-8">
-              <time className="text-xs font-semibold uppercase tracking-wider text-imus-navy/50">
+              <time className="text-xs font-semibold uppercase tracking-wider text-tenant-navy/50">
                 {formatDate(featured.date, lang)}
               </time>
-              <h3 className="mt-2 font-heading text-xl font-bold text-imus-navy md:text-2xl">
+              <h3 className="mt-2 font-heading text-xl font-bold text-tenant-navy md:text-2xl">
                 {t(featured.title, language)}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-imus-navy/75 md:text-base">
+              <p className="mt-3 text-sm leading-relaxed text-tenant-navy/75 md:text-base">
                 {t(featured.excerpt, language)}
               </p>
               <AnnouncementCta
                 item={featured}
-                className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-imus-red transition-colors hover:text-imus-navy focus-ring rounded-sm"
+                className="mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-tenant-red transition-colors hover:text-tenant-navy focus-ring rounded-sm"
               >
                 {STRINGS.readMore[language]}
                 <ArrowRight className="h-4 w-4" />
@@ -155,10 +155,10 @@ export default function AnnouncementsSection() {
                   />
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col p-4">
-                  <time className="text-[10px] font-semibold uppercase tracking-wider text-imus-navy/50">
+                  <time className="text-[10px] font-semibold uppercase tracking-wider text-tenant-navy/50">
                     {formatDate(item.date, lang)}
                   </time>
-                  <h3 className="mt-1 font-heading text-sm font-bold text-imus-navy line-clamp-2 sm:text-base">
+                  <h3 className="mt-1 font-heading text-sm font-bold text-tenant-navy line-clamp-2 sm:text-base">
                     {t(item.title, language)}
                   </h3>
                   <p className="mt-1.5 flex-1 text-xs leading-relaxed text-gray-600 line-clamp-2 sm:text-sm">
@@ -166,7 +166,7 @@ export default function AnnouncementsSection() {
                   </p>
                   <AnnouncementCta
                     item={item}
-                    className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-imus-red transition-colors hover:text-imus-navy focus-ring rounded-sm sm:text-sm"
+                    className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-tenant-red transition-colors hover:text-tenant-navy focus-ring rounded-sm sm:text-sm"
                   >
                     {STRINGS.readMore[language]}
                     <ArrowRight className="h-3.5 w-3.5" />

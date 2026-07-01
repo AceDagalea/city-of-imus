@@ -19,9 +19,9 @@ export default function FormStepper({ steps, currentStep }: FormStepperProps) {
                   <div
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-bold transition-colors ${
                       isActive
-                        ? "bg-imus-navy text-white shadow-md"
+                        ? "bg-tenant-navy text-white shadow-md"
                         : isComplete
-                          ? "bg-imus-navy/15 text-imus-navy"
+                          ? "bg-tenant-navy/15 text-tenant-navy"
                           : "bg-gray-100 text-gray-400"
                     }`}
                   >
@@ -29,14 +29,14 @@ export default function FormStepper({ steps, currentStep }: FormStepperProps) {
                   </div>
                   {!isLast && (
                     <div
-                      className={`mx-1 h-0.5 flex-1 ${isComplete ? "bg-imus-navy/30" : "bg-gray-200"}`}
+                      className={`mx-1 h-0.5 flex-1 ${isComplete ? "bg-tenant-navy/30" : "bg-gray-200"}`}
                       aria-hidden="true"
                     />
                   )}
                 </div>
                 <p
                   className={`mt-2 hidden text-center text-[11px] font-medium leading-tight sm:block ${
-                    isActive ? "text-imus-navy" : "text-gray-400"
+                    isActive ? "text-tenant-navy" : "text-gray-400"
                   }`}
                 >
                   {step.title}
@@ -46,7 +46,7 @@ export default function FormStepper({ steps, currentStep }: FormStepperProps) {
           );
         })}
       </div>
-      <p className="mt-4 text-center text-xs font-medium text-imus-navy sm:hidden">
+      <p className="mt-4 text-center text-xs font-medium text-tenant-navy sm:hidden">
         Step {currentStep + 1} of {steps.length}: {steps[currentStep]?.title}
       </p>
     </div>

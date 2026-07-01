@@ -24,8 +24,8 @@ export default function ContactMap() {
       />
 
       <div className="absolute left-4 top-4 z-10 max-w-[220px] rounded-lg bg-white p-3 shadow-md ring-1 ring-gray-100">
-        <p className="flex items-start gap-2 text-xs font-semibold text-imus-navy">
-          <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-imus-red" aria-hidden="true" />
+        <p className="flex items-start gap-2 text-xs font-semibold text-tenant-navy">
+          <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-tenant-red" aria-hidden="true" />
           <span>New Imus City Hall</span>
         </p>
         <p className="mt-1 pl-5 text-[11px] leading-snug text-gray-600">{CONTACT.address}</p>
@@ -33,7 +33,7 @@ export default function ContactMap() {
           href={DIRECTIONS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-2 inline-block pl-5 text-xs font-semibold text-imus-green transition-colors hover:text-imus-greenDark focus-ring rounded-sm"
+          className="mt-2 inline-block pl-5 text-xs font-semibold text-tenant-green transition-colors hover:text-tenant-greenDark focus-ring rounded-sm"
         >
           {language === "fil" ? "Direksyon →" : "Directions →"}
         </a>

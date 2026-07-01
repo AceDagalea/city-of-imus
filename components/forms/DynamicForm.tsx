@@ -58,7 +58,7 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-6 rounded-full bg-imus-navy px-6 py-2 text-sm text-white hover:bg-imus-navyDark focus-ring"
+          className="mt-6 rounded-full bg-tenant-navy px-6 py-2 text-sm text-white hover:bg-tenant-navyDark focus-ring"
         >
           {language === "fil" ? "Mag-submit ng Isa Pa" : "Submit Another"}
         </button>
@@ -70,9 +70,9 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
     <form onSubmit={handleSubmit} className="space-y-6">
       {fields.map((field) => (
         <div key={field.id}>
-          <label htmlFor={field.id} className="mb-1.5 block text-sm font-medium text-imus-navy">
+          <label htmlFor={field.id} className="mb-1.5 block text-sm font-medium text-tenant-navy">
             {t(field.label, language)}
-            {field.required && <span className="text-imus-red"> *</span>}
+            {field.required && <span className="text-tenant-red"> *</span>}
           </label>
 
           {field.type === "textarea" ? (
@@ -82,14 +82,14 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
               required={field.required}
               rows={4}
               placeholder={field.placeholder ? t(field.placeholder, language) : undefined}
-              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm transition-colors focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm transition-colors focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20"
             />
           ) : field.type === "select" ? (
             <select
               id={field.id}
               name={field.id}
               required={field.required}
-              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20"
             >
               <option value="">{language === "fil" ? "Pumili..." : "Select..."}</option>
               {field.options?.map((opt) => (
@@ -105,7 +105,7 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
                 name={field.id}
                 type="checkbox"
                 required={field.required}
-                className="h-4 w-4 rounded border-gray-300 text-imus-navy focus:ring-imus-green"
+                className="h-4 w-4 rounded border-gray-300 text-tenant-navy focus:ring-tenant-green"
               />
               <span className="text-sm text-gray-600">
                 {field.placeholder ? t(field.placeholder, language) : t(field.label, language)}
@@ -118,7 +118,7 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
               type="file"
               required={field.required}
               accept=".pdf,.jpg,.jpeg,.png"
-              className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm file:mr-4 file:rounded-full file:border-0 file:bg-imus-navy file:px-4 file:py-1 file:text-sm file:text-white"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm file:mr-4 file:rounded-full file:border-0 file:bg-tenant-navy file:px-4 file:py-1 file:text-sm file:text-white"
             />
           ) : (
             <input
@@ -127,7 +127,7 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
               type={field.type}
               required={field.required}
               placeholder={field.placeholder ? t(field.placeholder, language) : undefined}
-              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm transition-colors focus:border-imus-navy focus:outline-none focus:ring-2 focus:ring-imus-navy/20"
+              className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm transition-colors focus:border-tenant-navy focus:outline-none focus:ring-2 focus:ring-tenant-navy/20"
             />
           )}
 
@@ -137,13 +137,13 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
         </div>
       ))}
 
-      <div className="rounded-lg bg-imus-gray p-4">
+      <div className="rounded-lg bg-tenant-gray p-4">
         <label className="flex items-start gap-2">
           <input
             name="agreement"
             type="checkbox"
             required
-            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-imus-navy focus:ring-imus-green"
+            className="mt-0.5 h-4 w-4 rounded border-gray-300 text-tenant-navy focus:ring-tenant-green"
           />
           <span className="text-sm text-gray-600">
             {language === "fil"
@@ -163,7 +163,7 @@ export default function DynamicForm({ fields, formSlug, formName }: DynamicFormP
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-imus-green px-8 py-3 font-semibold text-imus-navy transition-colors hover:bg-imus-greenDark disabled:opacity-60 focus-ring sm:w-auto"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-tenant-green px-8 py-3 font-semibold text-tenant-navy transition-colors hover:bg-tenant-greenDark disabled:opacity-60 focus-ring sm:w-auto"
       >
         {status === "submitting" && <Loader2 className="h-5 w-5 animate-spin" />}
         {language === "fil" ? "I-submit ang Aplikasyon" : "Submit Application"}

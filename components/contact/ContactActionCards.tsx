@@ -13,7 +13,7 @@ import { CONTACT_ACTIONS } from "@/lib/contact";
 import { t } from "@/lib/i18n";
 
 const ACCENT_STYLES = {
-  green: "bg-imus-green/15 text-imus-greenDark",
+  green: "bg-tenant-green/15 text-tenant-greenDark",
   blue: "bg-blue-100 text-blue-700",
   teal: "bg-teal-100 text-teal-700",
   violet: "bg-violet-100 text-violet-700",
@@ -46,7 +46,7 @@ export default function ContactActionCards() {
             >
               <Icon className="h-5 w-5" aria-hidden="true" />
             </div>
-            <h3 className="font-heading text-base font-bold text-imus-navy">
+            <h3 className="font-heading text-base font-bold text-tenant-navy">
               {t(action.title, lang)}
             </h3>
             <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
@@ -55,7 +55,7 @@ export default function ContactActionCards() {
             {isExternal ? (
               <a
                 href={action.href}
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
               >
                 {t(action.cta, lang)}
                 <ArrowRight className="h-4 w-4" />
@@ -63,7 +63,7 @@ export default function ContactActionCards() {
             ) : (
               <Link
                 href={action.href}
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-imus-navy transition-colors hover:text-imus-red focus-ring rounded-sm"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-sm"
               >
                 {t(action.cta, lang)}
                 <ArrowRight className="h-4 w-4" />

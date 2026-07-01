@@ -38,11 +38,11 @@ export default function DepartmentsTableSection() {
   return (
     <div className="min-w-0">
       <div className="mb-6 flex items-start gap-3">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-imus-green/15 text-imus-greenDark">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-tenant-green/15 text-tenant-greenDark">
           <Building2 className="h-6 w-6" aria-hidden="true" />
         </div>
         <div>
-          <h2 className="font-heading text-2xl font-bold text-imus-navy">
+          <h2 className="font-heading text-2xl font-bold text-tenant-navy">
             {language === "fil" ? "Mga Departamento at Yunit" : "Departments and Units"}
           </h2>
           <p className="mt-1 text-sm text-gray-500">
@@ -74,7 +74,7 @@ export default function DepartmentsTableSection() {
                 ? "Maghanap ng tanggapan, departamento, o opisyal..."
                 : "Search office, department, or official..."
             }
-            className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm text-imus-navy shadow-sm outline-none focus:border-imus-green focus:ring-2 focus:ring-imus-green/20"
+            className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-10 pr-4 text-sm text-tenant-navy shadow-sm outline-none focus:border-tenant-green focus:ring-2 focus:ring-tenant-green/20"
           />
         </label>
 
@@ -86,7 +86,7 @@ export default function DepartmentsTableSection() {
               setFloor(e.target.value as DepartmentFloorFilter);
               setPage(1);
             }}
-            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-imus-navy shadow-sm focus:border-imus-green focus:outline-none focus:ring-2 focus:ring-imus-green/20"
+            className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-tenant-navy shadow-sm focus:border-tenant-green focus:outline-none focus:ring-2 focus:ring-tenant-green/20"
           >
             {DEPARTMENT_FLOOR_ORDER.map((option) => (
               <option key={option} value={option}>
@@ -114,8 +114,8 @@ export default function DepartmentsTableSection() {
               }}
               className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors focus-ring ${
                 isActive
-                  ? "bg-imus-navy text-white shadow-sm"
-                  : "border border-gray-200 bg-white text-imus-navy hover:border-imus-green/40 hover:bg-imus-gray"
+                  ? "bg-tenant-navy text-white shadow-sm"
+                  : "border border-gray-200 bg-white text-tenant-navy hover:border-tenant-green/40 hover:bg-tenant-gray"
               }`}
             >
               {option === "All Floors"
@@ -132,7 +132,7 @@ export default function DepartmentsTableSection() {
         <div className="overflow-x-auto">
           <table className="min-w-full text-left text-sm">
             <thead>
-              <tr className="bg-imus-navy text-xs font-bold uppercase tracking-wider text-white">
+              <tr className="bg-tenant-navy text-xs font-bold uppercase tracking-wider text-white">
                 <th className="px-4 py-3 md:px-5">
                   {language === "fil" ? "Departamento / Yunit" : "Department / Unit"}
                 </th>
@@ -157,7 +157,7 @@ export default function DepartmentsTableSection() {
               ) : (
                 pageItems.map((dept, index) => {
                   const iconStyle = getDepartmentIconStyle(dept.id);
-                  const rowBg = index % 2 === 0 ? "bg-white" : "bg-imus-gray/60";
+                  const rowBg = index % 2 === 0 ? "bg-white" : "bg-tenant-gray/60";
 
                   return (
                     <tr key={dept.id} className={`${rowBg} border-t border-gray-100`}>
@@ -173,25 +173,25 @@ export default function DepartmentsTableSection() {
                               href={dept.detailUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="font-semibold text-imus-navy hover:text-imus-green focus-ring rounded-sm"
+                              className="font-semibold text-tenant-navy hover:text-tenant-green focus-ring rounded-sm"
                             >
                               {dept.name}
                             </a>
                           ) : (
-                            <span className="font-semibold text-imus-navy">{dept.name}</span>
+                            <span className="font-semibold text-tenant-navy">{dept.name}</span>
                           )}
                         </div>
                       </td>
                       <td className="px-4 py-3.5 text-gray-700 md:px-5">{dept.headOfOffice}</td>
                       <td className="px-4 py-3.5 text-gray-700 md:px-5">
                         <span className="inline-flex items-center gap-1.5">
-                          <DoorOpen className="h-3.5 w-3.5 text-imus-navy/50" aria-hidden="true" />
+                          <DoorOpen className="h-3.5 w-3.5 text-tenant-navy/50" aria-hidden="true" />
                           {dept.room}
                         </span>
                       </td>
                       <td className="px-4 py-3.5 text-gray-700 md:px-5">
                         <span className="inline-flex items-center gap-1.5">
-                          <Building2 className="h-3.5 w-3.5 text-imus-green" aria-hidden="true" />
+                          <Building2 className="h-3.5 w-3.5 text-tenant-green" aria-hidden="true" />
                           {dept.floor}
                         </span>
                       </td>
@@ -226,7 +226,7 @@ export default function DepartmentsTableSection() {
           href="https://www.cityofimus.gov.ph/departments-and-units.html"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-imus-green hover:underline focus-ring rounded-sm"
+          className="text-tenant-green hover:underline focus-ring rounded-sm"
         >
           cityofimus.gov.ph/departments-and-units
         </Link>

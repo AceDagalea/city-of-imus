@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply font-body text-imus-navy antialiased;
+    @apply font-body text-tenant-navy antialiased;
   }
 
   h1,
@@ -23,11 +23,11 @@
 
 @layer utilities {
   .focus-ring {
-    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-imus-green focus-visible:ring-offset-2;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-tenant-green focus-visible:ring-offset-2;
   }
 
   .skip-link {
-    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-imus-green focus:px-4 focus:py-2 focus:text-imus-navy focus:font-semibold;
+    @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-tenant-green focus:px-4 focus:py-2 focus:text-tenant-navy focus:font-semibold;
   }
 }
 
@@ -41,4 +41,21 @@
   main {
     padding-top: 0 !important;
   }
+}
+
+/* High-contrast mode (accessibility control in the national utility bar).
+   Boosts text contrast, underlines links, and strengthens focus outlines to
+   help meet WCAG AA for government websites. */
+.a11y-contrast body {
+  color: #0a0a0a;
+}
+
+.a11y-contrast a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.a11y-contrast :focus-visible {
+  outline: 3px solid #000 !important;
+  outline-offset: 2px;
 }

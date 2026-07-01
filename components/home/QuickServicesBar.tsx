@@ -10,7 +10,7 @@ export default function QuickServicesBar() {
   const { language } = useLanguage();
 
   return (
-    <section className="bg-imus-gray py-8" aria-label="Quick services">
+    <section className="bg-tenant-gray py-8" aria-label="Quick services">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin">
           {QUICK_SERVICES.map((service, index) => (

@@ -28,7 +28,7 @@ export default function DisclosureTable({ items, columns, tableVariant }: Disclo
     <div className="overflow-hidden rounded-xl border border-gray-100 bg-white shadow-md">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[640px] text-left text-sm">
-          <thead className="bg-imus-navy text-white">
+          <thead className="bg-tenant-navy text-white">
             <tr>
               {columns.map((col) => (
                 <th key={col.key} className="px-4 py-3 font-semibold">
@@ -48,13 +48,13 @@ export default function DisclosureTable({ items, columns, tableVariant }: Disclo
           </thead>
           <tbody className="divide-y divide-gray-100">
             {items.map((item) => (
-              <tr key={item.id} className="transition-colors hover:bg-imus-sky/30">
+              <tr key={item.id} className="transition-colors hover:bg-tenant-sky/30">
                 {columns.map((col) => (
-                  <td key={col.key} className="px-4 py-3.5 align-top text-imus-navy">
+                  <td key={col.key} className="px-4 py-3.5 align-top text-tenant-navy">
                     {col.key === "title" && useHtmlLinks ? (
                       <Link
                         href={getBanaagHtmlUrl(item.id)}
-                        className="font-medium text-imus-navy underline decoration-imus-navy/30 underline-offset-2 transition-colors hover:text-imus-red hover:decoration-imus-red focus-ring rounded-sm"
+                        className="font-medium text-tenant-navy underline decoration-tenant-navy/30 underline-offset-2 transition-colors hover:text-tenant-red hover:decoration-tenant-red focus-ring rounded-sm"
                       >
                         {item.title}
                       </Link>
@@ -67,7 +67,7 @@ export default function DisclosureTable({ items, columns, tableVariant }: Disclo
                   {useHtmlLinks ? (
                     <Link
                       href={getBanaagHtmlUrl(item.id)}
-                      className="inline-flex items-center gap-1.5 rounded-full bg-imus-navy px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-imus-navyDark focus-ring"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-tenant-navy px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-tenant-navyDark focus-ring"
                     >
                       <ExternalLink className="h-3.5 w-3.5" />
                       {language === "fil" ? "HTML" : "HTML"}
@@ -77,7 +77,7 @@ export default function DisclosureTable({ items, columns, tableVariant }: Disclo
                       href={item.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-imus-navy px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-imus-navyDark focus-ring"
+                      className="inline-flex items-center gap-1.5 rounded-full bg-tenant-navy px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-tenant-navyDark focus-ring"
                     >
                       <Download className="h-3.5 w-3.5" />
                       PDF

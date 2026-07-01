@@ -50,14 +50,14 @@ export default function Navbar() {
                   href={item.href}
                   className={`flex items-center gap-0.5 px-2.5 py-2 text-sm font-medium transition-colors duration-200 focus-ring rounded-md xl:px-3 ${
                     isNavActive(pathname, item.href)
-                      ? "border-b-2 border-imus-green text-imus-navy"
-                      : "text-imus-navy hover:text-imus-red"
+                      ? "border-b-2 border-tenant-green text-tenant-navy"
+                      : "text-tenant-navy hover:text-tenant-red"
                   }`}
                   aria-current={isNavActive(pathname, item.href) ? "page" : undefined}
                 >
                   {t(item.label, language)}
                   {item.children.length > 0 && (
-                    <ChevronDown className="h-3.5 w-3.5 text-imus-navy/50" aria-hidden="true" />
+                    <ChevronDown className="h-3.5 w-3.5 text-tenant-navy/50" aria-hidden="true" />
                   )}
                 </Link>
                 {item.children.length > 0 && (
@@ -76,7 +76,7 @@ export default function Navbar() {
                             href={child.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="block border-l-4 border-transparent px-4 py-2 text-sm text-imus-navy transition-colors hover:border-imus-green hover:bg-imus-gray focus-ring"
+                            className="block border-l-4 border-transparent px-4 py-2 text-sm text-tenant-navy transition-colors hover:border-tenant-green hover:bg-tenant-gray focus-ring"
                             role="menuitem"
                           >
                             {t(child.label, language)}
@@ -84,7 +84,7 @@ export default function Navbar() {
                         ) : (
                           <Link
                             href={child.href}
-                            className="block border-l-4 border-transparent px-4 py-2 text-sm text-imus-navy transition-colors hover:border-imus-green hover:bg-imus-gray focus-ring"
+                            className="block border-l-4 border-transparent px-4 py-2 text-sm text-tenant-navy transition-colors hover:border-tenant-green hover:bg-tenant-gray focus-ring"
                             role="menuitem"
                           >
                             {t(child.label, language)}
@@ -101,13 +101,13 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-imus-navy text-white transition-colors hover:bg-imus-navyDark focus-ring"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-tenant-navy text-white transition-colors hover:bg-tenant-navyDark focus-ring"
               aria-label={STRINGS.search[language]}
             >
               <Search className="h-4 w-4" />
             </button>
             <button
-              className="rounded-md p-2 text-imus-navy lg:hidden focus-ring"
+              className="rounded-md p-2 text-tenant-navy lg:hidden focus-ring"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
@@ -136,7 +136,7 @@ export default function Navbar() {
             <ImusWordmark size="md" />
             <button
               onClick={() => setMobileOpen(false)}
-              className="rounded-md p-2 text-imus-navy focus-ring"
+              className="rounded-md p-2 text-tenant-navy focus-ring"
               aria-label="Close menu"
             >
               <X className="h-6 w-6" />
@@ -149,7 +149,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block rounded-md px-3 py-3 font-medium text-imus-navy hover:bg-imus-gray focus-ring"
+                    className="block rounded-md px-3 py-3 font-medium text-tenant-navy hover:bg-tenant-gray focus-ring"
                   >
                     {t(item.label, language)}
                   </Link>
@@ -163,7 +163,7 @@ export default function Navbar() {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={() => setMobileOpen(false)}
-                              className="block rounded-md px-3 py-2 text-sm text-imus-navy/70 hover:text-imus-red focus-ring"
+                              className="block rounded-md px-3 py-2 text-sm text-tenant-navy/70 hover:text-tenant-red focus-ring"
                             >
                               {t(child.label, language)}
                             </a>
@@ -171,7 +171,7 @@ export default function Navbar() {
                             <Link
                               href={child.href}
                               onClick={() => setMobileOpen(false)}
-                              className="block rounded-md px-3 py-2 text-sm text-imus-navy/70 hover:text-imus-red focus-ring"
+                              className="block rounded-md px-3 py-2 text-sm text-tenant-navy/70 hover:text-tenant-red focus-ring"
                             >
                               {t(child.label, language)}
                             </Link>

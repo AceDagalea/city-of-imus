@@ -10,14 +10,14 @@ export default function CityStats() {
   const { language } = useLanguage();
 
   return (
-    <section className="bg-imus-gray py-16" aria-labelledby="stats-heading">
+    <section className="bg-tenant-gray py-16" aria-labelledby="stats-heading">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <motion.h2
           id="stats-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-8 text-center font-heading text-3xl font-bold text-imus-navy"
+          className="mb-8 text-center font-heading text-3xl font-bold text-tenant-navy"
         >
           {STRINGS.cityStatistics[language]}
         </motion.h2>

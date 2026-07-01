@@ -12,7 +12,7 @@ export default function ContactPage() {
     <>
       <ContactHero />
 
-      <div className="bg-imus-gray">
+      <div className="bg-tenant-gray">
         <div className="mx-auto max-w-7xl px-4 py-10 md:px-6 md:py-12">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:items-stretch">
             <GetInTouchPanel />

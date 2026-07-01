@@ -91,7 +91,7 @@ export const GAD_CATEGORY_STYLES: Record<string, string> = {
   Demography: "bg-blue-100 text-blue-800",
   Education: "bg-violet-100 text-violet-800",
   CSWDO: "bg-orange-100 text-orange-800",
-  OSCA: "bg-imus-navy/10 text-imus-navy",
+  OSCA: "bg-tenant-navy/10 text-tenant-navy",
   PDAO: "bg-teal-100 text-teal-800",
-  Publication: "bg-imus-green/15 text-imus-greenDark",
+  Publication: "bg-tenant-green/15 text-tenant-greenDark",
 };
