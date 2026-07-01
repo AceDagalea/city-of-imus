@@ -58,15 +58,13 @@ export default function FormsSidebar() {
       <div className="rounded-xl border border-gray-100 bg-tenant-sky/50 p-5">
         <h2 className="font-semibold text-tenant-navy">Registered Already?</h2>
         <p className="mt-1 text-sm text-gray-600">Sign in to view your applications and saved drafts.</p>
-        <a
-          href={CONTACT.eboss}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/login"
           className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-tenant-navy bg-white px-4 py-2.5 text-sm font-semibold text-tenant-navy transition-colors hover:bg-tenant-navy hover:text-white focus-ring"
         >
           <User className="h-4 w-4" />
           Login / Register
-        </a>
+        </Link>
       </div>
 
       <div className="rounded-xl border border-gray-100 bg-white p-5 shadow-card">

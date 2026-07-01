@@ -5,13 +5,12 @@ import Link from "next/link";
 import { ChevronDown, User, Menu, X } from "lucide-react";
 import ImusLogo from "@/components/shared/ImusLogo";
 import NationalBar from "@/components/layout/NationalBar";
-import { CONTACT } from "@/lib/constants";
 
 const NAV = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/forms", children: [{ label: "All Services", href: "/forms" }, { label: "Business Permits", href: "/forms?tab=businesses" }] },
   { label: "Track Application", href: "/forms#track" },
-  { label: "My Dashboard", href: "/forms#dashboard" },
+  { label: "My Dashboard", href: "/citizen/dashboard" },
 ];
 
 export default function DigitalPortalHeader() {
@@ -79,15 +78,13 @@ export default function DigitalPortalHeader() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <a
-              href={CONTACT.eboss}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/login"
               className="hidden items-center gap-2 rounded-full bg-tenant-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tenant-navyDark focus-ring sm:inline-flex"
             >
               <User className="h-4 w-4" />
               Login / Register
-            </a>
+            </Link>
             <button
               className="rounded-md p-2 text-tenant-navy lg:hidden focus-ring"
               onClick={() => setMobileOpen(true)}
