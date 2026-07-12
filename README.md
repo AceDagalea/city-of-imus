@@ -26,14 +26,49 @@ A modern redesign proposal for the [City Government of Imus](https://www.cityofi
 - Node.js 18+
 - npm
 
-### Install & run
+### First-time setup (after cloning)
+
+The database file (`prisma/dev.db`) and `.env` are **not** in Git. Every new clone needs these steps once:
 
 ```bash
+# 1. Install dependencies (also runs `prisma generate` via postinstall)
 npm install
+
+# 2. Create local environment file
+cp .env.local.example .env
+# On Windows PowerShell:
+#   Copy-Item .env.local.example .env
+
+# 3. Set AUTH_SECRET in .env (required for login). Generate one with:
+#   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+# Replace the "replace-me" value in .env with the output.
+
+# 4. Create the SQLite database and seed the admin account
+npm run db:setup
+```
+
+Then start the dev server:
+
+```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) (or the next available port if 3000 is in use).
+
+### Default login (after `npm run db:seed`)
+
+| Role | Email | Password |
+|------|-------|----------|
+| Admin | `admin@imus.gov.ph` | `ChangeMe@2026` |
+
+Citizens can self-register at `/register` (verification link is printed in the terminal — email is stubbed in local dev).
+
+If login fails with **“@prisma/client did not initialize yet”**, run:
+
+```bash
+npx prisma generate
+npm run db:setup
+```
 
 ### Production build
 

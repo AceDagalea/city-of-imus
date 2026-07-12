@@ -1,5 +1,10 @@
 import type { NextAuthConfig } from "next-auth";
 
+/** Secure cookies require HTTPS — plain http://localhost must stay non-secure. */
+const useSecureCookies =
+  process.env.AUTH_URL?.startsWith("https://") === true ||
+  process.env.NEXTAUTH_URL?.startsWith("https://") === true;
+
 /**
  * Edge-safe Auth.js config (no Prisma/bcrypt imports) shared by the middleware
  * and the full server config in `auth.ts`. Providers are added in `auth.ts` —
@@ -12,11 +17,29 @@ export const authConfig = {
   pages: {
     signIn: "/login",
   },
-  session: { strategy: "jwt" },
+  session: {
+    strategy: "jwt",
+    // Keep users signed in for 30 days across visits (default is also 30d;
+    // explicit here so middleware and API routes share the same maxAge).
+    maxAge: 30 * 24 * 60 * 60,
+    updateAge: 24 * 60 * 60,
+  },
+  cookies: {
+    sessionToken: {
+      name: useSecureCookies ? "__Secure-authjs.session-token" : "authjs.session-token",
+      options: {
+        httpOnly: true,
+        sameSite: "lax",
+        path: "/",
+        secure: useSecureCookies,
+      },
+    },
+  },
   callbacks: {
     // Persist role/permission claims in the JWT at sign-in.
     jwt({ token, user }) {
       if (user) {
+        token.sub = user.id;
         token.role = user.role;
         token.canApprove = user.canApprove;
         token.officeIds = user.officeIds;
@@ -29,34 +52,14 @@ export const authConfig = {
     session({ session, token }) {
       if (session.user) {
         session.user.id = token.sub ?? "";
-        session.user.role = token.role;
-        session.user.canApprove = token.canApprove;
-        session.user.officeIds = token.officeIds;
-        session.user.verified = token.verified;
-        session.user.firstName = token.firstName;
-        session.user.lastName = token.lastName;
+        session.user.role = token.role as string;
+        session.user.canApprove = Boolean(token.canApprove);
+        session.user.officeIds = (token.officeIds as string[]) ?? [];
+        session.user.verified = Boolean(token.verified);
+        session.user.firstName = (token.firstName as string) ?? "";
+        session.user.lastName = (token.lastName as string) ?? "";
       }
       return session;
-    },
-    // Route protection for /admin/*, /staff/*, /citizen/* (middleware matcher).
-    authorized({ auth, request }) {
-      const user = auth?.user;
-      if (!user) return false; // → redirect to /login
-
-      const path = request.nextUrl.pathname;
-      const role = user.role;
-
-      const allowed =
-        (path.startsWith("/admin") && role === "ADMIN") ||
-        (path.startsWith("/staff") && (role === "STAFF" || role === "ADMIN")) ||
-        (path.startsWith("/citizen") && (role === "CITIZEN" || role === "ADMIN"));
-
-      if (allowed) return true;
-
-      // Authenticated but wrong role — send to their own home.
-      const home =
-        role === "ADMIN" ? "/admin" : role === "STAFF" ? "/staff/queue" : "/citizen/dashboard";
-      return Response.redirect(new URL(home, request.nextUrl));
     },
   },
   providers: [], // filled in by auth.ts

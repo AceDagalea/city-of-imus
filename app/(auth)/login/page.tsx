@@ -2,7 +2,7 @@
 
 import { useState, Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useLanguage } from "@/context/LanguageContext";
 import { STRINGS, t } from "@/lib/i18n";
@@ -15,7 +15,6 @@ const CONSOLE_HOME: Record<string, string> = {
 
 function LoginForm() {
   const { language } = useLanguage();
-  const router = useRouter();
   const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,13 +36,12 @@ function LoginForm() {
       return;
     }
 
-    // Route by role: the middleware redirects wrong-role visits, but landing on
-    // the right console directly is nicer.
+    // Full page navigation ensures the session cookie is committed before the
+    // middleware runs on the destination (router.push can race the Set-Cookie).
     const session = await fetch("/api/auth/session").then((r) => r.json());
     const role: string = session?.user?.role ?? "CITIZEN";
     const callbackUrl = searchParams.get("callbackUrl");
-    router.push(callbackUrl ?? CONSOLE_HOME[role] ?? "/citizen/dashboard");
-    router.refresh();
+    window.location.assign(callbackUrl ?? CONSOLE_HOME[role] ?? "/citizen/dashboard");
   }
 
   return (

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LGU Website Template — Project Documentation</title>
+  <style>
+    :root {
+      --gov-blue: #0038a8;
+      --gov-blue-dark: #002868;
+      --gov-red: #ce1126;
+      --gov-gold: #fcd116;
+      --navy: #1a3668;
+      --green: #39a843;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
+      --step-bg: #eff6ff;
+      --step-border: #3b82f6;
+      --warn-bg: #fffbeb;
+      --warn-border: #f59e0b;
+      --ok-bg: #ecfdf5;
+      --ok-border: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
+      color: var(--gray-800);
+      background: var(--gray-50);
+    }
+
+    /* ── Header ── */
+    .top-bar {
+      background: linear-gradient(135deg, var(--gov-blue) 0%, var(--gov-blue-dark) 100%);
+      color: #fff;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+    .top-bar-inner { max-width: 960px; margin: 0 auto; }
+    .top-bar .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      padding: .25rem .85rem;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .top-bar h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 700; margin-bottom: .5rem; }
+    .top-bar p { opacity: .88; max-width: 640px; font-size: 1.05rem; }
+    .top-bar a { color: var(--gov-gold); }
+
+    /* ── Layout ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.04);
+      padding: 1.75rem 2rem;
+      margin-top: 1.75rem;
+    }
+    .card:first-of-type { margin-top: -1.5rem; }
+
+    h2 {
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    h3 { font-size: 1.05rem; color: var(--navy); margin: 1.25rem 0 .6rem; }
+    p { margin-bottom: .75rem; color: var(--gray-600); }
+    ul, ol { margin: .5rem 0 1rem 1.25rem; color: var(--gray-600); }
+    li { margin-bottom: .35rem; }
+    a { color: var(--gov-blue); }
+    code {
+      background: var(--gray-100);
+      padding: .15rem .45rem;
+      border-radius: 4px;
+      font-size: .88em;
+      font-family: Consolas, "Courier New", monospace;
+    }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: .85rem;
+      line-height: 1.5;
+      margin: .75rem 0 1rem;
+    }
+    pre code { background: none; padding: 0; color: inherit; }
+
+    /* ── Highlighted steps ── */
+    .steps { list-style: none; margin: 1rem 0; padding: 0; counter-reset: step; }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 1rem 1rem 1rem 3.5rem;
+      margin-bottom: .75rem;
+      background: var(--step-bg);
+      border-left: 4px solid var(--step-border);
+      border-radius: 0 8px 8px 0;
+      color: var(--gray-800);
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: .85rem;
+      top: .85rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      background: var(--step-border);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .85rem;
+    }
+    .steps li strong { display: block; color: var(--navy); margin-bottom: .25rem; }
+
+    /* ── Phase cards ── */
+    .phase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .phase {
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      background: var(--gray-50);
+    }
+    .phase .label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--green);
+      margin-bottom: .35rem;
+    }
+    .phase h4 { font-size: .95rem; color: var(--navy); margin-bottom: .4rem; }
+    .phase p { font-size: .85rem; margin: 0; }
+
+    /* ── Tables ── */
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: .75rem 0 1rem; }
+    th, td { padding: .65rem .85rem; text-align: left; border-bottom: 1px solid var(--gray-200); }
+    th { background: var(--gray-100); font-weight: 600; color: var(--navy); }
+    tr:hover td { background: var(--gray-50); }
+
+    /* ── Alerts ── */
+    .alert {
+      padding: 1rem 1.15rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      font-size: .92rem;
+    }
+    .alert-warn { background: var(--warn-bg); border: 1px solid var(--warn-border); color: #92400e; }
+    .alert-ok { background: var(--ok-bg); border: 1px solid var(--ok-border); color: #065f46; }
+    .alert-info { background: var(--step-bg); border: 1px solid var(--step-border); color: #1e40af; }
+
+    /* ── TOC ── */
+    .toc { columns: 2; column-gap: 2rem; }
+    .toc a { display: block; padding: .25rem 0; text-decoration: none; font-size: .92rem; }
+    .toc a:hover { text-decoration: underline; }
+
+    /* ── Route pills ── */
+    .route { display: inline-block; background: var(--gray-100); padding: .2rem .55rem; border-radius: 4px; font-family: Consolas, monospace; font-size: .82rem; margin: .15rem 0; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--gray-600);
+      font-size: .85rem;
+      border-top: 1px solid var(--gray-200);
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .card { padding: 1.25rem; }
+      .toc { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="badge">Republic of the Philippines · LGU Template</div>
+      <h1>City of Imus — White-Label Government Website</h1>
+      <p>
+        Documentation for the multi-phase transformation from a single-city site into a reusable
+        Philippine LGU template with tenant configuration, national design system, database-backed
+        requests, and role-based consoles.
+      </p>
+      <p style="margin-top:.75rem;font-size:.9rem;">
+        Repository: <a href="https://github.com/AceDagalea/city-of-imus">github.com/AceDagalea/city-of-imus</a>
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- TOC -->
+    <div class="card">
+      <h2>Contents</h2>
+      <nav class="toc">
+        <a href="#overview">1. Project Overview</a>
+        <a href="#phases">2. What Was Built (Phases 0–6)</a>
+        <a href="#architecture">3. Architecture Highlights</a>
+        <a href="#setup">4. First-Time Setup (Highlighted Steps)</a>
+        <a href="#env">5. Environment Variables</a>
+        <a href="#database">6. Accessing the Database</a>
+        <a href="#login">7. Login Credentials &amp; Routes</a>
+        <a href="#workflow">8. Request Lifecycle</a>
+        <a href="#troubleshooting">9. Troubleshooting</a>
+        <a href="#scripts">10. NPM Scripts Reference</a>
+      </nav>
+    </div>
+
+    <!-- Overview -->
+    <div class="card" id="overview">
+      <h2>1. Project Overview</h2>
+      <p>
+        This project started as the <strong>City of Imus</strong> government website and was refactored into a
+        <strong>white-label template</strong> any Philippine Local Government Unit (LGU) can re-skin by swapping
+        a tenant configuration file — without rewriting the application core.
+      </p>
+      <table>
+        <tr><th>Item</th><th>Detail</th></tr>
+        <tr><td>Framework</td><td>Next.js 14 (App Router) + TypeScript</td></tr>
+        <tr><td>Styling</td><td>Tailwind CSS — <code>gov.*</code> (national) + <code>tenant.*</code> (LGU branding)</td></tr>
+        <tr><td>Database</td><td>SQLite via Prisma (<code>prisma/dev.db</code>) — swappable to Postgres</td></tr>
+        <tr><td>Authentication</td><td>Auth.js (NextAuth v5) — email + password credentials</td></tr>
+        <tr><td>Validation</td><td>Zod (tenant config + API inputs)</td></tr>
+        <tr><td>i18n</td><td>English + Filipino (<code>en</code> / <code>fil</code>)</td></tr>
+      </table>
+      <div class="alert alert-info">
+        <strong>Not using Supabase.</strong> The database is local SQLite. <code>AUTH_SECRET</code> is generated
+        locally in your <code>.env</code> file — it is not stored in any cloud dashboard.
+      </div>
+    </div>
+
+    <!-- Phases -->
+    <div class="card" id="phases">
+      <h2>2. What Was Built (Phases 0–6)</h2>
+      <div class="phase-grid">
+        <div class="phase">
+          <div class="label">Phase 0</div>
+          <h4>Tenant Configuration Layer</h4>
+          <p>
+            Moved all Imus-specific data from <code>lib/constants.ts</code>, <code>lib/forms.ts</code>, and
+            <code>lib/digital-services.ts</code> into <code>config/tenants/imus.config.ts</code> with a Zod schema
+            and loader. New LGUs copy <code>_template.config.ts</code>.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="label">Phase 1</div>
+          <h4>National Design System</h4>
+          <p>
+            Philippine flag colors (<code>gov.*</code>), CSS-variable tenant theming (<code>tenant.*</code>),
+            national header strip, legal footer, Transparency Seal badge, language toggle, accessibility controls,
+            and <code>/transparency</code> hub page.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="label">Phase 2</div>
+          <h4>Database Layer</h4>
+          <p>
+            Prisma + SQLite. Models: User, Submission, SubmissionEvent, Attachment, VerificationToken.
+            Form submissions persist to DB (no more JSON files). Attachments stay on disk under
+            <code>data/submissions/&lt;referenceNo&gt;/</code>.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="label">Phase 3</div>
+          <h4>Auth &amp; RBAC</h4>
+          <p>
+            Auth.js credentials login, JWT role claims, middleware route protection, citizen registration with
+            required email verification, admin seed script, permission matrix and segregation-of-duties in
+            <code>lib/rbac.ts</code>.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="label">Phase 4</div>
+          <h4>Citizen Console</h4>
+          <p>
+            <code>/citizen/dashboard</code> — list applications, view detail with timeline and attachments,
+            respond to NEEDS_INFO requests with reply text and document uploads.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="label">Phase 5</div>
+          <h4>Staff Console</h4>
+          <p>
+            <code>/staff/queue</code> — office-scoped processing queue grouped by status. Actions: start review,
+            request info, approve, reject, mark ready, mark released. All enforced server-side.
+          </p>
+        </div>
+        <div class="phase">
+          <div class="label">Phase 6</div>
+          <h4>Admin Console</h4>
+          <p>
+            <code>/admin</code> — user management (create staff/admin, assign offices, toggle permissions),
+            all-submissions view with filters, read-only offices and tenant content views.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture -->
+    <div class="card" id="architecture">
+      <h2>3. Architecture Highlights</h2>
+      <h3>Key folders</h3>
+      <table>
+        <tr><th>Path</th><th>Purpose</th></tr>
+        <tr><td><code>config/tenants/imus.config.ts</code></td><td>All Imus-specific site data (branding, forms, nav, content)</td></tr>
+        <tr><td><code>config/tenant.config.ts</code></td><td>Loader — reads <code>TENANT</code> env var, validates with Zod</td></tr>
+        <tr><td><code>prisma/schema.prisma</code></td><td>Database schema</td></tr>
+        <tr><td><code>prisma/dev.db</code></td><td>SQLite database file (gitignored — local only)</td></tr>
+        <tr><td><code>lib/rbac.ts</code></td><td>Role permissions + segregation of duties</td></tr>
+        <tr><td><code>lib/workflow.ts</code></td><td>Submission status lifecycle and transitions</td></tr>
+        <tr><td><code>auth.ts</code> / <code>middleware.ts</code></td><td>Auth.js config and route protection</td></tr>
+        <tr><td><code>components/console/</code></td><td>Shared UI for citizen, staff, and admin consoles</td></tr>
+      </table>
+
+      <h3>Roles</h3>
+      <table>
+        <tr><th>Role</th><th>Access</th></tr>
+        <tr><td><strong>CITIZEN</strong></td><td>Self-register, submit forms (after email verification), view own applications</td></tr>
+        <tr><td><strong>STAFF</strong></td><td>Process submissions for assigned offices; optional <code>canApprove</code> permission</td></tr>
+        <tr><td><strong>ADMIN</strong></td><td>Full access — manage users, view all submissions, override restrictions</td></tr>
+      </table>
+    </div>
+
+    <!-- Setup -->
+    <div class="card" id="setup">
+      <h2>4. First-Time Setup (Highlighted Steps)</h2>
+      <p>Run these steps after cloning from GitHub. The database and <code>.env</code> are <strong>not</strong> included in the repository.</p>
+
+      <div class="alert alert-warn">
+        <strong>⚠ Avoid OneDrive folders.</strong> Cloning to <code>OneDrive\Desktop\...</code> can cause
+        <code>EPERM</code> errors during <code>prisma generate</code>. Prefer <code>C:\dev\city-of-imus</code> or similar.
+      </div>
+
+      <ol class="steps">
+        <li>
+          <strong>Clone the repository</strong>
+          <pre><code>git clone https://github.com/AceDagalea/city-of-imus.git
+cd city-of-imus</code></pre>
+        </li>
+        <li>
+          <strong>Install dependencies</strong>
+          <p>Also runs <code>prisma generate</code> automatically via the <code>postinstall</code> script.</p>
+          <pre><code>npm install</code></pre>
+        </li>
+        <li>
+          <strong>Create the environment file</strong>
+          <pre><code># Windows PowerShell
+Copy-Item .env.local.example .env
+
+# macOS / Linux
+cp .env.local.example .env</code></pre>
+        </li>
+        <li>
+          <strong>Generate AUTH_SECRET and paste into .env</strong>
+          <pre><code>node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"</code></pre>
+          <p>Replace <code>AUTH_SECRET="replace-me"</code> with the generated value. Do not commit <code>.env</code>.</p>
+        </li>
+        <li>
+          <strong>Create database tables and seed the admin account</strong>
+          <pre><code>npm run db:setup</code></pre>
+          <p>Equivalent to <code>npx prisma migrate deploy</code> + <code>npx prisma db seed</code>.</p>
+        </li>
+        <li>
+          <strong>Start the development server</strong>
+          <pre><code>npm run dev</code></pre>
+          <p>Open <a href="http://localhost:3000">http://localhost:3000</a></p>
+        </li>
+        <li>
+          <strong>Log in or register</strong>
+          <p>Admin: <code>/login</code> with seeded credentials (see Section 7). Citizens: <code>/register</code> — verification link prints in the terminal.</p>
+        </li>
+      </ol>
+
+      <div class="alert alert-ok">
+        <strong>✓ Success checklist:</strong>
+        <code>npm run dev</code> starts without errors ·
+        <code>/login</code> loads ·
+        Admin login works ·
+        <code>npx prisma studio</code> shows the <code>User</code> table
+      </div>
+    </div>
+
+    <!-- Env -->
+    <div class="card" id="env">
+      <h2>5. Environment Variables</h2>
+      <p>All variables live in <code>.env</code> at the project root (copy from <code>.env.local.example</code>).</p>
+      <table>
+        <tr><th>Variable</th><th>Example</th><th>Description</th></tr>
+        <tr>
+          <td><code>TENANT</code></td>
+          <td><code>imus</code></td>
+          <td>Selects <code>config/tenants/&lt;TENANT&gt;.config.ts</code>. Defaults to <code>imus</code>.</td>
+        </tr>
+        <tr>
+          <td><code>DATABASE_URL</code></td>
+          <td><code>"file:./dev.db"</code></td>
+          <td>SQLite path relative to <code>prisma/</code>. For Postgres, change provider in schema and set a Postgres URL.</td>
+        </tr>
+        <tr>
+          <td><code>AUTH_SECRET</code></td>
+          <td><code>"a1b2c3..."</code></td>
+          <td><strong>Required.</strong> Random hex string for Auth.js JWT signing. Generate locally — not from Supabase or GitHub.</td>
+        </tr>
+        <tr>
+          <td><code>SEED_ADMIN_EMAIL</code></td>
+          <td><code>admin@imus.gov.ph</code></td>
+          <td>Optional override for seed script (default: <code>admin@imus.gov.ph</code>).</td>
+        </tr>
+        <tr>
+          <td><code>SEED_ADMIN_PASSWORD</code></td>
+          <td><code>ChangeMe@2026</code></td>
+          <td>Optional override for seed script password.</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Database -->
+    <div class="card" id="database">
+      <h2>6. Accessing the Database</h2>
+      <table>
+        <tr><th>Method</th><th>Command / Path</th></tr>
+        <tr>
+          <td><strong>Prisma Studio</strong> (recommended)</td>
+          <td><code>npx prisma studio</code> → opens <a href="http://localhost:5555">http://localhost:5555</a></td>
+        </tr>
+        <tr>
+          <td><strong>Database file</strong></td>
+          <td><code>prisma/dev.db</code> (created after <code>npm run db:setup</code>)</td>
+        </tr>
+        <tr>
+          <td><strong>Through the app</strong></td>
+          <td>Admin <code>/admin</code> · Staff <code>/staff/queue</code> · Citizen <code>/citizen/dashboard</code></td>
+        </tr>
+        <tr>
+          <td><strong>SQLite GUI</strong></td>
+          <td>Open <code>prisma/dev.db</code> in DB Browser for SQLite or a VS Code extension</td>
+        </tr>
+      </table>
+      <div class="alert alert-warn">
+        If Prisma Studio shows <strong>"The table main.User does not exist"</strong>, run
+        <code>npm run db:setup</code> — migrations have not been applied yet.
+      </div>
+    </div>
+
+    <!-- Login -->
+    <div class="card" id="login">
+      <h2>7. Login Credentials &amp; Routes</h2>
+
+      <h3>Default admin (created by <code>npm run db:seed</code>)</h3>
+      <table>
+        <tr><th>Email</th><th>Password</th><th>Console</th></tr>
+        <tr>
+          <td><code>admin@imus.gov.ph</code></td>
+          <td><code>ChangeMe@2026</code></td>
+          <td><span class="route">/admin</span></td>
+        </tr>
+      </table>
+
+      <h3>Key routes</h3>
+      <table>
+        <tr><th>Route</th><th>Who</th><th>Purpose</th></tr>
+        <tr><td><span class="route">/login</span></td><td>Everyone</td><td>Sign in</td></tr>
+        <tr><td><span class="route">/register</span></td><td>Public</td><td>Citizen self-registration</td></tr>
+        <tr><td><span class="route">/verify</span></td><td>Citizens</td><td>Email verification (link from terminal in dev)</td></tr>
+        <tr><td><span class="route">/forms</span></td><td>Public</td><td>Digital services portal — browse and submit forms</td></tr>
+        <tr><td><span class="route">/citizen/dashboard</span></td><td>Citizen</td><td>My applications</td></tr>
+        <tr><td><span class="route">/staff/queue</span></td><td>Staff / Admin</td><td>Processing queue</td></tr>
+        <tr><td><span class="route">/admin/users</span></td><td>Admin</td><td>Create and manage staff accounts</td></tr>
+        <tr><td><span class="route">/transparency</span></td><td>Public</td><td>Transparency Seal hub</td></tr>
+      </table>
+
+      <div class="alert alert-info">
+        Portal <strong>Login / Register</strong> buttons now point to <code>/login</code> (not the external eBOSS site).
+        eBOSS links for business permits remain as external links where appropriate.
+      </div>
+    </div>
+
+    <!-- Workflow -->
+    <div class="card" id="workflow">
+      <h2>8. Request Lifecycle</h2>
+      <pre><code>DRAFT → SUBMITTED → UNDER_REVIEW ⇄ NEEDS_INFO
+                              ↓
+                    APPROVED → READY_FOR_RELEASE → RELEASED
+                              ↓
+                           REJECTED</code></pre>
+      <ul>
+        <li>Only <strong>verified citizens</strong> can submit requests.</li>
+        <li>Staff see only submissions for their <strong>assigned offices</strong>.</li>
+        <li><strong>Segregation of duties:</strong> the staff member who moves a submission to UNDER_REVIEW cannot also approve it — a different approver must decide.</li>
+        <li>Every status change writes a <code>SubmissionEvent</code> row (audit trail).</li>
+      </ul>
+    </div>
+
+    <!-- Troubleshooting -->
+    <div class="card" id="troubleshooting">
+      <h2>9. Troubleshooting</h2>
+      <table>
+        <tr><th>Error</th><th>Cause</th><th>Fix</th></tr>
+        <tr>
+          <td><code>@prisma/client did not initialize yet</code></td>
+          <td>Prisma Client not generated after clone</td>
+          <td><code>npm install</code> then <code>npx prisma generate</code></td>
+        </tr>
+        <tr>
+          <td><code>The table main.User does not exist</code></td>
+          <td>Migrations not applied</td>
+          <td><code>npm run db:setup</code></td>
+        </tr>
+        <tr>
+          <td><code>EPERM: operation not permitted, rename ...query_engine...</code></td>
+          <td>OneDrive or another process locking files</td>
+          <td>Pause OneDrive sync, close dev server/Studio, move project out of OneDrive, delete <code>node_modules\.prisma</code>, retry</td>
+        </tr>
+        <tr>
+          <td>Login redirects to Cloudflare block page</td>
+          <td>Old link pointed to external eBOSS site</td>
+          <td>Use <code>/login</code> on localhost — fixed in latest code</td>
+        </tr>
+        <tr>
+          <td>Login fails silently / session issues</td>
+          <td><code>AUTH_SECRET</code> still set to <code>"replace-me"</code></td>
+          <td>Generate a real secret, update <code>.env</code>, restart <code>npm run dev</code></td>
+        </tr>
+        <tr>
+          <td><code>Please verify your email</code> on submit</td>
+          <td>Expected — verification required at launch</td>
+          <td>Complete <code>/verify</code> flow; link appears in server terminal during dev</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Scripts -->
+    <div class="card" id="scripts">
+      <h2>10. NPM Scripts Reference</h2>
+      <table>
+        <tr><th>Command</th><th>Description</th></tr>
+        <tr><td><code>npm run dev</code></td><td>Start development server</td></tr>
+        <tr><td><code>npm run build</code></td><td>Generate Prisma client + production build</td></tr>
+        <tr><td><code>npm start</code></td><td>Run production server</td></tr>
+        <tr><td><code>npm run lint</code></td><td>Run ESLint</td></tr>
+        <tr><td><code>npm run db:setup</code></td><td>Apply migrations + seed admin account</td></tr>
+        <tr><td><code>npm run db:migrate</code></td><td>Apply migrations only</td></tr>
+        <tr><td><code>npm run db:seed</code></td><td>Seed admin account only</td></tr>
+        <tr><td><code>npx prisma studio</code></td><td>Open database browser UI</td></tr>
+        <tr><td><code>npx prisma generate</code></td><td>Regenerate Prisma Client</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    City of Imus LGU Website Template · Documentation generated July 2026 ·
+    <a href="https://github.com/AceDagalea/city-of-imus">GitHub Repository</a>
+  </footer>
+
+</body>
+</html>

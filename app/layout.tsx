@@ -4,6 +4,7 @@ import { Montserrat, Libre_Baskerville } from "next/font/google";
 import LayoutShell from "@/components/layout/LayoutShell";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { AccessibilityProvider } from "@/context/AccessibilityContext";
+import SessionProvider from "@/components/providers/SessionProvider";
 import { tenantConfig } from "@/config/tenant.config";
 import "@/styles/globals.css";
 
@@ -58,14 +59,16 @@ export default function RootLayout({
       className={`${montserrat.variable} ${libreBaskerville.variable}`}
     >
       <body className="min-h-screen overflow-x-hidden flex flex-col font-body">
-        <AccessibilityProvider>
-          <LanguageProvider>
-            <a href="#main-content" className="skip-link">
-              Skip to main content
-            </a>
-            <LayoutShell>{children}</LayoutShell>
-          </LanguageProvider>
-        </AccessibilityProvider>
+        <SessionProvider>
+          <AccessibilityProvider>
+            <LanguageProvider>
+              <a href="#main-content" className="skip-link">
+                Skip to main content
+              </a>
+              <LayoutShell>{children}</LayoutShell>
+            </LanguageProvider>
+          </AccessibilityProvider>
+        </SessionProvider>
       </body>
     </html>
   );
