@@ -25,9 +25,33 @@ export function getFormsForAudience(audienceId: AudienceTabId): CityForm[] {
 export function getFormMeta(form: CityForm) {
   return {
     processingTime: form.processingDays ?? "Varies",
-    requirements: form.mode === "requirements" ? "See checklist" : "3+ Documents",
+    requirements: form.mode === "requirements" ? "See checklist" : "3+ docs",
     fee: form.mode === "online" ? "Varies" : "See office",
   };
+}
+
+export type ServiceSort = "most-used" | "az" | "online";
+
+export function sortForms(forms: CityForm[], sort: ServiceSort): CityForm[] {
+  const list = [...forms];
+  if (sort === "az") {
+    return list.sort((a, b) => a.name.en.localeCompare(b.name.en));
+  }
+  if (sort === "online") {
+    return list.sort((a, b) => {
+      const ao = a.mode === "online" ? 0 : 1;
+      const bo = b.mode === "online" ? 0 : 1;
+      return ao - bo || a.name.en.localeCompare(b.name.en);
+    });
+  }
+  // most-used: prioritize MOST_REQUESTED_SLUGS order, then name
+  return list.sort((a, b) => {
+    const ai = MOST_REQUESTED_SLUGS.indexOf(a.slug);
+    const bi = MOST_REQUESTED_SLUGS.indexOf(b.slug);
+    const aRank = ai === -1 ? 999 : ai;
+    const bRank = bi === -1 ? 999 : bi;
+    return aRank - bRank || a.name.en.localeCompare(b.name.en);
+  });
 }
 
 export { FORM_CATEGORIES, CITY_FORMS };

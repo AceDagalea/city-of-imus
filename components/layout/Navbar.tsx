@@ -35,7 +35,7 @@ export default function Navbar() {
         className="border-b border-gray-100 bg-white shadow-sm"
         aria-label="Main navigation"
       >
-        <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-4 px-4 md:h-20 md:px-6">
+        <div className="mx-auto flex h-[4.5rem] max-w-[1200px] items-center justify-between gap-4 px-6 md:h-[72px]">
           <ImusLogo href="/" size="lg" />
 
           <ul className="hidden items-center justify-center gap-0.5 lg:flex xl:gap-1">

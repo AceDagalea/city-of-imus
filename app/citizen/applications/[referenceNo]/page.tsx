@@ -1,15 +1,9 @@
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 import { auth } from "@/auth";
 import { prisma } from "@/lib/db";
-import { getFormBySlug } from "@/lib/forms";
-import ConsoleShell from "@/components/console/ConsoleShell";
-import StatusBadge from "@/components/console/StatusBadge";
-import SubmissionDetail from "@/components/console/SubmissionDetail";
-import RespondForm from "@/components/console/RespondForm";
-import L from "@/components/console/L";
-import { STRINGS } from "@/lib/i18n";
+import { getCategoryById, getFormBySlug } from "@/lib/forms";
+import { getFormMeta } from "@/lib/digital-services";
+import CitizenApplicationDetail from "@/components/citizen/CitizenApplicationDetail";
 
 export const dynamic = "force-dynamic";
 
@@ -30,48 +24,44 @@ export default async function CitizenApplicationPage({
     },
   });
 
-  // Citizens can only see their own submissions (admins may inspect too).
   if (!submission || (submission.citizenId !== user.id && user.role !== "ADMIN")) {
     notFound();
   }
 
   const form = getFormBySlug(submission.formSlug);
+  const office = getCategoryById(submission.officeId);
   const fields = JSON.parse(submission.fields) as Record<string, string>;
+  const title = form?.name ?? { en: submission.formSlug, fil: submission.formSlug };
+  const meta = form ? getFormMeta(form) : { processingTime: "Varies" };
 
   return (
-    <ConsoleShell
-      title={form?.name ?? { en: submission.formSlug, fil: submission.formSlug }}
-      actions={
-        <Link
-          href="/citizen/dashboard"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-white/25 px-3 py-2 text-xs font-semibold text-white/85 transition-colors hover:bg-white/10 focus-ring"
-        >
-          <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
-          <L s={STRINGS.backLabel} />
-        </Link>
+    <CitizenApplicationDetail
+      referenceNo={submission.referenceNo}
+      status={submission.status}
+      formSlug={submission.formSlug}
+      title={title}
+      serviceShort={
+        form?.name.en
+          .replace(/\s+(Application|Request|Renewal).*$/i, "")
+          .trim() ?? submission.formSlug
       }
-    >
-      <div className="mb-6 flex flex-wrap items-center gap-3 rounded-xl bg-white px-6 py-4 shadow-card">
-        <span className="font-mono text-sm font-semibold text-tenant-navy">{submission.referenceNo}</span>
-        <StatusBadge status={submission.status} />
-      </div>
-
-      {submission.status === "NEEDS_INFO" && (
-        <section className="mb-6 rounded-xl border border-orange-200 bg-orange-50/60 p-6">
-          <h2 className="text-sm font-bold uppercase tracking-wider text-orange-800">
-            <L s={STRINGS.respondTitle} />
-          </h2>
-          <div className="mt-4">
-            <RespondForm referenceNo={submission.referenceNo} />
-          </div>
-        </section>
-      )}
-
-      <SubmissionDetail
-        fields={fields}
-        attachments={submission.attachments}
-        events={submission.events}
-      />
-    </ConsoleShell>
+      officeShort={office?.shortName ?? submission.officeId.toUpperCase()}
+      officeName={office?.name ?? { en: submission.officeId, fil: submission.officeId }}
+      processingTime={meta.processingTime}
+      createdAt={submission.createdAt.toISOString()}
+      fields={fields}
+      attachments={submission.attachments.map((a) => ({
+        id: a.id,
+        filename: a.filename,
+        uploadedAt: a.uploadedAt.toISOString(),
+      }))}
+      events={submission.events.map((e) => ({
+        id: e.id,
+        fromStatus: e.fromStatus,
+        toStatus: e.toStatus,
+        note: e.note,
+        createdAt: e.createdAt.toISOString(),
+      }))}
+    />
   );
 }

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, User, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import ImusLogo from "@/components/shared/ImusLogo";
-import NationalBar from "@/components/layout/NationalBar";
+import PortalAuthButton from "@/components/forms/digital/PortalAuthButton";
 
 const NAV = [
   { label: "Home", href: "/" },
@@ -19,29 +19,28 @@ export default function DigitalPortalHeader() {
 
   return (
     <header className="sticky top-0 z-50 bg-white">
-      <NationalBar />
-      <div className="bg-tenant-navy text-white">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-2 text-xs md:px-6">
-          <p className="text-white/85">
+      <div className="bg-[#132a63] text-[#aebbe4]">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-2 px-6 py-1.5 text-[12.5px]">
+          <p>
             Official Website of the{" "}
-            <span className="font-semibold text-tenant-green-light">City Government of Imus</span>, Cavite
+            <span className="font-semibold text-white">City Government of Imus</span>, Cavite
           </p>
-          <div className="flex flex-wrap items-center gap-4 text-white/75">
-            <a href="#main-content" className="hover:text-white focus-ring rounded-sm">
+          <div className="flex flex-wrap items-center gap-[18px]">
+            <a href="#main-content" className="transition-colors hover:text-white focus-ring rounded-sm">
               Accessibility
             </a>
-            <Link href="/contact" className="hover:text-white focus-ring rounded-sm">
+            <Link href="/contact" className="transition-colors hover:text-white focus-ring rounded-sm">
               Help Center
             </Link>
-            <Link href="/contact#hotlines" className="hover:text-white focus-ring rounded-sm">
+            <Link href="/contact#hotlines" className="transition-colors hover:text-white focus-ring rounded-sm">
               FAQs
             </Link>
           </div>
         </div>
       </div>
 
-      <nav className="border-b border-gray-100 shadow-sm" aria-label="Digital services navigation">
-        <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between gap-4 px-4 md:h-20 md:px-6">
+      <nav className="border-b border-[#e7eaf0] bg-white" aria-label="Digital services navigation">
+        <div className="mx-auto flex h-[4.5rem] max-w-[1200px] items-center justify-between gap-4 px-6 md:h-[72px]">
           <ImusLogo href="/forms" size="lg" />
 
           <ul className="hidden items-center gap-1 lg:flex">
@@ -54,7 +53,11 @@ export default function DigitalPortalHeader() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-tenant-navy transition-colors hover:text-tenant-red focus-ring rounded-md"
+                  className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors focus-ring rounded-md ${
+                    item.href === "/forms"
+                      ? "font-bold text-[#12275c]"
+                      : "text-[#3a4256] hover:text-[#2b57c4]"
+                  }`}
                 >
                   {item.label}
                   {item.children && <ChevronDown className="h-3.5 w-3.5 opacity-50" />}
@@ -78,13 +81,7 @@ export default function DigitalPortalHeader() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <Link
-              href="/login"
-              className="hidden items-center gap-2 rounded-full bg-tenant-navy px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tenant-navyDark focus-ring sm:inline-flex"
-            >
-              <User className="h-4 w-4" />
-              Login / Register
-            </Link>
+            <PortalAuthButton />
             <button
               className="rounded-md p-2 text-tenant-navy lg:hidden focus-ring"
               onClick={() => setMobileOpen(true)}

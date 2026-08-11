@@ -14,14 +14,13 @@ export const authConfig = {
   // Self-hosted deployments serve from their own host (not a known platform
   // proxy), so the request Host header is the source of truth for URLs.
   trustHost: true,
+  secret: process.env.AUTH_SECRET,
   pages: {
     signIn: "/login",
   },
   session: {
-    strategy: "jwt",
-    // Keep users signed in for 30 days across visits (default is also 30d;
-    // explicit here so middleware and API routes share the same maxAge).
-    maxAge: 30 * 24 * 60 * 60,
+    strategy: "jwt" as const,
+    maxAge: 30 * 24 * 60 * 60, // 30 days
     updateAge: 24 * 60 * 60,
   },
   cookies: {
@@ -29,14 +28,16 @@ export const authConfig = {
       name: useSecureCookies ? "__Secure-authjs.session-token" : "authjs.session-token",
       options: {
         httpOnly: true,
-        sameSite: "lax",
+        sameSite: "lax" as const,
         path: "/",
         secure: useSecureCookies,
+        // Explicit maxAge so the browser keeps the cookie across navigations.
+        maxAge: 30 * 24 * 60 * 60,
       },
     },
   },
   callbacks: {
-    // Persist role/permission claims in the JWT at sign-in.
+    // Persist role/permission claims in the JWT at sign-in AND on every refresh.
     jwt({ token, user }) {
       if (user) {
         token.sub = user.id;
@@ -51,8 +52,8 @@ export const authConfig = {
     },
     session({ session, token }) {
       if (session.user) {
-        session.user.id = token.sub ?? "";
-        session.user.role = token.role as string;
+        session.user.id = (token.sub as string) ?? "";
+        session.user.role = (token.role as string) ?? "";
         session.user.canApprove = Boolean(token.canApprove);
         session.user.officeIds = (token.officeIds as string[]) ?? [];
         session.user.verified = Boolean(token.verified);

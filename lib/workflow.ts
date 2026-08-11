@@ -41,6 +41,77 @@ export function canTransition(from: SubmissionStatus, to: SubmissionStatus): boo
   return STATUS_TRANSITIONS[from]?.includes(to) ?? false;
 }
 
+/**
+ * Mini progress track for the citizen dashboard (4 steps matching the mock):
+ * Received → Under Review → Approved → Ready/Released
+ */
+export function citizenProgress(status: string): { done: number; now: number } {
+  switch (status) {
+    case "DRAFT":
+      return { done: 0, now: 0 };
+    case "SUBMITTED":
+      return { done: 1, now: -1 };
+    case "UNDER_REVIEW":
+    case "NEEDS_INFO":
+      return { done: 1, now: 1 };
+    case "APPROVED":
+      return { done: 2, now: 2 };
+    case "READY_FOR_RELEASE":
+      return { done: 3, now: 3 };
+    case "RELEASED":
+      return { done: 4, now: -1 };
+    case "REJECTED":
+      return { done: 1, now: 1 };
+    default:
+      return { done: 0, now: 0 };
+  }
+}
+
+/**
+ * 5-step application detail tracker (Submitted → Under Review → Approved →
+ * Ready for Release → Released). `done` = completed steps, `now` = active
+ * step index (0-based), or -1 when fully complete.
+ */
+export function citizenDetailProgress(status: string): { done: number; now: number } {
+  switch (status) {
+    case "DRAFT":
+      return { done: 0, now: 0 };
+    case "SUBMITTED":
+      return { done: 0, now: 0 };
+    case "UNDER_REVIEW":
+    case "NEEDS_INFO":
+      return { done: 1, now: 1 };
+    case "APPROVED":
+      return { done: 2, now: 2 };
+    case "READY_FOR_RELEASE":
+      return { done: 3, now: 3 };
+    case "RELEASED":
+      return { done: 5, now: -1 };
+    case "REJECTED":
+      return { done: 1, now: 1 };
+    default:
+      return { done: 0, now: 0 };
+  }
+}
+
+/** Citizen-facing badge tone classes (dot + soft pill). */
+export function citizenBadgeTone(status: string): "review" | "ready" | "received" | "done" | "reject" {
+  switch (status) {
+    case "UNDER_REVIEW":
+    case "NEEDS_INFO":
+      return "review";
+    case "APPROVED":
+    case "READY_FOR_RELEASE":
+      return "ready";
+    case "RELEASED":
+      return "done";
+    case "REJECTED":
+      return "reject";
+    default:
+      return "received";
+  }
+}
+
 /** Display metadata for status badges (labels have en/fil pairs). */
 export const STATUS_META: Record<
   SubmissionStatus,

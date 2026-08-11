@@ -2,71 +2,88 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import SignOutButton from "@/components/auth/SignOutButton";
 import { STRINGS, t, type LocalizedString } from "@/lib/i18n";
 
 interface ConsoleShellProps {
   title: LocalizedString;
+  /** Display name shown after “Signed in as”. */
+  whoName?: string;
+  /** Optional office / role meta after the name. */
+  whoMeta?: string;
   subtitle?: LocalizedString;
-  /** Section nav tabs (admin console). */
   tabs?: { label: LocalizedString; href: string }[];
   actions?: React.ReactNode;
   children: React.ReactNode;
 }
 
-export default function ConsoleShell({ title, subtitle, tabs, actions, children }: ConsoleShellProps) {
+export default function ConsoleShell({
+  title,
+  whoName,
+  whoMeta,
+  subtitle,
+  tabs,
+  actions,
+  children,
+}: ConsoleShellProps) {
   const { language } = useLanguage();
   const pathname = usePathname();
 
   return (
-    <div className="bg-tenant-gray">
-      <div className="bg-tenant-navy pb-10 pt-8 text-white">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-4 px-4 md:px-6">
-          <div>
-            <h1 className="font-heading text-2xl font-bold md:text-3xl">{t(title, language)}</h1>
-            {subtitle && (
-              <p className="mt-1.5 max-w-2xl text-sm text-white/75">{t(subtitle, language)}</p>
-            )}
+    <div className="bg-[#f4f6fa]">
+      <section className="bg-gradient-to-br from-[#12275c] to-[#1b3a86] text-white">
+        <div className="mx-auto max-w-[1200px] px-6 pt-7">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h1 className="text-[28px] font-bold tracking-tight">{t(title, language)}</h1>
+              {whoName ? (
+                <p className="mt-1 text-[13px] text-[#aebbe4]">
+                  {t(STRINGS.adminSignedInAs, language)}
+                  <b className="text-white">{whoName}</b>
+                  {whoMeta ? <> · {whoMeta}</> : null}
+                </p>
+              ) : subtitle ? (
+                <p className="mt-1.5 max-w-2xl text-sm text-white/75">{t(subtitle, language)}</p>
+              ) : null}
+            </div>
+            <div className="flex items-center gap-3">
+              {actions}
+              <SignOutButton className="inline-flex items-center gap-1.5 rounded-[9px] border border-white/25 bg-white/8 px-4 py-2 text-[13.5px] font-semibold text-white transition-colors hover:bg-white/16 focus-ring disabled:opacity-60">
+                <LogOut className="h-3.5 w-3.5" aria-hidden="true" />
+                {t(STRINGS.signOut, language)}
+              </SignOutButton>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
-            {actions}
-            <button
-              type="button"
-              onClick={() => signOut({ callbackUrl: "/" })}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/25 px-3 py-2 text-xs font-semibold text-white/85 transition-colors hover:bg-white/10 focus-ring"
-            >
-              <LogOut className="h-3.5 w-3.5" aria-hidden="true" />
-              {t(STRINGS.signOut, language)}
-            </button>
-          </div>
-        </div>
-        {tabs && tabs.length > 0 && (
-          <nav className="mx-auto mt-6 max-w-7xl px-4 md:px-6" aria-label="Console sections">
-            <ul className="flex flex-wrap gap-1">
+
+          {tabs && tabs.length > 0 && (
+            <nav className="mt-[22px] flex gap-1 overflow-x-auto" aria-label="Console sections">
               {tabs.map((tab) => {
-                const active = pathname === tab.href;
+                const active =
+                  tab.href === "/admin"
+                    ? pathname === "/admin"
+                    : pathname === tab.href || pathname.startsWith(`${tab.href}/`);
                 return (
-                  <li key={tab.href}>
-                    <Link
-                      href={tab.href}
-                      className={`inline-block rounded-t-lg px-4 py-2 text-sm font-medium transition-colors focus-ring ${
-                        active
-                          ? "bg-tenant-gray text-tenant-navy"
-                          : "text-white/75 hover:bg-white/10 hover:text-white"
-                      }`}
-                    >
-                      {t(tab.label, language)}
-                    </Link>
-                  </li>
+                  <Link
+                    key={tab.href}
+                    href={tab.href}
+                    className={`whitespace-nowrap px-5 py-3 text-[13.5px] font-semibold transition-colors focus-ring ${
+                      active
+                        ? "rounded-t-[10px] border-b-[3px] border-[#1f9d55] bg-[#f4f6fa] text-[#12275c]"
+                        : "rounded-t-lg border-b-[3px] border-transparent text-[#aebbe4] hover:text-white"
+                    }`}
+                  >
+                    {t(tab.label, language)}
+                  </Link>
                 );
               })}
-            </ul>
-          </nav>
-        )}
-      </div>
-      <div className="mx-auto max-w-7xl px-4 py-8 md:px-6">{children}</div>
+            </nav>
+          )}
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-[1200px] px-6 py-[26px] pb-[50px]">{children}</div>
     </div>
   );
 }

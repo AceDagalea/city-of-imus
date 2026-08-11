@@ -6,6 +6,7 @@ import { FORM_CATEGORIES } from "@/lib/forms";
 import ConsoleShell from "@/components/console/ConsoleShell";
 import UserAdmin from "@/components/console/UserAdmin";
 import { ADMIN_TABS } from "@/components/console/adminTabs";
+import { adminWho } from "@/components/console/adminWho";
 import { STRINGS } from "@/lib/i18n";
 
 export const dynamic = "force-dynamic";
@@ -37,7 +38,7 @@ export default async function AdminUsersPage() {
   const offices = FORM_CATEGORIES.map((c) => ({ id: c.id, shortName: c.shortName }));
 
   return (
-    <ConsoleShell title={STRINGS.adminUsersTitle} tabs={ADMIN_TABS}>
+    <ConsoleShell title={STRINGS.adminUsersTitle} tabs={ADMIN_TABS} {...adminWho(session)}>
       <UserAdmin users={rows} offices={offices} />
     </ConsoleShell>
   );

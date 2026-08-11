@@ -3,9 +3,9 @@ import DigitalPortalHeader from "@/components/forms/digital/DigitalPortalHeader"
 import DigitalPortalFooter from "@/components/forms/digital/DigitalPortalFooter";
 
 export const metadata: Metadata = {
-  title: "Digital Services",
+  title: "City Services",
   description:
-    "Access City of Imus government services online — apply for permits, certificates, and more.",
+    "Apply for permits, request documents, and track your applications online with the City Government of Imus.",
 };
 
 export default function FormsLayout({ children }: { children: React.ReactNode }) {
